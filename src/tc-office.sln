@@ -1,0 +1,193 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A0218791-FD24-4922-88E4-247AC2039E1A}"
+	ProjectSection(SolutionItems) = preProject
+		..\readme.md = ..\readme.md
+		..\docs\tc_cash_codes.md = ..\docs\tc_cash_codes.md
+		..\docs\tc_demo_manufacturing.md = ..\docs\tc_demo_manufacturing.md
+		..\docs\tc_demo_services.md = ..\docs\tc_demo_services.md
+		..\docs\tc_mtd_uk.md = ..\docs\tc_mtd_uk.md
+		..\docs\tc_testing.md = ..\docs\tc_testing.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{96699F18-CBEB-4AD9-B68C-8A79A54FFF44}"
+	ProjectSection(SolutionItems) = preProject
+		..\img\bom_attributes.jpg = ..\img\bom_attributes.jpg
+		..\img\bom_cash_flow_invoiced.jpg = ..\img\bom_cash_flow_invoiced.jpg
+		..\img\bom_cash_flow_settings.jpg = ..\img\bom_cash_flow_settings.jpg
+		..\img\bom_cash_flow_uninvoiced.jpg = ..\img\bom_cash_flow_uninvoiced.jpg
+		..\img\bom_cash_statement.jpg = ..\img\bom_cash_statement.jpg
+		..\img\bom_compstat_uninvoiced.jpg = ..\img\bom_compstat_uninvoiced.jpg
+		..\img\bom_document_manager.jpg = ..\img\bom_document_manager.jpg
+		..\img\bom_install.jpg = ..\img\bom_install.jpg
+		..\img\bom_invoice_polarity.jpg = ..\img\bom_invoice_polarity.jpg
+		..\img\bom_invoice_register.jpg = ..\img\bom_invoice_register.jpg
+		..\img\bom_job_profit_report.jpg = ..\img\bom_job_profit_report.jpg
+		..\img\bom_operations.jpg = ..\img\bom_operations.jpg
+		..\img\bom_organisation_statement.jpg = ..\img\bom_organisation_statement.jpg
+		..\img\bom_parts_listing.jpg = ..\img\bom_parts_listing.jpg
+		..\img\bom_payment_entry.jpg = ..\img\bom_payment_entry.jpg
+		..\img\bom_project_view.jpg = ..\img\bom_project_view.jpg
+		..\img\bom_register.jpg = ..\img\bom_register.jpg
+		..\img\bom_status_graphs.jpg = ..\img\bom_status_graphs.jpg
+		..\img\bom_task_edit.jpg = ..\img\bom_task_edit.jpg
+		..\img\bom_task_explorer.jpg = ..\img\bom_task_explorer.jpg
+		..\img\bom_task_view.jpg = ..\img\bom_task_view.jpg
+		..\img\bom_where_used.jpg = ..\img\bom_where_used.jpg
+		..\img\bom_work_flow.jpg = ..\img\bom_work_flow.jpg
+		..\img\mtd_1_click_grab.jpg = ..\img\mtd_1_click_grab.jpg
+		..\img\mtd_vat_totals.jpg = ..\img\mtd_vat_totals.jpg
+		..\img\services_address.jpg = ..\img\services_address.jpg
+		..\img\services_attributes.jpg = ..\img\services_attributes.jpg
+		..\img\services_cash_statement.jpg = ..\img\services_cash_statement.jpg
+		..\img\services_expenses.jpg = ..\img\services_expenses.jpg
+		..\img\services_install.jpg = ..\img\services_install.jpg
+		..\img\services_invoice.jpg = ..\img\services_invoice.jpg
+		..\img\services_new_org.jpg = ..\img\services_new_org.jpg
+		..\img\services_new_task.jpg = ..\img\services_new_task.jpg
+		..\img\services_ops.jpg = ..\img\services_ops.jpg
+		..\img\services_period_end.jpg = ..\img\services_period_end.jpg
+		..\img\services_quote.jpg = ..\img\services_quote.jpg
+		..\img\services_system_overview.jpg = ..\img\services_system_overview.jpg
+		..\img\services_task_explorer.jpg = ..\img\services_task_explorer.jpg
+		..\img\services_tree_example.jpg = ..\img\services_tree_example.jpg
+		..\img\services_work_flow.jpg = ..\img\services_work_flow.jpg
+		..\img\tcoffice_connection.jpg = ..\img\tcoffice_connection.jpg
+		..\img\tcoffice_expressions.jpg = ..\img\tcoffice_expressions.jpg
+		..\img\tcoffice_menu.jpg = ..\img\tcoffice_menu.jpg
+		..\img\tcoffice_net_profit.jpg = ..\img\tcoffice_net_profit.jpg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installation", "installation", "{EAB7026F-356D-4BBD-ACF6-95E98C1CBF0D}"
+	ProjectSection(SolutionItems) = preProject
+		installation\tcOfficeClient.zip = installation\tcOfficeClient.zip
+		installation\tcOfficeMTD.zip = installation\tcOfficeMTD.zip
+		installation\tcOfficeTemplates.zip = installation\tcOfficeTemplates.zip
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "access", "access", "{29A2A478-3B3D-4828-B55D-55DD4647C162}"
+	ProjectSection(SolutionItems) = preProject
+		access\CTCnode_3.accdb = access\CTCnode_3.accdb
+		access\CTCnode_3.accdr = access\CTCnode_3.accdr
+		access\CTCnode_3.ico = access\CTCnode_3.ico
+		access\TCnode_3.accdb = access\TCnode_3.accdb
+		access\TCnode_3.accde = access\TCnode_3.accde
+		access\TCnode_3.ico = access\TCnode_3.ico
+		access\TCnode_local.accdb = access\TCnode_local.accdb
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "excel", "excel", "{5BA740B1-9F61-451B-AE81-A64AFB62DF0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xltCashFlow", "excel\xltCashFlow\xltCashFlow.csproj", "{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mtd_uk", "mtd_uk", "{B1E198D0-2F87-4FF8-87DE-32D2934DAC41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeMTD", "mtd_uk\OfficeMTD\OfficeMTD.csproj", "{A549326A-5538-4BCE-8433-74FF544558F1}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OfficeMTDInstall", "mtd_uk\OfficeMTDInstall\OfficeMTDInstall.vdproj", "{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "word", "word", "{140CF55D-C70B-48FB-ACBF-673D9E31E8C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docAcknowledgement", "word\docAcknowledgement\docAcknowledgement.csproj", "{08523553-948F-400C-853D-89784FDA3E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docPurchaseDelivery", "word\docPurchaseDelivery\docPurchaseDelivery.csproj", "{F5793B12-1A0F-4869-9631-11DC0154A2B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docPurchaseEnquiry", "word\docPurchaseEnquiry\docPurchaseEnquiry.csproj", "{5FFC993E-7C48-4FD1-9006-2718725F258A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docPurchaseOrder", "word\docPurchaseOrder\docPurchaseOrder.csproj", "{2450E744-C45F-405F-9FE3-28B3C23F2851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docQuotation", "word\docQuotation\docQuotation.csproj", "{37C6D71F-C707-429C-87D1-598E1798E821}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docQuoteSimple", "word\docQuoteSimple\docQuoteSimple.csproj", "{2B599FD8-AE43-435E-8F61-B87E964777E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "docSalesInvoice", "word\docSalesInvoice\docSalesInvoice.csproj", "{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Documents", "word\Documents\Documents.csproj", "{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSchema", "word\DocumentSchema\DocumentSchema.csproj", "{64A770D6-CABF-4833-B96E-2EF2B365C5CF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "tcOfficeSetup", "setup\tcOfficeSetup.vdproj", "{A6248AC0-5E4C-4232-A0F4-FF65AF76EF4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A549326A-5538-4BCE-8433-74FF544558F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A549326A-5538-4BCE-8433-74FF544558F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A549326A-5538-4BCE-8433-74FF544558F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A549326A-5538-4BCE-8433-74FF544558F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3}.Debug|Any CPU.ActiveCfg = Debug
+		{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3}.Debug|Any CPU.Build.0 = Debug
+		{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3}.Release|Any CPU.ActiveCfg = Release
+		{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3}.Release|Any CPU.Build.0 = Release
+		{08523553-948F-400C-853D-89784FDA3E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08523553-948F-400C-853D-89784FDA3E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08523553-948F-400C-853D-89784FDA3E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08523553-948F-400C-853D-89784FDA3E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5793B12-1A0F-4869-9631-11DC0154A2B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5793B12-1A0F-4869-9631-11DC0154A2B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5793B12-1A0F-4869-9631-11DC0154A2B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5793B12-1A0F-4869-9631-11DC0154A2B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFC993E-7C48-4FD1-9006-2718725F258A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFC993E-7C48-4FD1-9006-2718725F258A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFC993E-7C48-4FD1-9006-2718725F258A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFC993E-7C48-4FD1-9006-2718725F258A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2450E744-C45F-405F-9FE3-28B3C23F2851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2450E744-C45F-405F-9FE3-28B3C23F2851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2450E744-C45F-405F-9FE3-28B3C23F2851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2450E744-C45F-405F-9FE3-28B3C23F2851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C6D71F-C707-429C-87D1-598E1798E821}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C6D71F-C707-429C-87D1-598E1798E821}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C6D71F-C707-429C-87D1-598E1798E821}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C6D71F-C707-429C-87D1-598E1798E821}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B599FD8-AE43-435E-8F61-B87E964777E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B599FD8-AE43-435E-8F61-B87E964777E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B599FD8-AE43-435E-8F61-B87E964777E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B599FD8-AE43-435E-8F61-B87E964777E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A770D6-CABF-4833-B96E-2EF2B365C5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A770D6-CABF-4833-B96E-2EF2B365C5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A770D6-CABF-4833-B96E-2EF2B365C5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A770D6-CABF-4833-B96E-2EF2B365C5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6248AC0-5E4C-4232-A0F4-FF65AF76EF4A}.Debug|Any CPU.ActiveCfg = Debug
+		{A6248AC0-5E4C-4232-A0F4-FF65AF76EF4A}.Debug|Any CPU.Build.0 = Debug
+		{A6248AC0-5E4C-4232-A0F4-FF65AF76EF4A}.Release|Any CPU.ActiveCfg = Release
+		{A6248AC0-5E4C-4232-A0F4-FF65AF76EF4A}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C63EEB9D-034B-4C8D-88F1-A1F7CB7D251E} = {5BA740B1-9F61-451B-AE81-A64AFB62DF0C}
+		{A549326A-5538-4BCE-8433-74FF544558F1} = {B1E198D0-2F87-4FF8-87DE-32D2934DAC41}
+		{24FD0B0B-EF30-4E31-96EB-F50CD6F072E3} = {B1E198D0-2F87-4FF8-87DE-32D2934DAC41}
+		{08523553-948F-400C-853D-89784FDA3E30} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{F5793B12-1A0F-4869-9631-11DC0154A2B4} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{5FFC993E-7C48-4FD1-9006-2718725F258A} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{2450E744-C45F-405F-9FE3-28B3C23F2851} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{37C6D71F-C707-429C-87D1-598E1798E821} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{2B599FD8-AE43-435E-8F61-B87E964777E2} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{72E4F15B-EC69-4B2D-A604-7A57B6C38AF2} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{890BECF8-82C2-4B6F-A4EC-CEEBE59BA9FC} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+		{64A770D6-CABF-4833-B96E-2EF2B365C5CF} = {140CF55D-C70B-48FB-ACBF-673D9E31E8C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A8B77ED-2D0D-412F-A03A-0D0BBA437CBF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TradeControl.Documents.Word.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InvoiceTaskXml" Type="System.String" Scope="User">
+      <Value Profile="(Default)">InvoiceTask</Value>
+    </Setting>
+    <Setting Name="InvoiceActivityXml" Type="System.String" Scope="User">
+      <Value Profile="(Default)">InvoiceActivity</Value>
+    </Setting>
+    <Setting Name="TaskSingleXml" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OrderSingleLine</Value>
+    </Setting>
+    <Setting Name="TaskMultipleXml" Type="System.String" Scope="User">
+      <Value Profile="(Default)">OrderMultiLine</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

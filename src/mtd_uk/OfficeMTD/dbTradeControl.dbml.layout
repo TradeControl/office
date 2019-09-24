@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbTradeControl">
+  <DataContextMoniker Name="/dbTradeControlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9b3d57b1-b1e0-4cb8-a3da-1fe8dc4edd30" absoluteBounds="1.625, 1, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwTaxVatTotal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f2de448-5c3d-4e83-ae02-937acfa13f37" absoluteBounds="1.6400000000000001, 1.46, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

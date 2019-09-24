@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tcBom" Class="dbTradeControlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TC-PC01;Initial Catalog=tcBom;Integrated Security=True" SettingsObjectName="TradeControl.Tax.Office.Properties.Settings" SettingsPropertyName="tcBomConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Cash.vwTaxVatTotals" Member="vwTaxVatTotals">
+    <Type Name="vwTaxVatTotal">
+      <Column Name="YearNumber" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Period" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StartOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HomeSales" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HomePurchases" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExportSales" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExportPurchases" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HomeSalesVat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="HomePurchasesVat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExportSalesVat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ExportPurchasesVat" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="VatAdjustment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="VatDue" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

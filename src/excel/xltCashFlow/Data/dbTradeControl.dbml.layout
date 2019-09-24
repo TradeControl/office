@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbTradeControl">
+  <DataContextMoniker Name="/dbTradeControlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b82e0daf-87c7-4af0-971a-ada5ebf21de6" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwActivePeriod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3b6fc90-2dcf-41c8-a5b2-d2f0d58d1f96" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="025f22da-9aa6-452b-830d-8f71fd93fb2a" isExpanded="false" absoluteBounds="0.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwActiveYear" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b142d415-128f-4df5-aceb-05b32f0e0a3c" absoluteBounds="0.51500000000000012, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e320dd7-5f64-4430-8851-b83ee4c954bf" isExpanded="false" absoluteBounds="0.5, 2, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwMonth" />
+      <nestedChildShapes>
+        <elementListCompartment Id="458ce7c9-e4d2-4229-a564-7c83e9a32df7" absoluteBounds="0.51500000000000012, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf9c6688-2bd0-4a9f-bbe9-71938616e8c2" isExpanded="false" absoluteBounds="2.875, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwCategoryTrade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1aefa741-f7db-42b3-a303-6d86d6c64afe" absoluteBounds="2.89, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da687908-3251-49f6-ab9c-0060fc22abbb" isExpanded="false" absoluteBounds="2.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwCategoryBank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="134318d8-f3db-43dd-a977-236853bc9af0" absoluteBounds="2.89, 1.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09d66881-5790-43a7-be27-2cfed434e276" isExpanded="false" absoluteBounds="2.875, 2, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwCategoryTax" />
+      <nestedChildShapes>
+        <elementListCompartment Id="090427e7-94b0-43bf-86bd-2bf96b918ac1" absoluteBounds="2.89, 2.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d72069a-ac91-4d2b-af20-657658b45d35" isExpanded="false" absoluteBounds="2.875, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwCategoryTotal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17fcbf8c-0034-4715-84f4-645f0f026350" absoluteBounds="2.89, 3.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea7d8a67-b053-4d9c-91ac-28f392149750" isExpanded="false" absoluteBounds="2.875, 3.5, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwCategoryExpression" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52bd426d-f8fa-4b22-85c0-6a9efcb62857" absoluteBounds="2.89, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2b16b582-5aa0-4d24-a426-02cabafdc1ba" isExpanded="false" absoluteBounds="5.5, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwHomeAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a8190e2-2eb3-4b93-8e15-8ceaa2d68bd3" absoluteBounds="5.515, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04af6700-3291-48ba-b918-8e558a4831e7" isExpanded="false" absoluteBounds="5.375, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwBankAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40fd426f-1f9f-4046-9548-ee28a6f580ba" absoluteBounds="5.39, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9a52d16-b415-44f8-ab9e-4672a6cb7fae" isExpanded="false" absoluteBounds="8, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwFlowVatPeriodTotal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93c061c1-2cc3-41eb-9ed1-6beae7951d33" absoluteBounds="8.015, 2.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8310ae20-5278-4491-9cf9-de8ef7576ea5" isExpanded="false" absoluteBounds="8.125, 3, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwFlowTaxType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b2978d8-71f8-4b5a-9e04-3225af677727" absoluteBounds="8.14, 3.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="894571fd-88d4-4beb-ae9b-8e1a3c2570e8" isExpanded="false" absoluteBounds="8, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwFlowVatRecurrence" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1c940d4-a151-4a80-8967-6e4887acbc6d" absoluteBounds="8.015, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4dd2266c-ec06-4bcb-bd62-cb406848ab6a" isExpanded="false" absoluteBounds="8, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwFlowVatRecurrenceAccrual" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a414108-540d-495b-b8d9-2670b8226cf6" absoluteBounds="8.015, 1.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad8b5c15-4ee9-45d6-8b81-aa8fc66da84d" isExpanded="false" absoluteBounds="8, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwFlowVatPeriodAccrual" />
+      <nestedChildShapes>
+        <elementListCompartment Id="36244a5f-94f8-4bb9-b0a3-b2f5ec95a732" absoluteBounds="8.015, 2.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
