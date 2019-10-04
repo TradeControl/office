@@ -4,6 +4,8 @@ An MS Office client for the [Trade Control](https://github.com/tradecontrol/tc-n
 
 It is a free open source alternative to conventional accounting and order processing apps for Office Business 365 subscribers.
 
+[Change Log](changelog.md)
+
 ## Components
 
 ### Client
