@@ -71,7 +71,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installation", "installatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "access", "access", "{29A2A478-3B3D-4828-B55D-55DD4647C162}"
 	ProjectSection(SolutionItems) = preProject
-		access\CTCnode_3.accdb = access\CTCnode_3.accdb
 		access\CTCnode_3.accdr = access\CTCnode_3.accdr
 		access\CTCnode_3.ico = access\CTCnode_3.ico
 		access\TCnode_3.accdb = access\TCnode_3.accdb
