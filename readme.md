@@ -22,6 +22,10 @@ Although the standard communication documents (Sales Invoices, Purchase Orders e
 
 ## Installation
 
+Pre-requisite: Office 365 Business 64 bit. 
+
+> If your machine is 32 bit, [re-compile the solution](#visual-studio-solution) with an alternative build target.
+
 First, if not already available, [install and configure](https://github.com/tradecontrol/tc-nodecore) an instance of Trade Control in Azure Sql and add data users. Use Azure Portal to register your fixed IP Address with the database firewall. Then install the following on your machine:
 
 - [Office client installer](src/installation/tcOfficeClient.zip)

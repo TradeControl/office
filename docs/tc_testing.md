@@ -17,9 +17,9 @@ Then add an Sql database on the server called **tcDemo**, configured to Basic.
 
 ## Frontend
 
-1. Log into your 365 account and install the apps.
+1. Log into your 365 account and install the 64 bit version of Office.
 
-2. Install ODBC Driver 17 for Sql Server and create a 32 bit ODBC Data Source.
+2. Install ODBC Driver 17 for Sql Server and create a 64 bit ODBC Data Source.
   
 3. Extract the following zip files into their own folder: 
 

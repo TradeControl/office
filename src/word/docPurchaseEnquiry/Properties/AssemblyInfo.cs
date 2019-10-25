@@ -16,6 +16,6 @@ using System.Security;
 
 [assembly: Guid("8c704fbe-e39b-477d-b8c9-8600207ca80e")]
 
-[assembly: AssemblyVersion("2.1.2.*")]
-[assembly: AssemblyFileVersion("2.1.2.1")]
+[assembly: AssemblyVersion("2.2.1.*")]
+[assembly: AssemblyFileVersion("2.2.1.1")]
 

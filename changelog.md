@@ -13,4 +13,6 @@ The following record logs changes to Trade Control, first released on **2019.09.
 - [x] Documents - locate email address by spooled flag [3.9.2]
 - [x] Payment Entry - NI default value incorrect [3.9.2] 
  
- 
+## 3.10
+
+- [x] 64 bit release 

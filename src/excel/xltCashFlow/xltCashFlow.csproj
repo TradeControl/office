@@ -20,7 +20,7 @@
     <PublishUrl>..\..\Installation\CashFlow\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.2.0.5</ApplicationVersion>
+    <ApplicationVersion>2.2.1.1</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
@@ -32,6 +32,11 @@
     <OfficeApplicationDescription />
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
@@ -62,6 +67,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
     <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -233,7 +239,7 @@
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="xltCashFlow.xltx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]xltCashFlow.xltx&quot;" />
+        <ProjectProperties HostName="xltCashFlow.xltx" HostPackage="{3F2B7691-D1D1-402F-9370-2704A737CF60}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="XLT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\excel.exe" DebugInfoCommandLine="/t /x &quot;[$OUTPUT]xltCashFlow.xltx&quot;" />
         <Host Name="Excel Document" Path=".\xltCashFlow.xltx" GeneratedCodeNamespace="TradeControl.CashFlow" PublishedHash="CFA074DD923E1B0189258B503AE76F3E3824AAD6">
           <HostItem Name="ThisWorkbook" Code="ThisWorkbook.cs" CanonicalName="ThisWorkbook" PublishedHash="C5187221AC76E9B3ED98A54223B890015CEB7C08" Blueprint="ThisWorkbook.Designer.xml" GeneratedCode="ThisWorkbook.Designer.cs" />
           <HostItem Name="Sheet1" Code="WSBudget.cs" CanonicalName="Sheet1" PublishedHash="F2D847B9DF31CB75184F56A97FF146E64C1AC514" DisplayName="Budget" Blueprint="WSBudget.Designer.xml" GeneratedCode="WSBudget.Designer.cs" />
