@@ -16,3 +16,4 @@ The following record logs changes to Trade Control, first released on **2019.09.
 ## 3.10
 
 - [x] 64 bit release 
+- [x] ClickOnce manifests Sectigo RSA code signing
