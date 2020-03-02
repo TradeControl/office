@@ -46,25 +46,29 @@ namespace TradeControl.Documents.Word
         /// <param name="_docType">Type of document to open</param>
         /// <param name="_fileName">Template file name without the windows path</param>
         /// <param name="_documentReference">Task code or invoice number</param>
+        /// <param name="_activateWord">Only load the document into xml</param>
         [ComVisible(true)]
-        public bool OpenDocument(short _docType, string _fileName, string _documentReference)
+        public bool OpenDocument(short _docType, string _fileName, string _documentReference, bool _activateWord)
         {
             try
             {
                 if (LoadDocument(_docType, _fileName, _documentReference))
                 {
-                    MicrosoftWord.Application appWord = new MicrosoftWord.Application();
+                    if (_activateWord)
+                    {
+                        MicrosoftWord.Application appWord = new MicrosoftWord.Application();
 
-                    object template = _fileName;
-                    object newTemplate = false;
-                    object docType = MicrosoftWord.WdNewDocumentType.wdNewBlankDocument;
-                    object visible = true;
+                        object template = _fileName;
+                        object newTemplate = false;
+                        object docType = MicrosoftWord.WdNewDocumentType.wdNewBlankDocument;
+                        object visible = true;
 
-                    MicrosoftWord.Document doc = appWord.Documents.Add(ref template, ref newTemplate, ref docType, ref visible);
-                    doc.PrintPreview();
-                    appWord.Visible = true;
-                    appWord.Activate();
-                                        
+                        MicrosoftWord.Document doc = appWord.Documents.Add(ref template, ref newTemplate, ref docType, ref visible);
+                        doc.PrintPreview();
+                        appWord.Visible = true;
+                        appWord.Activate();
+                    }
+                    
                     return true;
                 }
                 else
