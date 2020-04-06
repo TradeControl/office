@@ -749,15 +749,15 @@ namespace TradeControl.CashFlow
                     curCol++;
                 }
 
-                ws.Cells[curRow, curCol].Value = (double)ws.Cells[curRow, curCol].Value + vat_period?.HomeSales;
-                ws.Cells[curRow + 1, curCol].Value = (double)ws.Cells[curRow + 1, curCol].Value + vat_period?.HomePurchases;
-                ws.Cells[curRow + 2, curCol].Value = (double)ws.Cells[curRow + 2, curCol].Value + vat_period?.ExportSales;
-                ws.Cells[curRow + 3, curCol].Value = (double)ws.Cells[curRow + 3, curCol].Value + vat_period?.ExportPurchases;
-                ws.Cells[curRow + 4, curCol].Value = (double)ws.Cells[curRow + 4, curCol].Value + vat_period?.HomeSalesVat;
-                ws.Cells[curRow + 5, curCol].Value = (double)ws.Cells[curRow + 5, curCol].Value + vat_period?.HomePurchasesVat;
-                ws.Cells[curRow + 6, curCol].Value = (double)ws.Cells[curRow + 6, curCol].Value + vat_period?.ExportSalesVat;
-                ws.Cells[curRow + 7, curCol].Value = (double)ws.Cells[curRow + 7, curCol].Value + vat_period?.ExportPurchasesVat;
-                ws.Cells[curRow + 9, curCol].Value = (double)ws.Cells[curRow + 9, curCol].Value + vat_period?.VatDue;
+                ws.Cells[curRow, curCol].Value = (decimal)ws.Cells[curRow, curCol].Value + vat_period?.HomeSales;
+                ws.Cells[curRow + 1, curCol].Value = (decimal)ws.Cells[curRow + 1, curCol].Value + vat_period?.HomePurchases;
+                ws.Cells[curRow + 2, curCol].Value = (decimal)ws.Cells[curRow + 2, curCol].Value + vat_period?.ExportSales;
+                ws.Cells[curRow + 3, curCol].Value = (decimal)ws.Cells[curRow + 3, curCol].Value + vat_period?.ExportPurchases;
+                ws.Cells[curRow + 4, curCol].Value = (decimal)ws.Cells[curRow + 4, curCol].Value + vat_period?.HomeSalesVat;
+                ws.Cells[curRow + 5, curCol].Value = (decimal)ws.Cells[curRow + 5, curCol].Value + vat_period?.HomePurchasesVat;
+                ws.Cells[curRow + 6, curCol].Value = (decimal)ws.Cells[curRow + 6, curCol].Value + vat_period?.ExportSalesVat;
+                ws.Cells[curRow + 7, curCol].Value = (decimal)ws.Cells[curRow + 7, curCol].Value + vat_period?.ExportPurchasesVat;
+                ws.Cells[curRow + 9, curCol].Value = (decimal)ws.Cells[curRow + 9, curCol].Value + vat_period?.VatDue;
 
                 curCol++;
             }
@@ -850,15 +850,15 @@ namespace TradeControl.CashFlow
                     curCol++;
                 }
 
-                ws.Cells[curRow, curCol].Value = (double)ws.Cells[curRow, curCol].Value + vat_period?.HomeSales;
-                ws.Cells[curRow + 1, curCol].Value = (double)ws.Cells[curRow + 1, curCol].Value + vat_period?.HomePurchases;
-                ws.Cells[curRow + 2, curCol].Value = (double)ws.Cells[curRow + 2, curCol].Value + vat_period?.ExportSales;
-                ws.Cells[curRow + 3, curCol].Value = (double)ws.Cells[curRow + 3, curCol].Value + vat_period?.ExportPurchases;
-                ws.Cells[curRow + 4, curCol].Value = (double)ws.Cells[curRow + 4, curCol].Value + vat_period?.HomeSalesVat;
-                ws.Cells[curRow + 5, curCol].Value = (double)ws.Cells[curRow + 5, curCol].Value + vat_period?.HomePurchasesVat;
-                ws.Cells[curRow + 6, curCol].Value = (double)ws.Cells[curRow + 6, curCol].Value + vat_period?.ExportSalesVat;
-                ws.Cells[curRow + 7, curCol].Value = (double)ws.Cells[curRow + 7, curCol].Value + vat_period?.ExportPurchasesVat;
-                ws.Cells[curRow + 8, curCol].Value = (double)ws.Cells[curRow + 8, curCol].Value + vat_period?.VatDue;
+                ws.Cells[curRow, curCol].Value = (decimal)ws.Cells[curRow, curCol].Value + vat_period?.HomeSales;
+                ws.Cells[curRow + 1, curCol].Value = (decimal)ws.Cells[curRow + 1, curCol].Value + vat_period?.HomePurchases;
+                ws.Cells[curRow + 2, curCol].Value = (decimal)ws.Cells[curRow + 2, curCol].Value + vat_period?.ExportSales;
+                ws.Cells[curRow + 3, curCol].Value = (decimal)ws.Cells[curRow + 3, curCol].Value + vat_period?.ExportPurchases;
+                ws.Cells[curRow + 4, curCol].Value = (decimal)ws.Cells[curRow + 4, curCol].Value + vat_period?.HomeSalesVat;
+                ws.Cells[curRow + 5, curCol].Value = (decimal)ws.Cells[curRow + 5, curCol].Value + vat_period?.HomePurchasesVat;
+                ws.Cells[curRow + 6, curCol].Value = (decimal)ws.Cells[curRow + 6, curCol].Value + vat_period?.ExportSalesVat;
+                ws.Cells[curRow + 7, curCol].Value = (decimal)ws.Cells[curRow + 7, curCol].Value + vat_period?.ExportPurchasesVat;
+                ws.Cells[curRow + 8, curCol].Value = (decimal)ws.Cells[curRow + 8, curCol].Value + vat_period?.VatDue;
 
                 curCol++;
             }

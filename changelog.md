@@ -29,3 +29,10 @@ Includes interface changes required for the [Trade Control Network](https://gith
 - [x] Purchase Order Delivery template not digitally signed
 - [x] Manual open flag for generating Word template data
 - [x] Opening Organisation Edit in datasheet view generates an error
+
+## 3.12
+
+Node version [3.26.1](https://github.com/tradecontrol/tc-nodecore)
+
+- [x] Change ```FLOAT``` types to ```DECIMAL``` - VSTO Cash Flow, COM Interop assembly, Document Schema and client.
+

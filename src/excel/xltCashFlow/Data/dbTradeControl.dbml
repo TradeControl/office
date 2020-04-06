@@ -18,7 +18,7 @@
   </Table>
   <Table Name="App.vwMonths" Member="vwMonths">
     <Type Name="vwMonth">
-      <Column Name="StartOn" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StartOn" Type="System.Decimal" DbType="Decimal" CanBeNull="true" />
       <Column Name="MonthName" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MonthNumber" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
     </Type>
@@ -159,30 +159,30 @@
     <Type Name="vwFlowVatRecurrenceAccrual">
       <Column Name="YearNumber" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="StartOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="HomeSales" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomePurchases" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportSales" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportPurchases" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomeSalesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomePurchasesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportSalesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportPurchasesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="VatDue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="HomeSales" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomePurchases" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportSales" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportPurchases" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomeSalesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomePurchasesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportSalesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportPurchasesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="VatDue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="Cash.vwFlowVatPeriodAccruals" Member="vwFlowVatPeriodAccruals">
     <Type Name="vwFlowVatPeriodAccrual">
       <Column Name="YearNumber" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
       <Column Name="StartOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="HomeSales" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomePurchases" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportSales" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportPurchases" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomeSalesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="HomePurchasesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportSalesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="ExportPurchasesVat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="VatDue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="HomeSales" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomePurchases" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportSales" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportPurchases" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomeSalesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="HomePurchasesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportSalesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ExportPurchasesVat" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="VatDue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="App.proc_EventLog" Method="proc_EventLog">

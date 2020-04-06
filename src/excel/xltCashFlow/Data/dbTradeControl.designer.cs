@@ -420,7 +420,7 @@ namespace TradeControl.CashFlow.Data
 	public partial class vwMonth
 	{
 		
-		private System.Nullable<double> _StartOn;
+		private System.Nullable<decimal> _StartOn;
 		
 		private string _MonthName;
 		
@@ -430,8 +430,8 @@ namespace TradeControl.CashFlow.Data
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="Float")]
-		public System.Nullable<double> StartOn
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="Decimal")]
+		public System.Nullable<decimal> StartOn
 		{
 			get
 			{
@@ -2233,23 +2233,23 @@ namespace TradeControl.CashFlow.Data
 		
 		private System.DateTime _StartOn;
 		
-		private double _HomeSales;
+		private decimal _HomeSales;
 		
-		private double _HomePurchases;
+		private decimal _HomePurchases;
 		
-		private double _ExportSales;
+		private decimal _ExportSales;
 		
-		private double _ExportPurchases;
+		private decimal _ExportPurchases;
 		
-		private double _HomeSalesVat;
+		private decimal _HomeSalesVat;
 		
-		private double _HomePurchasesVat;
+		private decimal _HomePurchasesVat;
 		
-		private double _ExportSalesVat;
+		private decimal _ExportSalesVat;
 		
-		private double _ExportPurchasesVat;
+		private decimal _ExportPurchasesVat;
 		
-		private double _VatDue;
+		private decimal _VatDue;
 		
 		public vwFlowVatRecurrenceAccrual()
 		{
@@ -2287,8 +2287,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Float NOT NULL")]
-		public double HomeSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
+		public decimal HomeSales
 		{
 			get
 			{
@@ -2303,8 +2303,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Float NOT NULL")]
-		public double HomePurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
+		public decimal HomePurchases
 		{
 			get
 			{
@@ -2319,8 +2319,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Float NOT NULL")]
-		public double ExportSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
+		public decimal ExportSales
 		{
 			get
 			{
@@ -2335,8 +2335,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Float NOT NULL")]
-		public double ExportPurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
+		public decimal ExportPurchases
 		{
 			get
 			{
@@ -2351,8 +2351,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Float NOT NULL")]
-		public double HomeSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
+		public decimal HomeSalesVat
 		{
 			get
 			{
@@ -2367,8 +2367,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Float NOT NULL")]
-		public double HomePurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
+		public decimal HomePurchasesVat
 		{
 			get
 			{
@@ -2383,8 +2383,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Float NOT NULL")]
-		public double ExportSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
+		public decimal ExportSalesVat
 		{
 			get
 			{
@@ -2399,8 +2399,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Float NOT NULL")]
-		public double ExportPurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
+		public decimal ExportPurchasesVat
 		{
 			get
 			{
@@ -2415,8 +2415,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Float NOT NULL")]
-		public double VatDue
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
+		public decimal VatDue
 		{
 			get
 			{
@@ -2440,23 +2440,23 @@ namespace TradeControl.CashFlow.Data
 		
 		private System.DateTime _StartOn;
 		
-		private double _HomeSales;
+		private decimal _HomeSales;
 		
-		private double _HomePurchases;
+		private decimal _HomePurchases;
 		
-		private double _ExportSales;
+		private decimal _ExportSales;
 		
-		private double _ExportPurchases;
+		private decimal _ExportPurchases;
 		
-		private double _HomeSalesVat;
+		private decimal _HomeSalesVat;
 		
-		private double _HomePurchasesVat;
+		private decimal _HomePurchasesVat;
 		
-		private double _ExportSalesVat;
+		private decimal _ExportSalesVat;
 		
-		private double _ExportPurchasesVat;
+		private decimal _ExportPurchasesVat;
 		
-		private double _VatDue;
+		private decimal _VatDue;
 		
 		public vwFlowVatPeriodAccrual()
 		{
@@ -2494,8 +2494,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Float NOT NULL")]
-		public double HomeSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
+		public decimal HomeSales
 		{
 			get
 			{
@@ -2510,8 +2510,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Float NOT NULL")]
-		public double HomePurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
+		public decimal HomePurchases
 		{
 			get
 			{
@@ -2526,8 +2526,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Float NOT NULL")]
-		public double ExportSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
+		public decimal ExportSales
 		{
 			get
 			{
@@ -2542,8 +2542,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Float NOT NULL")]
-		public double ExportPurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
+		public decimal ExportPurchases
 		{
 			get
 			{
@@ -2558,8 +2558,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Float NOT NULL")]
-		public double HomeSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
+		public decimal HomeSalesVat
 		{
 			get
 			{
@@ -2574,8 +2574,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Float NOT NULL")]
-		public double HomePurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
+		public decimal HomePurchasesVat
 		{
 			get
 			{
@@ -2590,8 +2590,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Float NOT NULL")]
-		public double ExportSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
+		public decimal ExportSalesVat
 		{
 			get
 			{
@@ -2606,8 +2606,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Float NOT NULL")]
-		public double ExportPurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
+		public decimal ExportPurchasesVat
 		{
 			get
 			{
@@ -2622,8 +2622,8 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Float NOT NULL")]
-		public double VatDue
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
+		public decimal VatDue
 		{
 			get
 			{

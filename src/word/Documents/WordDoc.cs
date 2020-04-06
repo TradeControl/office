@@ -556,8 +556,8 @@ namespace TradeControl.Documents.Word
                 taskRow.TaskNotes = task.TaskNotes;
                 taskRow.TaskTitle = task.TaskTitle;
                 taskRow.TaxCode = task.TaxCode;
-                taskRow.TaxRate = (float)task.TaxRate;
-                taskRow.TotalCharge = (double)task.TotalCharge;
+                taskRow.TaxRate = (decimal)task.TaxRate;
+                taskRow.TotalCharge = task.TotalCharge;
                 taskRow.UnitCharge = task.UnitCharge;
                 taskRow.UnitOfMeasure = task.UnitOfMeasure;
                 taskRow.ContactName = task.ContactName;
@@ -606,9 +606,9 @@ namespace TradeControl.Documents.Word
                     priceRow.QuoteQuantity = quote.Quantity;
                     priceRow.RunBackPrice = quote.RunBackPrice;
                     priceRow.RunBackQuantity = quote.RunBackQuantity;
-                    priceRow.RunOnPrice = (double)quote.RunOnPrice;
+                    priceRow.RunOnPrice = quote.RunOnPrice;
                     priceRow.RunOnQuantity = quote.RunOnQuantity;
-                    priceRow.QuotePrice = (double)quote.TotalPrice;
+                    priceRow.QuotePrice = quote.TotalPrice;
                     taskXml.QuotedPrices.AddQuotedPricesRow(priceRow);
                 }
 
@@ -619,7 +619,7 @@ namespace TradeControl.Documents.Word
                 foreach (proc_OpResult op in schedule)
                 {
                     xsTaskCode.ScheduleRow opRow = taskXml.Schedule.NewScheduleRow();
-                    opRow.Duration = op.Duration;
+                    opRow.Duration = (decimal)op.Duration;
                     opRow.EndOn = op.EndOn;
                     opRow.Note = op.Note;
                     opRow.Operation = op.Operation;

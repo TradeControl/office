@@ -806,12 +806,12 @@ namespace TradeControl.Documents.Word {
                         string TaskTitle, 
                         string TaskNotes, 
                         System.DateTime ActionOn, 
-                        double Quantity, 
+                        decimal Quantity, 
                         string UnitOfMeasure, 
-                        double UnitCharge, 
-                        double TotalCharge, 
+                        decimal UnitCharge, 
+                        decimal TotalCharge, 
                         string TaxCode, 
-                        float TaxRate, 
+                        decimal TaxRate, 
                         double TaxCharge, 
                         string CollectionAccountName, 
                         string CollectionAddress, 
@@ -955,17 +955,17 @@ namespace TradeControl.Documents.Word {
                 base.Columns.Add(this.columnTaskNotes);
                 this.columnActionOn = new global::System.Data.DataColumn("ActionOn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActionOn);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
                 this.columnUnitOfMeasure = new global::System.Data.DataColumn("UnitOfMeasure", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnitOfMeasure);
-                this.columnUnitCharge = new global::System.Data.DataColumn("UnitCharge", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnUnitCharge = new global::System.Data.DataColumn("UnitCharge", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnitCharge);
-                this.columnTotalCharge = new global::System.Data.DataColumn("TotalCharge", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnTotalCharge = new global::System.Data.DataColumn("TotalCharge", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalCharge);
                 this.columnTaxCode = new global::System.Data.DataColumn("TaxCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaxCode);
-                this.columnTaxRate = new global::System.Data.DataColumn("TaxRate", typeof(float), null, global::System.Data.MappingType.Element);
+                this.columnTaxRate = new global::System.Data.DataColumn("TaxRate", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaxRate);
                 this.columnTaxCharge = new global::System.Data.DataColumn("TaxCharge", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTaxCharge);
@@ -1519,7 +1519,7 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public QuotedPricesRow AddQuotedPricesRow(double QuoteQuantity, double QuotePrice, double RunOnQuantity, double RunOnPrice, double RunBackQuantity, double RunBackPrice) {
+            public QuotedPricesRow AddQuotedPricesRow(decimal QuoteQuantity, decimal QuotePrice, decimal RunOnQuantity, decimal RunOnPrice, decimal RunBackQuantity, decimal RunBackPrice) {
                 QuotedPricesRow rowQuotedPricesRow = ((QuotedPricesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         QuoteQuantity,
@@ -1561,17 +1561,17 @@ namespace TradeControl.Documents.Word {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnQuoteQuantity = new global::System.Data.DataColumn("QuoteQuantity", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnQuoteQuantity = new global::System.Data.DataColumn("QuoteQuantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuoteQuantity);
-                this.columnQuotePrice = new global::System.Data.DataColumn("QuotePrice", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnQuotePrice = new global::System.Data.DataColumn("QuotePrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuotePrice);
-                this.columnRunOnQuantity = new global::System.Data.DataColumn("RunOnQuantity", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnRunOnQuantity = new global::System.Data.DataColumn("RunOnQuantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRunOnQuantity);
-                this.columnRunOnPrice = new global::System.Data.DataColumn("RunOnPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnRunOnPrice = new global::System.Data.DataColumn("RunOnPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRunOnPrice);
-                this.columnRunBackQuantity = new global::System.Data.DataColumn("RunBackQuantity", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnRunBackQuantity = new global::System.Data.DataColumn("RunBackQuantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRunBackQuantity);
-                this.columnRunBackPrice = new global::System.Data.DataColumn("RunBackPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnRunBackPrice = new global::System.Data.DataColumn("RunBackPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRunBackPrice);
             }
             
@@ -1836,7 +1836,7 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ScheduleRow AddScheduleRow(short OperationNumber, System.DateTime EndOn, System.DateTime StartOn, string Operation, string Note, double Duration) {
+            public ScheduleRow AddScheduleRow(short OperationNumber, System.DateTime EndOn, System.DateTime StartOn, string Operation, string Note, decimal Duration) {
                 ScheduleRow rowScheduleRow = ((ScheduleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OperationNumber,
@@ -1888,7 +1888,7 @@ namespace TradeControl.Documents.Word {
                 base.Columns.Add(this.columnOperation);
                 this.columnNote = new global::System.Data.DataColumn("Note", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNote);
-                this.columnDuration = new global::System.Data.DataColumn("Duration", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnDuration = new global::System.Data.DataColumn("Duration", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDuration);
             }
             
@@ -2368,10 +2368,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Quantity {
+            public decimal Quantity {
                 get {
                     try {
-                        return ((double)(this[this.tableTask.QuantityColumn]));
+                        return ((decimal)(this[this.tableTask.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'Task\' is DBNull.", e);
@@ -2400,10 +2400,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double UnitCharge {
+            public decimal UnitCharge {
                 get {
                     try {
-                        return ((double)(this[this.tableTask.UnitChargeColumn]));
+                        return ((decimal)(this[this.tableTask.UnitChargeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'UnitCharge\' in table \'Task\' is DBNull.", e);
@@ -2416,10 +2416,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double TotalCharge {
+            public decimal TotalCharge {
                 get {
                     try {
-                        return ((double)(this[this.tableTask.TotalChargeColumn]));
+                        return ((decimal)(this[this.tableTask.TotalChargeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TotalCharge\' in table \'Task\' is DBNull.", e);
@@ -2448,10 +2448,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public float TaxRate {
+            public decimal TaxRate {
                 get {
                     try {
-                        return ((float)(this[this.tableTask.TaxRateColumn]));
+                        return ((decimal)(this[this.tableTask.TaxRateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TaxRate\' in table \'Task\' is DBNull.", e);
@@ -3070,10 +3070,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double QuoteQuantity {
+            public decimal QuoteQuantity {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.QuoteQuantityColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.QuoteQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'QuoteQuantity\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3086,10 +3086,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double QuotePrice {
+            public decimal QuotePrice {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.QuotePriceColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.QuotePriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'QuotePrice\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3102,10 +3102,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double RunOnQuantity {
+            public decimal RunOnQuantity {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.RunOnQuantityColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.RunOnQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'RunOnQuantity\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3118,10 +3118,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double RunOnPrice {
+            public decimal RunOnPrice {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.RunOnPriceColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.RunOnPriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'RunOnPrice\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3134,10 +3134,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double RunBackQuantity {
+            public decimal RunBackQuantity {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.RunBackQuantityColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.RunBackQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'RunBackQuantity\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3150,10 +3150,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double RunBackPrice {
+            public decimal RunBackPrice {
                 get {
                     try {
-                        return ((double)(this[this.tableQuotedPrices.RunBackPriceColumn]));
+                        return ((decimal)(this[this.tableQuotedPrices.RunBackPriceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'RunBackPrice\' in table \'QuotedPrices\' is DBNull.", e);
@@ -3333,10 +3333,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Duration {
+            public decimal Duration {
                 get {
                     try {
-                        return ((double)(this[this.tableSchedule.DurationColumn]));
+                        return ((decimal)(this[this.tableSchedule.DurationColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Duration\' in table \'Schedule\' is DBNull.", e);

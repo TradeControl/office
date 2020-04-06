@@ -1194,7 +1194,7 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InvoiceItemRow AddInvoiceItemRow(InvoiceRow parentInvoiceRowByFK_Invoice_InvoiceItem, string ItemDescription, string ActivityCode, string TaskCode, string SecondReference, string CashCode, string CashDescription, string TaxCode, System.DateTime ActionedOn, double Quantity, string UnitOfMeasure, decimal UnitValue, decimal InvoiceValue, decimal TaxValue, decimal ItemCharge) {
+            public InvoiceItemRow AddInvoiceItemRow(InvoiceRow parentInvoiceRowByFK_Invoice_InvoiceItem, string ItemDescription, string ActivityCode, string TaskCode, string SecondReference, string CashCode, string CashDescription, string TaxCode, System.DateTime ActionedOn, decimal Quantity, string UnitOfMeasure, decimal UnitValue, decimal InvoiceValue, decimal TaxValue, decimal ItemCharge) {
                 InvoiceItemRow rowInvoiceItemRow = ((InvoiceItemRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1275,7 +1275,7 @@ namespace TradeControl.Documents.Word {
                 base.Columns.Add(this.columnTaxCode);
                 this.columnActionedOn = new global::System.Data.DataColumn("ActionedOn", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnActionedOn);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
                 this.columnUnitOfMeasure = new global::System.Data.DataColumn("UnitOfMeasure", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnitOfMeasure);
@@ -2601,10 +2601,10 @@ namespace TradeControl.Documents.Word {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Quantity {
+            public decimal Quantity {
                 get {
                     try {
-                        return ((double)(this[this.tableInvoiceItem.QuantityColumn]));
+                        return ((decimal)(this[this.tableInvoiceItem.QuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'InvoiceItem\' is DBNull.", e);

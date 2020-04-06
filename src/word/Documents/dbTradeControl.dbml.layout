@@ -50,16 +50,16 @@
         <elementListCompartment Id="8010d03b-5bb9-46e9-a969-5f3b9f5a5134" absoluteBounds="9.14, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d34b6f15-6d10-4175-8115-7f51923dd16e" absoluteBounds="3, 6, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/dbTradeControlDataContext/vwDocInvoiceTask" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cfee9373-233a-474e-81c2-704bb471f5e8" absoluteBounds="3.015, 6.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="b3bf9559-291b-478b-9ba2-8e40b5ced0c9" absoluteBounds="0.75, 0.5, 2, 6.3861311848958326">
       <DataClassMoniker Name="/dbTradeControlDataContext/vwDocTaskCode" />
       <nestedChildShapes>
         <elementListCompartment Id="444efbc9-6c42-4889-8fea-5035f83bcd98" absoluteBounds="0.765, 0.96, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d0f4deb-8b7e-46a6-a74c-1df84a2dca1a" absoluteBounds="3.125, 6.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/dbTradeControlDataContext/vwDocInvoiceTask" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0519b8e7-8d5f-45f3-a1d9-47ac6a56d4bd" absoluteBounds="3.14, 6.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

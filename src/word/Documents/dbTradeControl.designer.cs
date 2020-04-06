@@ -22,7 +22,7 @@ namespace TradeControl.Documents.Word
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="misLive")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="tcTHEBUS")]
 	public partial class dbTradeControlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -45,7 +45,7 @@ namespace TradeControl.Documents.Word
     #endregion
 		
 		public dbTradeControlDataContext() : 
-				base(global::TradeControl.Documents.Word.Properties.Settings.Default.misLiveConnectionString, mappingSource)
+				base(global::TradeControl.Documents.Word.Properties.Settings.Default.tcTHEBUSConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -138,19 +138,19 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		public System.Data.Linq.Table<vwDocInvoiceTask> vwDocInvoiceTasks
-		{
-			get
-			{
-				return this.GetTable<vwDocInvoiceTask>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vwDocTaskCode> vwDocTaskCodes
 		{
 			get
 			{
 				return this.GetTable<vwDocTaskCode>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vwDocInvoiceTask> vwDocInvoiceTasks
+		{
+			get
+			{
+				return this.GetTable<vwDocInvoiceTask>();
 			}
 		}
 		
@@ -810,7 +810,7 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Logo", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Logo
 		{
 			get
@@ -1230,17 +1230,17 @@ namespace TradeControl.Documents.Word
 		
 		private string _TaskCode;
 		
-		private double _Quantity;
+		private decimal _Quantity;
 		
 		private decimal _TotalPrice;
 		
-		private double _RunOnQuantity;
+		private decimal _RunOnQuantity;
 		
 		private decimal _RunOnPrice;
 		
-		private double _RunBackQuantity;
+		private decimal _RunBackQuantity;
 		
-		private double _RunBackPrice;
+		private decimal _RunBackPrice;
 		
 		private string _InsertedBy;
 		
@@ -1256,17 +1256,17 @@ namespace TradeControl.Documents.Word
     partial void OnCreated();
     partial void OnTaskCodeChanging(string value);
     partial void OnTaskCodeChanged();
-    partial void OnQuantityChanging(double value);
+    partial void OnQuantityChanging(decimal value);
     partial void OnQuantityChanged();
     partial void OnTotalPriceChanging(decimal value);
     partial void OnTotalPriceChanged();
-    partial void OnRunOnQuantityChanging(double value);
+    partial void OnRunOnQuantityChanging(decimal value);
     partial void OnRunOnQuantityChanged();
     partial void OnRunOnPriceChanging(decimal value);
     partial void OnRunOnPriceChanged();
-    partial void OnRunBackQuantityChanging(double value);
+    partial void OnRunBackQuantityChanging(decimal value);
     partial void OnRunBackQuantityChanged();
-    partial void OnRunBackPriceChanging(double value);
+    partial void OnRunBackPriceChanging(decimal value);
     partial void OnRunBackPriceChanged();
     partial void OnInsertedByChanging(string value);
     partial void OnInsertedByChanged();
@@ -1303,8 +1303,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float NOT NULL", IsPrimaryKey=true)]
-		public double Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal NOT NULL", IsPrimaryKey=true)]
+		public decimal Quantity
 		{
 			get
 			{
@@ -1343,8 +1343,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunOnQuantity", DbType="Float NOT NULL")]
-		public double RunOnQuantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunOnQuantity", DbType="Decimal NOT NULL")]
+		public decimal RunOnQuantity
 		{
 			get
 			{
@@ -1383,8 +1383,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunBackQuantity", DbType="Float NOT NULL")]
-		public double RunBackQuantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunBackQuantity", DbType="Decimal NOT NULL")]
+		public decimal RunBackQuantity
 		{
 			get
 			{
@@ -1403,8 +1403,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunBackPrice", DbType="Float NOT NULL")]
-		public double RunBackPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RunBackPrice", DbType="Decimal NOT NULL")]
+		public decimal RunBackPrice
 		{
 			get
 			{
@@ -1548,7 +1548,7 @@ namespace TradeControl.Documents.Word
 		
 		private System.DateTime _EndOn;
 		
-		private double _Duration;
+		private decimal _Duration;
 		
 		private short _OffsetDays;
 		
@@ -1582,7 +1582,7 @@ namespace TradeControl.Documents.Word
     partial void OnStartOnChanged();
     partial void OnEndOnChanging(System.DateTime value);
     partial void OnEndOnChanged();
-    partial void OnDurationChanging(double value);
+    partial void OnDurationChanging(decimal value);
     partial void OnDurationChanged();
     partial void OnOffsetDaysChanging(short value);
     partial void OnOffsetDaysChanged();
@@ -1781,8 +1781,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="Float NOT NULL")]
-		public double Duration
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="Decimal NOT NULL")]
+		public decimal Duration
 		{
 			get
 			{
@@ -1922,249 +1922,6 @@ namespace TradeControl.Documents.Word
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Invoice.vwDocTask")]
-	public partial class vwDocInvoiceTask
-	{
-		
-		private string _InvoiceNumber;
-		
-		private string _TaskCode;
-		
-		private string _TaskTitle;
-		
-		private string _ActivityCode;
-		
-		private string _CashCode;
-		
-		private string _CashDescription;
-		
-		private System.Nullable<System.DateTime> _ActionedOn;
-		
-		private double _Quantity;
-		
-		private string _UnitOfMeasure;
-		
-		private decimal _InvoiceValue;
-		
-		private decimal _TaxValue;
-		
-		private string _TaxCode;
-		
-		private string _SecondReference;
-		
-		public vwDocInvoiceTask()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNumber", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string InvoiceNumber
-		{
-			get
-			{
-				return this._InvoiceNumber;
-			}
-			set
-			{
-				if ((this._InvoiceNumber != value))
-				{
-					this._InvoiceNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string TaskCode
-		{
-			get
-			{
-				return this._TaskCode;
-			}
-			set
-			{
-				if ((this._TaskCode != value))
-				{
-					this._TaskCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskTitle", DbType="NVarChar(100)")]
-		public string TaskTitle
-		{
-			get
-			{
-				return this._TaskTitle;
-			}
-			set
-			{
-				if ((this._TaskTitle != value))
-				{
-					this._TaskTitle = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivityCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string ActivityCode
-		{
-			get
-			{
-				return this._ActivityCode;
-			}
-			set
-			{
-				if ((this._ActivityCode != value))
-				{
-					this._ActivityCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CashCode
-		{
-			get
-			{
-				return this._CashCode;
-			}
-			set
-			{
-				if ((this._CashCode != value))
-				{
-					this._CashCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashDescription", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string CashDescription
-		{
-			get
-			{
-				return this._CashDescription;
-			}
-			set
-			{
-				if ((this._CashDescription != value))
-				{
-					this._CashDescription = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionedOn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ActionedOn
-		{
-			get
-			{
-				return this._ActionedOn;
-			}
-			set
-			{
-				if ((this._ActionedOn != value))
-				{
-					this._ActionedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float NOT NULL")]
-		public double Quantity
-		{
-			get
-			{
-				return this._Quantity;
-			}
-			set
-			{
-				if ((this._Quantity != value))
-				{
-					this._Quantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitOfMeasure", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
-		public string UnitOfMeasure
-		{
-			get
-			{
-				return this._UnitOfMeasure;
-			}
-			set
-			{
-				if ((this._UnitOfMeasure != value))
-				{
-					this._UnitOfMeasure = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceValue", DbType="Money NOT NULL")]
-		public decimal InvoiceValue
-		{
-			get
-			{
-				return this._InvoiceValue;
-			}
-			set
-			{
-				if ((this._InvoiceValue != value))
-				{
-					this._InvoiceValue = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxValue", DbType="Money NOT NULL")]
-		public decimal TaxValue
-		{
-			get
-			{
-				return this._TaxValue;
-			}
-			set
-			{
-				if ((this._TaxValue != value))
-				{
-					this._TaxValue = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxCode", DbType="NVarChar(10)")]
-		public string TaxCode
-		{
-			get
-			{
-				return this._TaxCode;
-			}
-			set
-			{
-				if ((this._TaxCode != value))
-				{
-					this._TaxCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondReference", DbType="NVarChar(20)")]
-		public string SecondReference
-		{
-			get
-			{
-				return this._SecondReference;
-			}
-			set
-			{
-				if ((this._SecondReference != value))
-				{
-					this._SecondReference = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Task.vwDoc")]
 	public partial class vwDocTaskCode
 	{
@@ -2205,13 +1962,13 @@ namespace TradeControl.Documents.Word
 		
 		private string _UnitOfMeasure;
 		
-		private double _Quantity;
+		private decimal _Quantity;
 		
 		private string _TaxCode;
 		
-		private System.Nullable<double> _TaxRate;
+		private System.Nullable<decimal> _TaxRate;
 		
-		private double _UnitCharge;
+		private decimal _UnitCharge;
 		
 		private decimal _TotalCharge;
 		
@@ -2519,8 +2276,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Float NOT NULL")]
-		public double Quantity
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal NOT NULL")]
+		public decimal Quantity
 		{
 			get
 			{
@@ -2551,8 +2308,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxRate", DbType="Float")]
-		public System.Nullable<double> TaxRate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxRate", DbType="Decimal")]
+		public System.Nullable<decimal> TaxRate
 		{
 			get
 			{
@@ -2567,8 +2324,8 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitCharge", DbType="Float NOT NULL")]
-		public double UnitCharge
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitCharge", DbType="Decimal NOT NULL")]
+		public decimal UnitCharge
 		{
 			get
 			{
@@ -2615,7 +2372,7 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Signature", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Signature", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Signature
 		{
 			get
@@ -2696,6 +2453,249 @@ namespace TradeControl.Documents.Word
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Invoice.vwDocTask")]
+	public partial class vwDocInvoiceTask
+	{
+		
+		private string _InvoiceNumber;
+		
+		private string _TaskCode;
+		
+		private string _TaskTitle;
+		
+		private string _ActivityCode;
+		
+		private string _CashCode;
+		
+		private string _CashDescription;
+		
+		private System.Nullable<System.DateTime> _ActionedOn;
+		
+		private decimal _Quantity;
+		
+		private string _UnitOfMeasure;
+		
+		private decimal _InvoiceValue;
+		
+		private decimal _TaxValue;
+		
+		private string _TaxCode;
+		
+		private string _SecondReference;
+		
+		public vwDocInvoiceTask()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNumber", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskCode", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string TaskCode
+		{
+			get
+			{
+				return this._TaskCode;
+			}
+			set
+			{
+				if ((this._TaskCode != value))
+				{
+					this._TaskCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaskTitle", DbType="NVarChar(100)")]
+		public string TaskTitle
+		{
+			get
+			{
+				return this._TaskTitle;
+			}
+			set
+			{
+				if ((this._TaskTitle != value))
+				{
+					this._TaskTitle = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActivityCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string ActivityCode
+		{
+			get
+			{
+				return this._ActivityCode;
+			}
+			set
+			{
+				if ((this._ActivityCode != value))
+				{
+					this._ActivityCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CashCode
+		{
+			get
+			{
+				return this._CashCode;
+			}
+			set
+			{
+				if ((this._CashCode != value))
+				{
+					this._CashCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashDescription", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string CashDescription
+		{
+			get
+			{
+				return this._CashDescription;
+			}
+			set
+			{
+				if ((this._CashDescription != value))
+				{
+					this._CashDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ActionedOn", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ActionedOn
+		{
+			get
+			{
+				return this._ActionedOn;
+			}
+			set
+			{
+				if ((this._ActionedOn != value))
+				{
+					this._ActionedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal NOT NULL")]
+		public decimal Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UnitOfMeasure", DbType="NVarChar(15) NOT NULL", CanBeNull=false)]
+		public string UnitOfMeasure
+		{
+			get
+			{
+				return this._UnitOfMeasure;
+			}
+			set
+			{
+				if ((this._UnitOfMeasure != value))
+				{
+					this._UnitOfMeasure = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceValue", DbType="Money NOT NULL")]
+		public decimal InvoiceValue
+		{
+			get
+			{
+				return this._InvoiceValue;
+			}
+			set
+			{
+				if ((this._InvoiceValue != value))
+				{
+					this._InvoiceValue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxValue", DbType="Money NOT NULL")]
+		public decimal TaxValue
+		{
+			get
+			{
+				return this._TaxValue;
+			}
+			set
+			{
+				if ((this._TaxValue != value))
+				{
+					this._TaxValue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TaxCode", DbType="NVarChar(10)")]
+		public string TaxCode
+		{
+			get
+			{
+				return this._TaxCode;
+			}
+			set
+			{
+				if ((this._TaxCode != value))
+				{
+					this._TaxCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SecondReference", DbType="NVarChar(20)")]
+		public string SecondReference
+		{
+			get
+			{
+				return this._SecondReference;
+			}
+			set
+			{
+				if ((this._SecondReference != value))
+				{
+					this._SecondReference = value;
+				}
+			}
+		}
+	}
+	
 	public partial class proc_OpResult
 	{
 		
@@ -2703,11 +2703,11 @@ namespace TradeControl.Documents.Word
 		
 		private short _OperationNumber;
 		
-		private string _UserId;
-		
-		private short _OpTypeCode;
+		private short _SyncTypeCode;
 		
 		private short _OpStatusCode;
+		
+		private string _UserId;
 		
 		private string _Operation;
 		
@@ -2716,8 +2716,6 @@ namespace TradeControl.Documents.Word
 		private System.DateTime _StartOn;
 		
 		private System.DateTime _EndOn;
-		
-		private double _Duration;
 		
 		private short _OffsetDays;
 		
@@ -2728,6 +2726,10 @@ namespace TradeControl.Documents.Word
 		private string _UpdatedBy;
 		
 		private System.DateTime _UpdatedOn;
+		
+		private System.Data.Linq.Binary _RowVer;
+		
+		private System.Nullable<decimal> _Duration;
 		
 		public proc_OpResult()
 		{
@@ -2765,34 +2767,18 @@ namespace TradeControl.Documents.Word
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string UserId
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SyncTypeCode", DbType="SmallInt NOT NULL")]
+		public short SyncTypeCode
 		{
 			get
 			{
-				return this._UserId;
+				return this._SyncTypeCode;
 			}
 			set
 			{
-				if ((this._UserId != value))
+				if ((this._SyncTypeCode != value))
 				{
-					this._UserId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpTypeCode", DbType="SmallInt NOT NULL")]
-		public short OpTypeCode
-		{
-			get
-			{
-				return this._OpTypeCode;
-			}
-			set
-			{
-				if ((this._OpTypeCode != value))
-				{
-					this._OpTypeCode = value;
+					this._SyncTypeCode = value;
 				}
 			}
 		}
@@ -2809,6 +2795,22 @@ namespace TradeControl.Documents.Word
 				if ((this._OpStatusCode != value))
 				{
 					this._OpStatusCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
 				}
 			}
 		}
@@ -2873,22 +2875,6 @@ namespace TradeControl.Documents.Word
 				if ((this._EndOn != value))
 				{
 					this._EndOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="Float NOT NULL")]
-		public double Duration
-		{
-			get
-			{
-				return this._Duration;
-			}
-			set
-			{
-				if ((this._Duration != value))
-				{
-					this._Duration = value;
 				}
 			}
 		}
@@ -2969,6 +2955,38 @@ namespace TradeControl.Documents.Word
 				if ((this._UpdatedOn != value))
 				{
 					this._UpdatedOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowVer", DbType="rowversion NOT NULL", CanBeNull=false)]
+		public System.Data.Linq.Binary RowVer
+		{
+			get
+			{
+				return this._RowVer;
+			}
+			set
+			{
+				if ((this._RowVer != value))
+				{
+					this._RowVer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duration", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> Duration
+		{
+			get
+			{
+				return this._Duration;
+			}
+			set
+			{
+				if ((this._Duration != value))
+				{
+					this._Duration = value;
 				}
 			}
 		}
