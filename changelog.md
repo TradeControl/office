@@ -36,3 +36,11 @@ Node version [3.26.1](https://github.com/tradecontrol/tc-nodecore)
 
 - [x] Change ```FLOAT``` types to ```DECIMAL``` - VSTO Cash Flow, COM Interop assembly, Document Schema and client.
 
+## 3.13
+
+Node version [3.27.1](https://github.com/tradecontrol/tc-nodecore). First release of the [Trade Control Network](https://github.com/tradecontrol/tc-network)
+
+- [x] Network Allocations
+- [x] Network Invoices
+- [x] Cash Code mirrors
+- [x] Activity Code mirrors

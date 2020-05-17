@@ -275,3 +275,6 @@ Why not create a bill of materials yourself, for something simple like a plastic
 15. Using the Company Statement, follow through this demo until all the suppliers have been paid and customer's money is in the bank
 
 In a real factory, you must do a lot more than that - exciting duties like stock control - but you will learn the basics and familiarise yourself with the system.
+
+## Supply-Chains
+Trade Control instances are nodes that can be connected together, such that BOM-like workflows can operate over supply-chains. Install the [Trade Control Network](https://github.com/tradecontrol/tc-network) and try out the demo. It shows you how to schedule the entire supply chain for both customers and suppliers of the assembly.

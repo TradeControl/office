@@ -4,8 +4,6 @@ An MS Office client for the [Trade Control](https://github.com/tradecontrol/tc-n
 
 It is a free open source alternative to conventional accounting and order processing apps for Office Business 365 subscribers.
 
-[Change Log](changelog.md)
-
 ## Components
 
 ### Client
@@ -21,6 +19,8 @@ The business's cash flow position is communicated via a VSTO Excel Template. Thi
 Although the standard communication documents (Sales Invoices, Purchase Orders etc) can be spooled inside a Document Manager and emailed to Contacts as PDF attachments, Word Templates are also offered as an alternative. These templates give the business greater control over the styling of its important communications.  How to update and register them with the client is covered in the [services demo](docs/tc_demo_services.md).
 
 ## Installation
+
+[Change Log](changelog.md)
 
 Pre-requisite: Office 365 Business 64 bit. 
 
@@ -93,6 +93,8 @@ The quickest way to obtain an appreciation of the app is to read, or preferably 
 
 Supporting material describes how [cash transactions](docs/tc_cash_codes.md) are modelled.
 
+For supply-chain scheduling, refer to the demo in the [Trade Control Network](https://github.com/tradecontrol/tc-network) repository.
+
 ### Visual Studio Solution
 
 The repository can be opened in VS 2019 from TradeControl.sln in src. The solution requires the following dependencies from the VS Installer.
@@ -122,7 +124,11 @@ Trade Control is free and Open Source. If you are using the system in your busin
 
 ## License
 
-[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
+The Trade Control Code licence is issued by Trade Control Ltd under a [GNU General Public Licence v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
+
+Trade Control Documentation by Trade Control Ltd is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) 
+
+![Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
 
 ## Author
 

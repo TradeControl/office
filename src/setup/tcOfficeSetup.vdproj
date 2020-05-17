@@ -21,13 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_371C396C9533CB447FC32943C4D019D6"
+        "MsmKey" = "8:_2F9148053FB478B987517825751460ED"
         "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_4F5D35334E3B03CA7EC413D634F5F294"
+        "MsmKey" = "8:_371C396C9533CB447FC32943C4D019D6"
         "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -76,7 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4F5D35334E3B03CA7EC413D634F5F294"
+        "OwnerKey" = "8:_2F9148053FB478B987517825751460ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -180,20 +180,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_371C396C9533CB447FC32943C4D019D6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F9148053FB478B987517825751460ED"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.26184, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
-                    "_371C396C9533CB447FC32943C4D019D6"
+                    "_2F9148053FB478B987517825751460ED"
                     {
-                    "Name" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime.dll"
+                    "Name" = "8:TradeControl.Documents.Word.Schema.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime.dll"
+            "SourcePath" = "8:TradeControl.Documents.Word.Schema.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
@@ -211,20 +211,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4F5D35334E3B03CA7EC413D634F5F294"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_371C396C9533CB447FC32943C4D019D6"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.36971, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4F5D35334E3B03CA7EC413D634F5F294"
+                    "_371C396C9533CB447FC32943C4D019D6"
                     {
-                    "Name" = "8:TradeControl.Documents.Word.Schema.dll"
+                    "Name" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:TradeControl.Documents.Word.Schema.dll"
+            "SourcePath" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
@@ -440,15 +440,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Client"
-        "ProductCode" = "8:{08D32881-F125-44FB-8EA7-C382F4900065}"
-        "PackageCode" = "8:{152422D5-AC3A-47E6-A708-54F6FD0741AD}"
+        "ProductCode" = "8:{766225A1-D9A1-4A9F-A465-C9ABEB8253D7}"
+        "PackageCode" = "8:{BD52D49C-482B-40BC-A85A-5AE3CA010B34}"
         "UpgradeCode" = "8:{D18C36D4-6510-46B5-A8C2-49A17926D734}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.12.0"
+        "ProductVersion" = "8:3.13.0"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -933,7 +933,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_27D54F1629FF40DD85A966F989DE611F"
             {
-            "SourcePath" = "8:..\\word\\Documents\\obj\\Debug\\TradeControl.Documents.Word.dll"
+            "SourcePath" = "8:..\\word\\Documents\\obj\\Release\\TradeControl.Documents.Word.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
