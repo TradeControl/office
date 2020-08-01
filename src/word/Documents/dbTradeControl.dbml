@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tcTHEBUS" Class="dbTradeControlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=IAM;Initial Catalog=tcTHEBUS;Integrated Security=True" SettingsObjectName="TradeControl.Documents.Word.Properties.Settings" SettingsPropertyName="tcTHEBUSConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="tcNode" Class="dbTradeControlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IAM;Initial Catalog=tcNode;Integrated Security=True" SettingsObjectName="TradeControl.Documents.Word.Properties.Settings" SettingsPropertyName="tcNodeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="Task.tbAttribute" Member="tbAttributes">
     <Type Name="tbAttribute">
       <Column Name="TaskCode" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -11,27 +11,6 @@
       <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="Invoice.vwDocItem" Member="vwDocInvoiceItems">
-    <Type Name="vwDocInvoiceItem">
-      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="CashCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CashDescription" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="ActionedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="TaxValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="ItemReference" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="Invoice.vwTaxSummary" Member="vwTaxSummaries">
-    <Type Name="vwTaxSummary">
-      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="InvoiceValueTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="TaxValueTotal" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="TaxRate" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="Usr.vwDoc" Member="vwDocCompanies">
@@ -53,39 +32,6 @@
     <Type Name="tbDocType">
       <Column Name="DocTypeCode" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="DocType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="Invoice.vwDoc" Member="vwDocInvoices">
-    <Type Name="vwDocInvoice">
-      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="AccountCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="AccountName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="InvoiceAddress" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="InvoiceType" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="InvoiceStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="InvoicedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="DueOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="TaxValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="PaymentTerms" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
-    </Type>
-  </Table>
-  <Table Name="Task.tbQuote" Member="tbQuotes">
-    <Type Name="tbQuote">
-      <Column Name="TaskCode" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TotalPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="RunOnQuantity" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
-      <Column Name="RunOnPrice" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="RunBackQuantity" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
-      <Column Name="RunBackPrice" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
-      <Column Name="InsertedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="Task.tbOp" Member="tbOps">
@@ -123,21 +69,39 @@
       <Column Name="CollectionAccountName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="CollectionAddress" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="AccountCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="TaskNotes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TaskNotes" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="ActivityCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ActionOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UnitOfMeasure" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
       <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal" CanBeNull="true" />
-      <Column Name="UnitCharge" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
-      <Column Name="TotalCharge" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="UnitCharge" Type="System.Decimal" DbType="Decimal(18,6) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCharge" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
       <Column Name="MobileNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Signature" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="TaskTitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="PaymentOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="SecondReference" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="PaymentTerms" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Invoice.vwDoc" Member="vwDocInvoices">
+    <Type Name="vwDocInvoice">
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountCode" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceAddress" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceType" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InvoicedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DueOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentTerms" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
   <Table Name="Invoice.vwDocTask" Member="vwDocInvoiceTasks">
@@ -149,12 +113,49 @@
       <Column Name="CashCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="CashDescription" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="ActionedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
       <Column Name="UnitOfMeasure" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="TaxValue" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
       <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="SecondReference" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Invoice.vwDocItem" Member="vwDocInvoiceItems">
+    <Type Name="vwDocInvoiceItem">
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CashCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CashDescription" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ActionedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="InvoiceValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxValue" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemReference" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="Task.tbQuote" Member="tbQuotes">
+    <Type Name="tbQuote">
+      <Column Name="TaskCode" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="InsertedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InsertedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RowVer" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RunOnQuantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RunBackQuantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="RunBackPrice" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalPrice" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="RunOnPrice" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Invoice.vwTaxSummary" Member="vwTaxSummaries">
+    <Type Name="vwTaxSummary">
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="InvoiceValueTotal" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="TaxValueTotal" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="Task.proc_Op" Method="proc_Op">
@@ -175,7 +176,7 @@
       <Column Name="UpdatedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="RowVer" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" />
-      <Column Name="Duration" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Trade Control Ltd")]
 [assembly: AssemblyProduct("Office MTD")]
-[assembly: AssemblyCopyright("GNU General Public License v3.0")]
+[assembly: AssemblyCopyright("Copyright © Trade Control Ltd 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -15,5 +15,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("a549326a-5538-4bce-8433-74ff544558f1")]
 
-[assembly: AssemblyVersion("1.1.1.*")]
-[assembly: AssemblyFileVersion("1.1.1.0")]
+[assembly: AssemblyVersion("1.2.2.*")]
+[assembly: AssemblyFileVersion("1.2.2.0")]

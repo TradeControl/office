@@ -130,10 +130,6 @@ Trade Control Documentation by Trade Control Ltd is licenced under a [Creative C
 
 ![Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
 
-## Author
-
-Ian Monnox
-&nbsp; [GitHub](https://github.com/iamonnox)
 
 
 

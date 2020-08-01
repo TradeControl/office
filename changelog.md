@@ -44,3 +44,14 @@ Node version [3.27.1](https://github.com/tradecontrol/tc-nodecore). First releas
 - [x] Network Invoices
 - [x] Cash Code mirrors
 - [x] Activity Code mirrors
+
+## 3.14
+
+Node version [3.28.3](https://github.com/tradecontrol/tc-nodecore). Changes for the [Trade Control Bitcoin](https://github.com/tradecontrol/tc-bitcoin) project.
+
+- [x] Remove default windows currency symbol and convert money types to ```DECIMAL(18,5)```
+- [x] Add bitcoin payment address to invoice mirrors
+- [x] Hide payment entry and account transfer forms if Unit of Charge is BTC
+- [x] Bitcoin miner cash code and account in Administration for fee processing
+- [x] VSTO templates: data context money fields to decimal
+- [x] MTD decimals v1.2.2

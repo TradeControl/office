@@ -4,7 +4,7 @@ Trade Control (TC) is not a manufacturing system, it is generic; yet the design 
 
 ## Installation
 
-The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/tc-nodecore). Follow the instructions until you get to the screen below. 
+The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/tc-nodecore). Follow the instructions until you get to the screen below. If you want, you can replace the fiat payment system with a [bitcoin wallet](#bitcoin).
 
 > **Note**
 >
@@ -238,7 +238,7 @@ The Task Explorer is the go-to place for:
 There are two document systems for communicating with other organisations:
 
 - A Document Manager, which presents the document types in a traditional way, monitors if they have been sent, and can spool multiple orders in one generation.
-- [Word VSTO Templates](tc_office.md) that can be modified to match your business style, populated from XML schema.
+- [Word VSTO Templates](../readme.md#templates) that can be modified to match your business style, populated from XML schema.
 
 Both can email a pdf document to the contact's address directly from within the client. Reports in the Document Manager are more flexible. In manufacturing, you would probably need a Supplier Schedule, instead of lots of single line Purchase Orders. 
 
@@ -276,5 +276,19 @@ Why not create a bill of materials yourself, for something simple like a plastic
 
 In a real factory, you must do a lot more than that - exciting duties like stock control - but you will learn the basics and familiarise yourself with the system.
 
-## Supply-Chains
+### Supply-Chains
+
 Trade Control instances are nodes that can be connected together, such that BOM-like workflows can operate over supply-chains. Install the [Trade Control Network](https://github.com/tradecontrol/tc-network) and try out the demo. It shows you how to schedule the entire supply chain for both customers and suppliers of the assembly.
+
+### Bitcoin
+
+Install the [bitcoin wallet](https://github.com/tc-bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
+
+## License
+
+The Trade Control Code licence is issued by Trade Control Ltd under a [GNU General Public Licence v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
+
+Trade Control Documentation by Trade Control Ltd is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) 
+
+![Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 
+

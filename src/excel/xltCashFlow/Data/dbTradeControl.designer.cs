@@ -22,7 +22,7 @@ namespace TradeControl.CashFlow.Data
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="misGreenPrint")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="tcNode")]
 	public partial class dbTradeControlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -31,6 +31,12 @@ namespace TradeControl.CashFlow.Data
     #region Extensibility Method Definitions
     partial void OnCreated();
     #endregion
+		
+		public dbTradeControlDataContext() : 
+				base(global::TradeControl.CashFlow.Properties.Settings.Default.tcNodeConnectionString, mappingSource)
+		{
+			OnCreated();
+		}
 		
 		public dbTradeControlDataContext(string connection) : 
 				base(connection, mappingSource)
@@ -128,27 +134,19 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		public System.Data.Linq.Table<vwBankAccount> vwBankAccounts
-		{
-			get
-			{
-				return this.GetTable<vwBankAccount>();
-			}
-		}
-		
-		public System.Data.Linq.Table<vwFlowVatPeriodTotal> vwFlowVatPeriodTotals
-		{
-			get
-			{
-				return this.GetTable<vwFlowVatPeriodTotal>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vwFlowTaxType> vwFlowTaxTypes
 		{
 			get
 			{
 				return this.GetTable<vwFlowTaxType>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vwBankAccount> vwBankAccounts
+		{
+			get
+			{
+				return this.GetTable<vwBankAccount>();
 			}
 		}
 		
@@ -160,6 +158,14 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
+		public System.Data.Linq.Table<vwFlowVatPeriodAccrual> vwFlowVatPeriodAccruals
+		{
+			get
+			{
+				return this.GetTable<vwFlowVatPeriodAccrual>();
+			}
+		}
+		
 		public System.Data.Linq.Table<vwFlowVatRecurrenceAccrual> vwFlowVatRecurrenceAccruals
 		{
 			get
@@ -168,11 +174,11 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		public System.Data.Linq.Table<vwFlowVatPeriodAccrual> vwFlowVatPeriodAccruals
+		public System.Data.Linq.Table<vwFlowVatPeriodTotal> vwFlowVatPeriodTotals
 		{
 			get
 			{
-				return this.GetTable<vwFlowVatPeriodAccrual>();
+				return this.GetTable<vwFlowVatPeriodTotal>();
 			}
 		}
 		
@@ -182,6 +188,24 @@ namespace TradeControl.CashFlow.Data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eventMessage, eventTypeCode, logCode);
 			logCode = ((string)(result.GetParameterValue(2)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowBankBalances", IsComposable=true)]
+		public IQueryable<fnFlowBankBalancesResult> fnFlowBankBalances([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashAccountCode", DbType="NVarChar(10)")] string cashAccountCode)
+		{
+			return this.CreateMethodCallQuery<fnFlowBankBalancesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashAccountCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoryTotalCodes", IsComposable=true)]
+		public IQueryable<fnFlowCategoryTotalCodesResult> fnFlowCategoryTotalCodes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryCode", DbType="NVarChar(10)")] string categoryCode)
+		{
+			return this.CreateMethodCallQuery<fnFlowCategoryTotalCodesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoriesByType", IsComposable=true)]
+		public IQueryable<fnFlowCategoriesByTypeResult> fnFlowCategoriesByType([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashTypeCode", DbType="SmallInt")] System.Nullable<short> cashTypeCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryTypeCode", DbType="SmallInt")] System.Nullable<short> categoryTypeCode)
+		{
+			return this.CreateMethodCallQuery<fnFlowCategoriesByTypeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashTypeCode, categoryTypeCode);
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategory", IsComposable=true)]
@@ -196,16 +220,11 @@ namespace TradeControl.CashFlow.Data
 			return this.CreateMethodCallQuery<fnFlowCategoryCashCodesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryCode);
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoriesByType", IsComposable=true)]
-		public IQueryable<fnFlowCategoriesByTypeResult> fnFlowCategoriesByType([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashTypeCode", DbType="SmallInt")] System.Nullable<short> cashTypeCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryTypeCode", DbType="SmallInt")] System.Nullable<short> categoryTypeCode)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.proc_FlowCashCodeValues")]
+		public ISingleResult<proc_FlowCashCodeValuesResult> proc_FlowCashCodeValues([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashCode", DbType="NVarChar(50)")] string cashCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="YearNumber", DbType="SmallInt")] System.Nullable<short> yearNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeActivePeriods", DbType="Bit")] System.Nullable<bool> includeActivePeriods, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeOrderBook", DbType="Bit")] System.Nullable<bool> includeOrderBook, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeTaxAccruals", DbType="Bit")] System.Nullable<bool> includeTaxAccruals)
 		{
-			return this.CreateMethodCallQuery<fnFlowCategoriesByTypeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashTypeCode, categoryTypeCode);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoryTotalCodes", IsComposable=true)]
-		public IQueryable<fnFlowCategoryTotalCodesResult> fnFlowCategoryTotalCodes([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryCode", DbType="NVarChar(10)")] string categoryCode)
-		{
-			return this.CreateMethodCallQuery<fnFlowCategoryTotalCodesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), categoryCode);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashCode, yearNumber, includeActivePeriods, includeOrderBook, includeTaxAccruals);
+			return ((ISingleResult<proc_FlowCashCodeValuesResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.proc_FlowCategoryCodeFromName")]
@@ -214,25 +233,6 @@ namespace TradeControl.CashFlow.Data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, categoryCode);
 			categoryCode = ((string)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowBankBalances", IsComposable=true)]
-		public IQueryable<fnFlowBankBalancesResult> fnFlowBankBalances([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashAccountCode", DbType="NVarChar(10)")] string cashAccountCode)
-		{
-			return this.CreateMethodCallQuery<fnFlowBankBalancesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashAccountCode);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCashCodeValues", IsComposable=true)]
-		public IQueryable<fnFlowCashCodeValuesResult> fnFlowCashCodeValues([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashCode", DbType="NVarChar(50)")] string cashCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="YearNumber", DbType="SmallInt")] System.Nullable<short> yearNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeActivePeriods", DbType="Bit")] System.Nullable<bool> includeActivePeriods, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeOrderBook", DbType="Bit")] System.Nullable<bool> includeOrderBook, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeTaxAccruals", DbType="Bit")] System.Nullable<bool> includeTaxAccruals)
-		{
-			return this.CreateMethodCallQuery<fnFlowCashCodeValuesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashCode, yearNumber, includeActivePeriods, includeOrderBook, includeTaxAccruals);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.proc_FlowCashCodeValues")]
-		public ISingleResult<proc_FlowCashCodeValuesResult> proc_FlowCashCodeValues([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashCode", DbType="NVarChar(50)")] string cashCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="YearNumber", DbType="SmallInt")] System.Nullable<short> yearNumber, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeActivePeriods", DbType="Bit")] System.Nullable<bool> includeActivePeriods, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeOrderBook", DbType="Bit")] System.Nullable<bool> includeOrderBook, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IncludeTaxAccruals", DbType="Bit")] System.Nullable<bool> includeTaxAccruals)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashCode, yearNumber, includeActivePeriods, includeOrderBook, includeTaxAccruals);
-			return ((ISingleResult<proc_FlowCashCodeValuesResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -1523,294 +1523,6 @@ namespace TradeControl.CashFlow.Data
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwBankAccounts")]
-	public partial class vwBankAccount
-	{
-		
-		private string _CashAccountCode;
-		
-		private string _CashAccountName;
-		
-		private decimal _OpeningBalance;
-		
-		private int _DisplayOrder;
-		
-		public vwBankAccount()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string CashAccountCode
-		{
-			get
-			{
-				return this._CashAccountCode;
-			}
-			set
-			{
-				if ((this._CashAccountCode != value))
-				{
-					this._CashAccountCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string CashAccountName
-		{
-			get
-			{
-				return this._CashAccountName;
-			}
-			set
-			{
-				if ((this._CashAccountName != value))
-				{
-					this._CashAccountName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpeningBalance", DbType="Money NOT NULL")]
-		public decimal OpeningBalance
-		{
-			get
-			{
-				return this._OpeningBalance;
-			}
-			set
-			{
-				if ((this._OpeningBalance != value))
-				{
-					this._OpeningBalance = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int NOT NULL")]
-		public int DisplayOrder
-		{
-			get
-			{
-				return this._DisplayOrder;
-			}
-			set
-			{
-				if ((this._DisplayOrder != value))
-				{
-					this._DisplayOrder = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowVatPeriodTotals")]
-	public partial class vwFlowVatPeriodTotal
-	{
-		
-		private short _YearNumber;
-		
-		private System.DateTime _StartOn;
-		
-		private decimal _HomeSales;
-		
-		private decimal _HomePurchases;
-		
-		private decimal _ExportSales;
-		
-		private decimal _ExportPurchases;
-		
-		private decimal _HomeSalesVat;
-		
-		private decimal _HomePurchasesVat;
-		
-		private decimal _ExportSalesVat;
-		
-		private decimal _ExportPurchasesVat;
-		
-		private decimal _VatDue;
-		
-		public vwFlowVatPeriodTotal()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
-		public short YearNumber
-		{
-			get
-			{
-				return this._YearNumber;
-			}
-			set
-			{
-				if ((this._YearNumber != value))
-				{
-					this._YearNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
-		public System.DateTime StartOn
-		{
-			get
-			{
-				return this._StartOn;
-			}
-			set
-			{
-				if ((this._StartOn != value))
-				{
-					this._StartOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
-		public decimal HomeSales
-		{
-			get
-			{
-				return this._HomeSales;
-			}
-			set
-			{
-				if ((this._HomeSales != value))
-				{
-					this._HomeSales = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
-		public decimal HomePurchases
-		{
-			get
-			{
-				return this._HomePurchases;
-			}
-			set
-			{
-				if ((this._HomePurchases != value))
-				{
-					this._HomePurchases = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
-		public decimal ExportSales
-		{
-			get
-			{
-				return this._ExportSales;
-			}
-			set
-			{
-				if ((this._ExportSales != value))
-				{
-					this._ExportSales = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
-		public decimal ExportPurchases
-		{
-			get
-			{
-				return this._ExportPurchases;
-			}
-			set
-			{
-				if ((this._ExportPurchases != value))
-				{
-					this._ExportPurchases = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
-		public decimal HomeSalesVat
-		{
-			get
-			{
-				return this._HomeSalesVat;
-			}
-			set
-			{
-				if ((this._HomeSalesVat != value))
-				{
-					this._HomeSalesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
-		public decimal HomePurchasesVat
-		{
-			get
-			{
-				return this._HomePurchasesVat;
-			}
-			set
-			{
-				if ((this._HomePurchasesVat != value))
-				{
-					this._HomePurchasesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
-		public decimal ExportSalesVat
-		{
-			get
-			{
-				return this._ExportSalesVat;
-			}
-			set
-			{
-				if ((this._ExportSalesVat != value))
-				{
-					this._ExportSalesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
-		public decimal ExportPurchasesVat
-		{
-			get
-			{
-				return this._ExportPurchasesVat;
-			}
-			set
-			{
-				if ((this._ExportPurchasesVat != value))
-				{
-					this._ExportPurchasesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
-		public decimal VatDue
-		{
-			get
-			{
-				return this._VatDue;
-			}
-			set
-			{
-				if ((this._VatDue != value))
-				{
-					this._VatDue = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowTaxType")]
 	public partial class vwFlowTaxType
 	{
@@ -2000,6 +1712,87 @@ namespace TradeControl.CashFlow.Data
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwBankAccounts")]
+	public partial class vwBankAccount
+	{
+		
+		private string _CashAccountCode;
+		
+		private string _CashAccountName;
+		
+		private decimal _OpeningBalance;
+		
+		private int _DisplayOrder;
+		
+		public vwBankAccount()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string CashAccountCode
+		{
+			get
+			{
+				return this._CashAccountCode;
+			}
+			set
+			{
+				if ((this._CashAccountCode != value))
+				{
+					this._CashAccountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CashAccountName
+		{
+			get
+			{
+				return this._CashAccountName;
+			}
+			set
+			{
+				if ((this._CashAccountName != value))
+				{
+					this._CashAccountName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpeningBalance", DbType="Decimal(18,5) NOT NULL")]
+		public decimal OpeningBalance
+		{
+			get
+			{
+				return this._OpeningBalance;
+			}
+			set
+			{
+				if ((this._OpeningBalance != value))
+				{
+					this._OpeningBalance = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="Int NOT NULL")]
+		public int DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this._DisplayOrder = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowVatRecurrence")]
 	public partial class vwFlowVatRecurrence
 	{
@@ -2064,7 +1857,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomeSales
 		{
 			get
@@ -2080,7 +1873,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomePurchases
 		{
 			get
@@ -2096,7 +1889,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportSales
 		{
 			get
@@ -2112,7 +1905,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportPurchases
 		{
 			get
@@ -2128,7 +1921,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomeSalesVat
 		{
 			get
@@ -2144,7 +1937,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomePurchasesVat
 		{
 			get
@@ -2160,7 +1953,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportSalesVat
 		{
 			get
@@ -2176,7 +1969,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportPurchasesVat
 		{
 			get
@@ -2192,7 +1985,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatAdjustment", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatAdjustment", DbType="Decimal(18,5) NOT NULL")]
 		public decimal VatAdjustment
 		{
 			get
@@ -2208,214 +2001,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
-		public decimal VatDue
-		{
-			get
-			{
-				return this._VatDue;
-			}
-			set
-			{
-				if ((this._VatDue != value))
-				{
-					this._VatDue = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowVatRecurrenceAccruals")]
-	public partial class vwFlowVatRecurrenceAccrual
-	{
-		
-		private short _YearNumber;
-		
-		private System.DateTime _StartOn;
-		
-		private decimal _HomeSales;
-		
-		private decimal _HomePurchases;
-		
-		private decimal _ExportSales;
-		
-		private decimal _ExportPurchases;
-		
-		private decimal _HomeSalesVat;
-		
-		private decimal _HomePurchasesVat;
-		
-		private decimal _ExportSalesVat;
-		
-		private decimal _ExportPurchasesVat;
-		
-		private decimal _VatDue;
-		
-		public vwFlowVatRecurrenceAccrual()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
-		public short YearNumber
-		{
-			get
-			{
-				return this._YearNumber;
-			}
-			set
-			{
-				if ((this._YearNumber != value))
-				{
-					this._YearNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
-		public System.DateTime StartOn
-		{
-			get
-			{
-				return this._StartOn;
-			}
-			set
-			{
-				if ((this._StartOn != value))
-				{
-					this._StartOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
-		public decimal HomeSales
-		{
-			get
-			{
-				return this._HomeSales;
-			}
-			set
-			{
-				if ((this._HomeSales != value))
-				{
-					this._HomeSales = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
-		public decimal HomePurchases
-		{
-			get
-			{
-				return this._HomePurchases;
-			}
-			set
-			{
-				if ((this._HomePurchases != value))
-				{
-					this._HomePurchases = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
-		public decimal ExportSales
-		{
-			get
-			{
-				return this._ExportSales;
-			}
-			set
-			{
-				if ((this._ExportSales != value))
-				{
-					this._ExportSales = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
-		public decimal ExportPurchases
-		{
-			get
-			{
-				return this._ExportPurchases;
-			}
-			set
-			{
-				if ((this._ExportPurchases != value))
-				{
-					this._ExportPurchases = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
-		public decimal HomeSalesVat
-		{
-			get
-			{
-				return this._HomeSalesVat;
-			}
-			set
-			{
-				if ((this._HomeSalesVat != value))
-				{
-					this._HomeSalesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
-		public decimal HomePurchasesVat
-		{
-			get
-			{
-				return this._HomePurchasesVat;
-			}
-			set
-			{
-				if ((this._HomePurchasesVat != value))
-				{
-					this._HomePurchasesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
-		public decimal ExportSalesVat
-		{
-			get
-			{
-				return this._ExportSalesVat;
-			}
-			set
-			{
-				if ((this._ExportSalesVat != value))
-				{
-					this._ExportSalesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
-		public decimal ExportPurchasesVat
-		{
-			get
-			{
-				return this._ExportPurchasesVat;
-			}
-			set
-			{
-				if ((this._ExportPurchasesVat != value))
-				{
-					this._ExportPurchasesVat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Decimal(18,5) NOT NULL")]
 		public decimal VatDue
 		{
 			get
@@ -2440,23 +2026,23 @@ namespace TradeControl.CashFlow.Data
 		
 		private System.DateTime _StartOn;
 		
-		private decimal _HomeSales;
+		private System.Nullable<decimal> _HomeSales;
 		
-		private decimal _HomePurchases;
+		private System.Nullable<decimal> _HomePurchases;
 		
-		private decimal _ExportSales;
+		private System.Nullable<decimal> _ExportSales;
 		
-		private decimal _ExportPurchases;
+		private System.Nullable<decimal> _ExportPurchases;
 		
-		private decimal _HomeSalesVat;
+		private System.Nullable<decimal> _HomeSalesVat;
 		
-		private decimal _HomePurchasesVat;
+		private System.Nullable<decimal> _HomePurchasesVat;
 		
-		private decimal _ExportSalesVat;
+		private System.Nullable<decimal> _ExportSalesVat;
 		
-		private decimal _ExportPurchasesVat;
+		private System.Nullable<decimal> _ExportPurchasesVat;
 		
-		private decimal _VatDue;
+		private System.Nullable<decimal> _VatDue;
 		
 		public vwFlowVatPeriodAccrual()
 		{
@@ -2494,7 +2080,421 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomeSales
+		{
+			get
+			{
+				return this._HomeSales;
+			}
+			set
+			{
+				if ((this._HomeSales != value))
+				{
+					this._HomeSales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomePurchases
+		{
+			get
+			{
+				return this._HomePurchases;
+			}
+			set
+			{
+				if ((this._HomePurchases != value))
+				{
+					this._HomePurchases = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportSales
+		{
+			get
+			{
+				return this._ExportSales;
+			}
+			set
+			{
+				if ((this._ExportSales != value))
+				{
+					this._ExportSales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportPurchases
+		{
+			get
+			{
+				return this._ExportPurchases;
+			}
+			set
+			{
+				if ((this._ExportPurchases != value))
+				{
+					this._ExportPurchases = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomeSalesVat
+		{
+			get
+			{
+				return this._HomeSalesVat;
+			}
+			set
+			{
+				if ((this._HomeSalesVat != value))
+				{
+					this._HomeSalesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomePurchasesVat
+		{
+			get
+			{
+				return this._HomePurchasesVat;
+			}
+			set
+			{
+				if ((this._HomePurchasesVat != value))
+				{
+					this._HomePurchasesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportSalesVat
+		{
+			get
+			{
+				return this._ExportSalesVat;
+			}
+			set
+			{
+				if ((this._ExportSalesVat != value))
+				{
+					this._ExportSalesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportPurchasesVat
+		{
+			get
+			{
+				return this._ExportPurchasesVat;
+			}
+			set
+			{
+				if ((this._ExportPurchasesVat != value))
+				{
+					this._ExportPurchasesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> VatDue
+		{
+			get
+			{
+				return this._VatDue;
+			}
+			set
+			{
+				if ((this._VatDue != value))
+				{
+					this._VatDue = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowVatRecurrenceAccruals")]
+	public partial class vwFlowVatRecurrenceAccrual
+	{
+		
+		private short _YearNumber;
+		
+		private System.DateTime _StartOn;
+		
+		private System.Nullable<decimal> _HomeSales;
+		
+		private System.Nullable<decimal> _HomePurchases;
+		
+		private System.Nullable<decimal> _ExportSales;
+		
+		private System.Nullable<decimal> _ExportPurchases;
+		
+		private System.Nullable<decimal> _HomeSalesVat;
+		
+		private System.Nullable<decimal> _HomePurchasesVat;
+		
+		private System.Nullable<decimal> _ExportSalesVat;
+		
+		private System.Nullable<decimal> _ExportPurchasesVat;
+		
+		private System.Nullable<decimal> _VatDue;
+		
+		public vwFlowVatRecurrenceAccrual()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
+		public short YearNumber
+		{
+			get
+			{
+				return this._YearNumber;
+			}
+			set
+			{
+				if ((this._YearNumber != value))
+				{
+					this._YearNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
+		public System.DateTime StartOn
+		{
+			get
+			{
+				return this._StartOn;
+			}
+			set
+			{
+				if ((this._StartOn != value))
+				{
+					this._StartOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomeSales
+		{
+			get
+			{
+				return this._HomeSales;
+			}
+			set
+			{
+				if ((this._HomeSales != value))
+				{
+					this._HomeSales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomePurchases
+		{
+			get
+			{
+				return this._HomePurchases;
+			}
+			set
+			{
+				if ((this._HomePurchases != value))
+				{
+					this._HomePurchases = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportSales
+		{
+			get
+			{
+				return this._ExportSales;
+			}
+			set
+			{
+				if ((this._ExportSales != value))
+				{
+					this._ExportSales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportPurchases
+		{
+			get
+			{
+				return this._ExportPurchases;
+			}
+			set
+			{
+				if ((this._ExportPurchases != value))
+				{
+					this._ExportPurchases = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomeSalesVat
+		{
+			get
+			{
+				return this._HomeSalesVat;
+			}
+			set
+			{
+				if ((this._HomeSalesVat != value))
+				{
+					this._HomeSalesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> HomePurchasesVat
+		{
+			get
+			{
+				return this._HomePurchasesVat;
+			}
+			set
+			{
+				if ((this._HomePurchasesVat != value))
+				{
+					this._HomePurchasesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportSalesVat
+		{
+			get
+			{
+				return this._ExportSalesVat;
+			}
+			set
+			{
+				if ((this._ExportSalesVat != value))
+				{
+					this._ExportSalesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> ExportPurchasesVat
+		{
+			get
+			{
+				return this._ExportPurchasesVat;
+			}
+			set
+			{
+				if ((this._ExportPurchasesVat != value))
+				{
+					this._ExportPurchasesVat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Decimal(18,5)")]
+		public System.Nullable<decimal> VatDue
+		{
+			get
+			{
+				return this._VatDue;
+			}
+			set
+			{
+				if ((this._VatDue != value))
+				{
+					this._VatDue = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwFlowVatPeriodTotals")]
+	public partial class vwFlowVatPeriodTotal
+	{
+		
+		private short _YearNumber;
+		
+		private System.DateTime _StartOn;
+		
+		private decimal _HomeSales;
+		
+		private decimal _HomePurchases;
+		
+		private decimal _ExportSales;
+		
+		private decimal _ExportPurchases;
+		
+		private decimal _HomeSalesVat;
+		
+		private decimal _HomePurchasesVat;
+		
+		private decimal _ExportSalesVat;
+		
+		private decimal _ExportPurchasesVat;
+		
+		private decimal _VatDue;
+		
+		public vwFlowVatPeriodTotal()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
+		public short YearNumber
+		{
+			get
+			{
+				return this._YearNumber;
+			}
+			set
+			{
+				if ((this._YearNumber != value))
+				{
+					this._YearNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
+		public System.DateTime StartOn
+		{
+			get
+			{
+				return this._StartOn;
+			}
+			set
+			{
+				if ((this._StartOn != value))
+				{
+					this._StartOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomeSales
 		{
 			get
@@ -2510,7 +2510,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomePurchases
 		{
 			get
@@ -2526,7 +2526,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportSales
 		{
 			get
@@ -2542,7 +2542,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportPurchases
 		{
 			get
@@ -2558,7 +2558,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomeSalesVat
 		{
 			get
@@ -2574,7 +2574,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal HomePurchasesVat
 		{
 			get
@@ -2590,7 +2590,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportSalesVat
 		{
 			get
@@ -2606,7 +2606,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ExportPurchasesVat
 		{
 			get
@@ -2622,7 +2622,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Decimal(18,5) NOT NULL")]
 		public decimal VatDue
 		{
 			get
@@ -2634,6 +2634,192 @@ namespace TradeControl.CashFlow.Data
 				if ((this._VatDue != value))
 				{
 					this._VatDue = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fnFlowBankBalancesResult
+	{
+		
+		private string _CashAccountCode;
+		
+		private short _YearNumber;
+		
+		private System.DateTime _StartOn;
+		
+		private System.Nullable<decimal> _PaidBalance;
+		
+		public fnFlowBankBalancesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10)")]
+		public string CashAccountCode
+		{
+			get
+			{
+				return this._CashAccountCode;
+			}
+			set
+			{
+				if ((this._CashAccountCode != value))
+				{
+					this._CashAccountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
+		public short YearNumber
+		{
+			get
+			{
+				return this._YearNumber;
+			}
+			set
+			{
+				if ((this._YearNumber != value))
+				{
+					this._YearNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
+		public System.DateTime StartOn
+		{
+			get
+			{
+				return this._StartOn;
+			}
+			set
+			{
+				if ((this._StartOn != value))
+				{
+					this._StartOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidBalance", DbType="Money")]
+		public System.Nullable<decimal> PaidBalance
+		{
+			get
+			{
+				return this._PaidBalance;
+			}
+			set
+			{
+				if ((this._PaidBalance != value))
+				{
+					this._PaidBalance = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fnFlowCategoryTotalCodesResult
+	{
+		
+		private string _CategoryCode;
+		
+		public fnFlowCategoryTotalCodesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string CategoryCode
+		{
+			get
+			{
+				return this._CategoryCode;
+			}
+			set
+			{
+				if ((this._CategoryCode != value))
+				{
+					this._CategoryCode = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fnFlowCategoriesByTypeResult
+	{
+		
+		private short _DisplayOrder;
+		
+		private string _Category;
+		
+		private string _CashType;
+		
+		private string _CategoryCode;
+		
+		public fnFlowCategoriesByTypeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="SmallInt NOT NULL")]
+		public short DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this._DisplayOrder = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashType", DbType="NVarChar(25)")]
+		public string CashType
+		{
+			get
+			{
+				return this._CashType;
+			}
+			set
+			{
+				if ((this._CashType != value))
+				{
+					this._CashType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string CategoryCode
+		{
+			get
+			{
+				return this._CategoryCode;
+			}
+			set
+			{
+				if ((this._CategoryCode != value))
+				{
+					this._CategoryCode = value;
 				}
 			}
 		}
@@ -2907,290 +3093,6 @@ namespace TradeControl.CashFlow.Data
 		}
 	}
 	
-	public partial class fnFlowCategoriesByTypeResult
-	{
-		
-		private short _DisplayOrder;
-		
-		private string _Category;
-		
-		private string _CashType;
-		
-		private string _CategoryCode;
-		
-		public fnFlowCategoriesByTypeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="SmallInt NOT NULL")]
-		public short DisplayOrder
-		{
-			get
-			{
-				return this._DisplayOrder;
-			}
-			set
-			{
-				if ((this._DisplayOrder != value))
-				{
-					this._DisplayOrder = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Category
-		{
-			get
-			{
-				return this._Category;
-			}
-			set
-			{
-				if ((this._Category != value))
-				{
-					this._Category = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashType", DbType="NVarChar(25)")]
-		public string CashType
-		{
-			get
-			{
-				return this._CashType;
-			}
-			set
-			{
-				if ((this._CashType != value))
-				{
-					this._CashType = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string CategoryCode
-		{
-			get
-			{
-				return this._CategoryCode;
-			}
-			set
-			{
-				if ((this._CategoryCode != value))
-				{
-					this._CategoryCode = value;
-				}
-			}
-		}
-	}
-	
-	public partial class fnFlowCategoryTotalCodesResult
-	{
-		
-		private string _CategoryCode;
-		
-		public fnFlowCategoryTotalCodesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string CategoryCode
-		{
-			get
-			{
-				return this._CategoryCode;
-			}
-			set
-			{
-				if ((this._CategoryCode != value))
-				{
-					this._CategoryCode = value;
-				}
-			}
-		}
-	}
-	
-	public partial class fnFlowBankBalancesResult
-	{
-		
-		private string _CashAccountCode;
-		
-		private short _YearNumber;
-		
-		private System.DateTime _StartOn;
-		
-		private System.Nullable<decimal> _PaidBalance;
-		
-		public fnFlowBankBalancesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10)")]
-		public string CashAccountCode
-		{
-			get
-			{
-				return this._CashAccountCode;
-			}
-			set
-			{
-				if ((this._CashAccountCode != value))
-				{
-					this._CashAccountCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
-		public short YearNumber
-		{
-			get
-			{
-				return this._YearNumber;
-			}
-			set
-			{
-				if ((this._YearNumber != value))
-				{
-					this._YearNumber = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
-		public System.DateTime StartOn
-		{
-			get
-			{
-				return this._StartOn;
-			}
-			set
-			{
-				if ((this._StartOn != value))
-				{
-					this._StartOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidBalance", DbType="Money")]
-		public System.Nullable<decimal> PaidBalance
-		{
-			get
-			{
-				return this._PaidBalance;
-			}
-			set
-			{
-				if ((this._PaidBalance != value))
-				{
-					this._PaidBalance = value;
-				}
-			}
-		}
-	}
-	
-	public partial class fnFlowCashCodeValuesResult
-	{
-		
-		private System.Nullable<System.DateTime> _StartOn;
-		
-		private System.Nullable<decimal> _InvoiceValue;
-		
-		private System.Nullable<decimal> _InvoiceTax;
-		
-		private System.Nullable<decimal> _ForecastValue;
-		
-		private System.Nullable<decimal> _ForecastTax;
-		
-		public fnFlowCashCodeValuesResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime")]
-		public System.Nullable<System.DateTime> StartOn
-		{
-			get
-			{
-				return this._StartOn;
-			}
-			set
-			{
-				if ((this._StartOn != value))
-				{
-					this._StartOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceValue", DbType="Money")]
-		public System.Nullable<decimal> InvoiceValue
-		{
-			get
-			{
-				return this._InvoiceValue;
-			}
-			set
-			{
-				if ((this._InvoiceValue != value))
-				{
-					this._InvoiceValue = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceTax", DbType="Money")]
-		public System.Nullable<decimal> InvoiceTax
-		{
-			get
-			{
-				return this._InvoiceTax;
-			}
-			set
-			{
-				if ((this._InvoiceTax != value))
-				{
-					this._InvoiceTax = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastValue", DbType="Money")]
-		public System.Nullable<decimal> ForecastValue
-		{
-			get
-			{
-				return this._ForecastValue;
-			}
-			set
-			{
-				if ((this._ForecastValue != value))
-				{
-					this._ForecastValue = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastTax", DbType="Money")]
-		public System.Nullable<decimal> ForecastTax
-		{
-			get
-			{
-				return this._ForecastTax;
-			}
-			set
-			{
-				if ((this._ForecastTax != value))
-				{
-					this._ForecastTax = value;
-				}
-			}
-		}
-	}
-	
 	public partial class proc_FlowCashCodeValuesResult
 	{
 		
@@ -3224,7 +3126,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceValue", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceValue", DbType="Decimal(18,5) NOT NULL")]
 		public decimal InvoiceValue
 		{
 			get
@@ -3240,7 +3142,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceTax", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceTax", DbType="Decimal(18,5) NOT NULL")]
 		public decimal InvoiceTax
 		{
 			get
@@ -3256,7 +3158,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastValue", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastValue", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ForecastValue
 		{
 			get
@@ -3272,7 +3174,7 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastTax", DbType="Money NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ForecastTax", DbType="Decimal(18,5) NOT NULL")]
 		public decimal ForecastTax
 		{
 			get
