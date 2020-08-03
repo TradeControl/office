@@ -282,7 +282,7 @@ Trade Control instances are nodes that can be connected together, such that BOM-
 
 ### Bitcoin
 
-Install the [bitcoin wallet](https://github.com/tc-bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
+Install the [bitcoin wallet](https://github.com/tradecontrol/tc-bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
 
 ## License
 
