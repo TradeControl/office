@@ -119,7 +119,7 @@ You can add intangible or gifted assets that do not appear on the P&L. We are go
 
 To demonstrate multiple trading accounts, we have already created a cash box in the section on [Cash Accounts](#cash-accounts). There is no operational difference between your current account and this cash box. They work the same and Trade Control classifies them both as CASH on the balance sheet. In traditional accounting, cash means physical coinage in a cash box. Today, unless you are a market-stall trader, that does not make much sense, since physical cash is likely to be a tiny proportion of your available funds. Here, CASH is your working funds, and BANK is your banked reserves. 
 
-Although the balance sheet adds cash to the current account, the Trade Statement also lists the closing balance of the Cash Box along with the other accounts (when option Bank Balances is checked). Therefore, you can decide how to communicate this category when you communicate your balance sheet to Companies House - from the Closing Balances of the cash accounts or the Cash Category of the balance sheet.
+Although the balance sheet adds cash to the current account, the Trade Statement also lists the closing balance of the Cash Box along with the other accounts (when option Bank Balances is checked). Therefore, you can decide how to communicate this category when you submit your balance sheet to Companies House - from the Closing Balances of the cash accounts or the Cash Category of the balance sheet.
 
 ### Cash Box Operation
 
@@ -171,7 +171,7 @@ There are two ways to enter a payment in Trade Control: against invoices or agai
 
 #### Method
 
-1. Open Activities from the Maintnenace menu and change the default status for Office Rent from Charged to Open.
+1. Open Activities from the Maintenance menu and change the default status for Office Rent from Charged to Open.
 2. From Organisations Quick Entry add **The Landlord** and set Payment Days to zero.
 3. Raise a new task from Task Explorer against the landlord with the Activity set to Project, the title Rent and the action on date as the start-up date. Edit the task.
 4. Add another Project activity task entitled **Rent 2019-20** 
@@ -189,7 +189,7 @@ The Company Statement tells us that there are sufficient funds to pay off the ar
 
 ![Accrual Payments](../img/balance_sheet_accruals_payments.png)
 
-If we invoice another rent payment, the Company Statement shows us our forward position:
+The Company Statement shows us our forward position:
 
 ![Company Statement](../img/balance_sheet_accruals_statement.png)
 
