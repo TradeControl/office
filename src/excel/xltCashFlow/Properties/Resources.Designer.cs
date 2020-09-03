@@ -115,6 +115,24 @@ namespace TradeControl.CashFlow.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BALANCE SHEET.
+        /// </summary>
+        internal static string TextBalanceSheet {
+            get {
+                return ResourceManager.GetString("TextBalanceSheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CAPITAL.
+        /// </summary>
+        internal static string TextCapital {
+            get {
+                return ResourceManager.GetString("TextCapital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CLOSING BALANCE.
         /// </summary>
         internal static string TextClosingBalances {
@@ -133,7 +151,7 @@ namespace TradeControl.CashFlow.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Company Balance.
+        ///   Looks up a localized string similar to COMPANY BALANCE.
         /// </summary>
         internal static string TextCompanyBalance {
             get {

@@ -39,7 +39,8 @@ namespace TradeControl.CashFlow
             bool includeBankBalances = false, 
             bool includeBankTypes = false, 
             bool includeTaxAccruals = false,
-            bool includeVatDetails = false)
+            bool includeVatDetails = false,
+            bool includeBalanceSheet = false)
         {
             try
             {
@@ -59,6 +60,7 @@ namespace TradeControl.CashFlow
                 InitialisePeriods(CashFlow);
 
                 LoadCategories(CashFlow, CashType.Trade, includeActivePeriods, includeOrderBook, false);
+                LoadCategories(CashFlow, CashType.Money, false, false, false);
                 LoadTotals(CashFlow, CashType.Trade, CategoryType.Total);
 
                 LoadCategories(CashFlow, CashType.Tax, includeActivePeriods, false, includeTaxAccruals);
@@ -68,7 +70,7 @@ namespace TradeControl.CashFlow
                 LoadExpressions(CashFlow);
 
                 if (includeBankTypes)
-                    LoadCategories(CashFlow, CashType.Bank, false, false, false);
+                    LoadCategories(CashFlow, CashType.Money, false, false, false);
 
                 if (includeBankBalances)
                     LoadBankBalances(CashFlow);
@@ -78,6 +80,9 @@ namespace TradeControl.CashFlow
                     LoadVatRecurrenceTotals(CashFlow, includeActivePeriods, includeTaxAccruals);
                     LoadVatPeriodTotals(CashFlow, includeActivePeriods, includeTaxAccruals);
                 }
+
+                if (includeBalanceSheet)
+                    LoadBalanceSheet(CashFlow);
 
                 dataContext.Close();
                 CashFlow.EndInit();
@@ -626,14 +631,13 @@ namespace TradeControl.CashFlow
                         curCol++;
                     }
 
-                    if (balance.PaidBalance != null)
+                    if (balance.Balance != null)
                     {
-                        ws.Cells[curRow, curCol].Value = balance?.PaidBalance;
+                        ws.Cells[curRow, curCol].Value = balance?.Balance;
                         curCol++;
                     }
                     else
-                        curCol++;
-                   
+                        curCol++;                   
                 }
 
                 ws.Cells[curRow, curCol].Formula = $"={Column(curCol - 1)}{curRow}";
@@ -646,11 +650,8 @@ namespace TradeControl.CashFlow
             curRow++;
             ws.Cells[curRow, 1].Value = Properties.Resources.TextCompanyBalance;
             ws.Cells[curRow, 1].EntireRow.Font.Bold = true;
-            if (!Greyscale)
-            {
-                ws.Cells[curRow, 1].EntireRow.Font.Color = Color.White;
-                ws.Cells[curRow, 1].EntireRow.Interior.Color = Color.Black;
-            }
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThin;
             ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
             ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThick;
             ws.Cells[curRow, 1].EntireRow.Locked = true;
@@ -728,7 +729,6 @@ namespace TradeControl.CashFlow
                 LoadVatRecurrenceAccruals(ws);
 
             curRow += 9;
-
         }
 
         private void LoadVatRecurrenceAccruals(WSCashFlow ws)
@@ -761,8 +761,6 @@ namespace TradeControl.CashFlow
 
                 curCol++;
             }
-
-
         }
 
         private void LoadVatPeriodTotals(WSCashFlow ws, bool includeActivePeriods = false, bool includeTaxAccruals = false)
@@ -829,6 +827,8 @@ namespace TradeControl.CashFlow
 
             if (includeTaxAccruals)
                 LoadVatPeriodAccruals(ws);
+
+            curRow += 8;
         }
 
         private void LoadVatPeriodAccruals(WSCashFlow ws)
@@ -861,7 +861,7 @@ namespace TradeControl.CashFlow
                 ws.Cells[curRow + 8, curCol].Value = (decimal)ws.Cells[curRow + 8, curCol].Value + vat_period?.VatDue;
 
                 curCol++;
-            }
+            }            
         }
 
         private void VatDetailCodes(WSCashFlow ws, bool includeAdjustments = true)
@@ -885,9 +885,93 @@ namespace TradeControl.CashFlow
             ws.Cells[row, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThick;
             ws.Cells[row, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
             ws.Cells[row, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThin;
-
         }
+
         #endregion
+
+        #region balance sheet
+        private void LoadBalanceSheet(WSCashFlow ws)
+        {
+            var balance_sheet = dataContext.BalanceSheet;
+
+            if (balance_sheet.Count() == 0)
+                return;
+
+            curRow += 2;
+
+            ws.Cells[curRow, 1].Value = Properties.Resources.TextBalanceSheet;
+            ws.Cells[curRow, 1].EntireRow.Font.Bold = true;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThin;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThin;
+
+            if (!Greyscale)
+            {
+                ws.Cells[curRow, 1].EntireRow.Cells.Interior.Color = Color.Red;
+                ws.Cells[curRow, 1].EntireRow.Cells.Font.Color = Color.White;
+                ws.Cells[curRow, 3].Font.Color = Color.White;
+            }
+
+            int startRow = curRow;
+            int offset = 1;
+            int yearCol = firstCol;
+            string assetName = string.Empty;
+
+            foreach (var entry in balance_sheet)
+            {
+                if (entry.AssetName != assetName)
+                {
+                    if (assetName != string.Empty)
+                        ws.Cells[curRow, curCol].Formula = $"={Column(curCol - offset)}{curRow}";
+
+                    curRow++;
+                    assetName = entry.AssetName;
+                    ws.Cells[curRow, 1].Value = entry.AssetCode;
+                    ws.Cells[curRow, 2].Value = entry.AssetName;
+                    curCol = firstCol;
+                    yearCol = firstCol;
+                }
+
+                if (((curCol - yearCol) % 12 == 0) && (curCol != yearCol))
+                {
+                    ws.Cells[curRow, curCol].Formula = $"={Column(curCol - offset)}{curRow}";
+                    curCol++;
+                    yearCol = curCol;
+                }
+                
+                ws.Cells[curRow, curCol].Value = entry.Balance;
+                
+                curCol++;
+            }
+
+            ws.Cells[curRow, curCol].Formula = $"={Column(curCol - offset)}{curRow}";
+
+            curRow++;
+            ws.Cells[curRow, 1].Value = Properties.Resources.TextCapital;
+            ws.Cells[curRow, 1].EntireRow.Font.Bold = true;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = Excel.XlLineStyle.xlContinuous;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThin;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = Excel.XlLineStyle.xlContinuous;
+            ws.Cells[curRow, 1].EntireRow.Cells.Borders[Excel.XlBordersIndex.xlEdgeBottom].Weight = Excel.XlBorderWeight.xlThick;
+            ws.Cells[curRow, 1].EntireRow.Locked = true;
+
+            yearCol = firstCol;
+
+            for (int curCol = firstCol; curCol <= lastCol+1; curCol++)
+            {
+                if (((curCol - yearCol) % 12 == 0) && (curCol != yearCol))
+                {
+                    ws.Cells[curRow, curCol].Formula = $"={Column(curCol - offset)}{curRow}";
+                    yearCol = curCol + 1;
+                }
+                else
+                    ws.Cells[curRow, curCol].Formula = $"=SUM({Column(curCol)}{startRow + 1}:{Column(curCol)}{curRow - 1})";
+            }
+        }
+
+        #endregion
+
 
     }
 }

@@ -22,7 +22,7 @@ Because categories can contain other categories, the structure is recursive, and
 Categories define the type and polarity of its Cash Code members. Category type is either:
 
 -	**TRADE**: the company balance is affected through an act of exchange
--	**BANK**: for financial transactions that do not affect the overall balance
+-	**MONEY**: for financial transactions that do not affect the overall balance
 -	**EXTERNAL**: for taxes that affect the balance without a corresponding exchange
 
 Tax Types are defined in the Tax page of the Administrator. There are three types, each with a corresponding tax rate: vat, income tax and general (e.g. corporation tax).  You can define as many tax rates as you need, but it is important to use the correct type when assigning them to transactions. A salary payment classified incorrectly as zero vat will turn up in the purchases of your Vat Statement. 

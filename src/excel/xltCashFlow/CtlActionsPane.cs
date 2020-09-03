@@ -27,9 +27,11 @@ namespace TradeControl.CashFlow
             Authentication = (AuthenticationMode)Properties.Settings.Default.AuthenticationMode;
             IncludeActivePeriods = Properties.Settings.Default.IncludeActivePeriods;
             IncludeOrderBook = Properties.Settings.Default.IncludeOrderBook;
+            IncludeBankTypes = Properties.Settings.Default.IncludeBankTypes;
             IncludeBankBalances = Properties.Settings.Default.IncludeBankBalances;
-            IncludeTaxAccruals = Properties.Settings.Default.IncludeTaxAccruals;
             IncludeVatDetails = Properties.Settings.Default.IncludeVatDetails;
+            IncludeTaxAccruals = Properties.Settings.Default.IncludeTaxAccruals;
+            IncludeBalanceSheet = Properties.Settings.Default.IncludeBalanceSheet;
             Greyscale = Properties.Settings.Default.Greyscale;
 
             if (Authentication == AuthenticationMode.SqlServer)
@@ -63,13 +65,14 @@ namespace TradeControl.CashFlow
                 {
                     DataLoader loader = new DataLoader();
                     loader.Greyscale = Greyscale;
-                    if (loader.OpenCashFlow(conn, 
-                            includeActivePeriods: IncludeActivePeriods, 
-                            includeOrderBook: IncludeOrderBook, 
-                            includeBankBalances: IncludeBankBalances, 
-                            includeBankTypes: IncludeBankTypes, 
+                    if (loader.OpenCashFlow(conn,
+                            includeActivePeriods: IncludeActivePeriods,
+                            includeOrderBook: IncludeOrderBook,
+                            includeBankBalances: IncludeBankBalances,
+                            includeBankTypes: IncludeBankTypes,
                             includeTaxAccruals: IncludeTaxAccruals,
-                            includeVatDetails: IncludeVatDetails))
+                            includeVatDetails: IncludeVatDetails,
+                            includeBalanceSheet: IncludeBalanceSheet))
                         LbMessage.Text = string.Empty;
                     else
                         LbMessage.Text = Properties.Resources.GenerationFailed;
@@ -250,6 +253,7 @@ namespace TradeControl.CashFlow
                 chkIncludeBankType.Checked = value;
             }
         }
+
         public bool IncludeTaxAccruals
         {
             get
@@ -273,6 +277,19 @@ namespace TradeControl.CashFlow
             set
             {
                 chkIncludeVatDetails.Checked = value;
+            }
+        }
+
+        public bool IncludeBalanceSheet
+        {
+            get
+            {
+                Properties.Settings.Default.IncludeBalanceSheet = chkIncludeBalanceSheet.Checked;
+                return chkIncludeBalanceSheet.Checked;
+            }
+            set
+            {
+                chkIncludeBalanceSheet.Checked = value;
             }
         }
 
@@ -432,6 +449,7 @@ namespace TradeControl.CashFlow
                 }
             }
         }
+
 
         #endregion
 

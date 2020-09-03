@@ -1131,3 +1131,10 @@ It is important to note that any new tasks or invoices you have created will be 
 re-install the database as only the test data we have created will be loaded each time you run the 
 installer.
 
+## License
+
+The Trade Control Code licence is issued by Trade Control Ltd under a [GNU General Public Licence v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
+
+Trade Control Documentation by Trade Control Ltd is licenced under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/) 
+
+![Creative Commons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png) 

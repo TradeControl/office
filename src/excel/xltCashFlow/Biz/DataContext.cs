@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 namespace TradeControl.CashFlow
 {
     public enum EventLogType { Error, Warning, Information };
-    public enum CashType { Trade, Tax, Bank };
+    public enum CashType { Trade, Tax, Money };
     public enum ReportMode { CashFlow, Budget };
     public enum CashMode { Expense, Income, Neutral };    
     public enum CategoryType { CashCode, Total, Expression };
@@ -208,6 +208,16 @@ namespace TradeControl.CashFlow
             {
                 return from r in db.vwFlowVatRecurrenceAccruals
                        orderby r.StartOn
+                       select r;
+            }
+        }
+
+        public IOrderedQueryable<Data.vwBalanceSheet> BalanceSheet
+        {
+            get
+            {
+                return from r in db.vwBalanceSheets
+                       orderby r.EntryNumber
                        select r;
             }
         }

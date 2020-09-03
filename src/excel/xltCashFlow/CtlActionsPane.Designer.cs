@@ -33,6 +33,7 @@
             this.pnControls = new System.Windows.Forms.Panel();
             this.tabCtl = new System.Windows.Forms.TabControl();
             this.pgOptions = new System.Windows.Forms.TabPage();
+            this.chkIncludeBalanceSheet = new System.Windows.Forms.CheckBox();
             this.chkGreyscale = new System.Windows.Forms.CheckBox();
             this.chkIncludeVatDetails = new System.Windows.Forms.CheckBox();
             this.chkIncludeBankType = new System.Windows.Forms.CheckBox();
@@ -53,14 +54,14 @@
             this.LbAuthentication = new System.Windows.Forms.Label();
             this.TbServerName = new System.Windows.Forms.TextBox();
             this.LbServerName = new System.Windows.Forms.Label();
-            this.LbSeparator1 = new System.Windows.Forms.Label();
-            this.LbSeparator2 = new System.Windows.Forms.Label();
             this.pgRun = new System.Windows.Forms.TabPage();
             this.BtnCashFlow = new System.Windows.Forms.Button();
             this.BtnBudget = new System.Windows.Forms.Button();
             this.BtnClearWorksheets = new System.Windows.Forms.Button();
             this.pnMessages = new System.Windows.Forms.Panel();
             this.LbMessage = new System.Windows.Forms.Label();
+            this.LbSeparator1 = new System.Windows.Forms.Label();
+            this.LbSeparator2 = new System.Windows.Forms.Label();
             this.PnBody.SuspendLayout();
             this.PnActions.SuspendLayout();
             this.pnControls.SuspendLayout();
@@ -103,7 +104,7 @@
             this.pnControls.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnControls.Location = new System.Drawing.Point(10, 10);
             this.pnControls.Name = "pnControls";
-            this.pnControls.Size = new System.Drawing.Size(433, 522);
+            this.pnControls.Size = new System.Drawing.Size(433, 536);
             this.pnControls.TabIndex = 8;
             // 
             // tabCtl
@@ -115,11 +116,12 @@
             this.tabCtl.Location = new System.Drawing.Point(0, 0);
             this.tabCtl.Name = "tabCtl";
             this.tabCtl.SelectedIndex = 0;
-            this.tabCtl.Size = new System.Drawing.Size(433, 458);
+            this.tabCtl.Size = new System.Drawing.Size(433, 472);
             this.tabCtl.TabIndex = 10;
             // 
             // pgOptions
             // 
+            this.pgOptions.Controls.Add(this.chkIncludeBalanceSheet);
             this.pgOptions.Controls.Add(this.chkGreyscale);
             this.pgOptions.Controls.Add(this.chkIncludeVatDetails);
             this.pgOptions.Controls.Add(this.chkIncludeBankType);
@@ -127,21 +129,31 @@
             this.pgOptions.Controls.Add(this.chkIncludeTaxAccruals);
             this.pgOptions.Controls.Add(this.chkIncludeBankBalance);
             this.pgOptions.Controls.Add(this.chkIncludeOrderBook);
-            this.pgOptions.Location = new System.Drawing.Point(4, 29);
+            this.pgOptions.Location = new System.Drawing.Point(4, 22);
             this.pgOptions.Name = "pgOptions";
             this.pgOptions.Padding = new System.Windows.Forms.Padding(10);
-            this.pgOptions.Size = new System.Drawing.Size(425, 425);
+            this.pgOptions.Size = new System.Drawing.Size(425, 446);
             this.pgOptions.TabIndex = 0;
             this.pgOptions.Text = "Options";
             this.pgOptions.UseVisualStyleBackColor = true;
             // 
+            // chkIncludeBalanceSheet
+            // 
+            this.chkIncludeBalanceSheet.AutoSize = true;
+            this.chkIncludeBalanceSheet.Location = new System.Drawing.Point(25, 160);
+            this.chkIncludeBalanceSheet.Name = "chkIncludeBalanceSheet";
+            this.chkIncludeBalanceSheet.Size = new System.Drawing.Size(102, 17);
+            this.chkIncludeBalanceSheet.TabIndex = 6;
+            this.chkIncludeBalanceSheet.Text = "Balance Sheet?";
+            this.chkIncludeBalanceSheet.UseVisualStyleBackColor = true;
+            // 
             // chkGreyscale
             // 
             this.chkGreyscale.AutoSize = true;
-            this.chkGreyscale.Location = new System.Drawing.Point(25, 160);
+            this.chkGreyscale.Location = new System.Drawing.Point(25, 183);
             this.chkGreyscale.Name = "chkGreyscale";
-            this.chkGreyscale.Size = new System.Drawing.Size(115, 24);
-            this.chkGreyscale.TabIndex = 6;
+            this.chkGreyscale.Size = new System.Drawing.Size(79, 17);
+            this.chkGreyscale.TabIndex = 7;
             this.chkGreyscale.Text = "Greyscale?";
             this.chkGreyscale.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +162,7 @@
             this.chkIncludeVatDetails.AutoSize = true;
             this.chkIncludeVatDetails.Location = new System.Drawing.Point(25, 137);
             this.chkIncludeVatDetails.Name = "chkIncludeVatDetails";
-            this.chkIncludeVatDetails.Size = new System.Drawing.Size(279, 24);
+            this.chkIncludeVatDetails.Size = new System.Drawing.Size(187, 17);
             this.chkIncludeVatDetails.TabIndex = 5;
             this.chkIncludeVatDetails.Text = "Vat period and quarterly amounts?";
             this.chkIncludeVatDetails.UseVisualStyleBackColor = true;
@@ -160,7 +172,7 @@
             this.chkIncludeBankType.AutoSize = true;
             this.chkIncludeBankType.Location = new System.Drawing.Point(25, 69);
             this.chkIncludeBankType.Name = "chkIncludeBankType";
-            this.chkIncludeBankType.Size = new System.Drawing.Size(206, 24);
+            this.chkIncludeBankType.Size = new System.Drawing.Size(140, 17);
             this.chkIncludeBankType.TabIndex = 2;
             this.chkIncludeBankType.Text = "Bank transaction types?";
             this.chkIncludeBankType.UseVisualStyleBackColor = true;
@@ -170,7 +182,7 @@
             this.chkIncludeActivePeriods.AutoSize = true;
             this.chkIncludeActivePeriods.Location = new System.Drawing.Point(25, 23);
             this.chkIncludeActivePeriods.Name = "chkIncludeActivePeriods";
-            this.chkIncludeActivePeriods.Size = new System.Drawing.Size(195, 24);
+            this.chkIncludeActivePeriods.Size = new System.Drawing.Size(136, 17);
             this.chkIncludeActivePeriods.TabIndex = 0;
             this.chkIncludeActivePeriods.Text = "Active period invoices?";
             this.chkIncludeActivePeriods.UseVisualStyleBackColor = true;
@@ -180,7 +192,7 @@
             this.chkIncludeTaxAccruals.AutoSize = true;
             this.chkIncludeTaxAccruals.Location = new System.Drawing.Point(25, 114);
             this.chkIncludeTaxAccruals.Name = "chkIncludeTaxAccruals";
-            this.chkIncludeTaxAccruals.Size = new System.Drawing.Size(279, 24);
+            this.chkIncludeTaxAccruals.Size = new System.Drawing.Size(190, 17);
             this.chkIncludeTaxAccruals.TabIndex = 4;
             this.chkIncludeTaxAccruals.Text = "Vat and Corporation Tax accruals?";
             this.chkIncludeTaxAccruals.UseVisualStyleBackColor = true;
@@ -190,7 +202,7 @@
             this.chkIncludeBankBalance.AutoSize = true;
             this.chkIncludeBankBalance.Location = new System.Drawing.Point(25, 91);
             this.chkIncludeBankBalance.Name = "chkIncludeBankBalance";
-            this.chkIncludeBankBalance.Size = new System.Drawing.Size(149, 24);
+            this.chkIncludeBankBalance.Size = new System.Drawing.Size(103, 17);
             this.chkIncludeBankBalance.TabIndex = 3;
             this.chkIncludeBankBalance.Text = "Bank balances?";
             this.chkIncludeBankBalance.UseVisualStyleBackColor = true;
@@ -200,7 +212,7 @@
             this.chkIncludeOrderBook.AutoSize = true;
             this.chkIncludeOrderBook.Location = new System.Drawing.Point(25, 46);
             this.chkIncludeOrderBook.Name = "chkIncludeOrderBook";
-            this.chkIncludeOrderBook.Size = new System.Drawing.Size(157, 24);
+            this.chkIncludeOrderBook.Size = new System.Drawing.Size(109, 17);
             this.chkIncludeOrderBook.TabIndex = 1;
             this.chkIncludeOrderBook.Text = "Live Order Book?";
             this.chkIncludeOrderBook.UseVisualStyleBackColor = true;
@@ -208,10 +220,10 @@
             // pgConnection
             // 
             this.pgConnection.Controls.Add(this.PnConnection);
-            this.pgConnection.Location = new System.Drawing.Point(4, 29);
+            this.pgConnection.Location = new System.Drawing.Point(4, 22);
             this.pgConnection.Name = "pgConnection";
             this.pgConnection.Padding = new System.Windows.Forms.Padding(3);
-            this.pgConnection.Size = new System.Drawing.Size(425, 425);
+            this.pgConnection.Size = new System.Drawing.Size(425, 446);
             this.pgConnection.TabIndex = 1;
             this.pgConnection.Text = "Connection";
             this.pgConnection.UseVisualStyleBackColor = true;
@@ -229,16 +241,16 @@
             this.PnConnection.Location = new System.Drawing.Point(3, 3);
             this.PnConnection.Name = "PnConnection";
             this.PnConnection.Padding = new System.Windows.Forms.Padding(10);
-            this.PnConnection.Size = new System.Drawing.Size(419, 419);
+            this.PnConnection.Size = new System.Drawing.Size(419, 440);
             this.PnConnection.TabIndex = 1;
             // 
             // CbDatabaseName
             // 
             this.CbDatabaseName.Dock = System.Windows.Forms.DockStyle.Top;
             this.CbDatabaseName.FormattingEnabled = true;
-            this.CbDatabaseName.Location = new System.Drawing.Point(10, 253);
+            this.CbDatabaseName.Location = new System.Drawing.Point(10, 219);
             this.CbDatabaseName.Name = "CbDatabaseName";
-            this.CbDatabaseName.Size = new System.Drawing.Size(399, 28);
+            this.CbDatabaseName.Size = new System.Drawing.Size(399, 21);
             this.CbDatabaseName.TabIndex = 2;
             this.CbDatabaseName.Enter += new System.EventHandler(this.CbDatabaseName_Enter);
             // 
@@ -246,10 +258,10 @@
             // 
             this.LbDatabaseName.AutoSize = true;
             this.LbDatabaseName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LbDatabaseName.Location = new System.Drawing.Point(10, 223);
+            this.LbDatabaseName.Location = new System.Drawing.Point(10, 196);
             this.LbDatabaseName.Name = "LbDatabaseName";
             this.LbDatabaseName.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.LbDatabaseName.Size = new System.Drawing.Size(83, 30);
+            this.LbDatabaseName.Size = new System.Drawing.Size(56, 23);
             this.LbDatabaseName.TabIndex = 5;
             this.LbDatabaseName.Text = "Database:";
             // 
@@ -261,7 +273,7 @@
             this.PnCredentials.Controls.Add(this.LbPassword);
             this.PnCredentials.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnCredentials.Enabled = false;
-            this.PnCredentials.Location = new System.Drawing.Point(10, 119);
+            this.PnCredentials.Location = new System.Drawing.Point(10, 92);
             this.PnCredentials.Name = "PnCredentials";
             this.PnCredentials.Size = new System.Drawing.Size(399, 104);
             this.PnCredentials.TabIndex = 4;
@@ -272,7 +284,7 @@
             this.TbPassword.Location = new System.Drawing.Point(128, 53);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.PasswordChar = '*';
-            this.TbPassword.Size = new System.Drawing.Size(160, 26);
+            this.TbPassword.Size = new System.Drawing.Size(160, 20);
             this.TbPassword.TabIndex = 1;
             // 
             // LbUserName
@@ -281,7 +293,7 @@
             this.LbUserName.Location = new System.Drawing.Point(9, 20);
             this.LbUserName.Name = "LbUserName";
             this.LbUserName.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.LbUserName.Size = new System.Drawing.Size(93, 30);
+            this.LbUserName.Size = new System.Drawing.Size(63, 23);
             this.LbUserName.TabIndex = 9;
             this.LbUserName.Text = "User Name:";
             // 
@@ -289,7 +301,7 @@
             // 
             this.TbUserName.Location = new System.Drawing.Point(128, 24);
             this.TbUserName.Name = "TbUserName";
-            this.TbUserName.Size = new System.Drawing.Size(160, 26);
+            this.TbUserName.Size = new System.Drawing.Size(160, 20);
             this.TbUserName.TabIndex = 0;
             // 
             // LbPassword
@@ -298,7 +310,7 @@
             this.LbPassword.Location = new System.Drawing.Point(9, 49);
             this.LbPassword.Name = "LbPassword";
             this.LbPassword.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.LbPassword.Size = new System.Drawing.Size(82, 30);
+            this.LbPassword.Size = new System.Drawing.Size(56, 23);
             this.LbPassword.TabIndex = 6;
             this.LbPassword.Text = "Password:";
             // 
@@ -310,9 +322,9 @@
             this.CbAuthentication.Items.AddRange(new object[] {
             "Windows Authentication",
             "Sql Server Authentication"});
-            this.CbAuthentication.Location = new System.Drawing.Point(10, 91);
+            this.CbAuthentication.Location = new System.Drawing.Point(10, 71);
             this.CbAuthentication.Name = "CbAuthentication";
-            this.CbAuthentication.Size = new System.Drawing.Size(399, 28);
+            this.CbAuthentication.Size = new System.Drawing.Size(399, 21);
             this.CbAuthentication.TabIndex = 1;
             this.CbAuthentication.SelectedIndexChanged += new System.EventHandler(this.CbAuthentication_SelectedIndexChanged);
             // 
@@ -320,19 +332,19 @@
             // 
             this.LbAuthentication.AutoSize = true;
             this.LbAuthentication.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LbAuthentication.Location = new System.Drawing.Point(10, 61);
+            this.LbAuthentication.Location = new System.Drawing.Point(10, 48);
             this.LbAuthentication.Name = "LbAuthentication";
             this.LbAuthentication.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.LbAuthentication.Size = new System.Drawing.Size(116, 30);
+            this.LbAuthentication.Size = new System.Drawing.Size(78, 23);
             this.LbAuthentication.TabIndex = 2;
             this.LbAuthentication.Text = "Authentication:";
             // 
             // TbServerName
             // 
             this.TbServerName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TbServerName.Location = new System.Drawing.Point(10, 35);
+            this.TbServerName.Location = new System.Drawing.Point(10, 28);
             this.TbServerName.Name = "TbServerName";
-            this.TbServerName.Size = new System.Drawing.Size(399, 26);
+            this.TbServerName.Size = new System.Drawing.Size(399, 20);
             this.TbServerName.TabIndex = 0;
             // 
             // LbServerName
@@ -342,37 +354,19 @@
             this.LbServerName.Location = new System.Drawing.Point(10, 10);
             this.LbServerName.Name = "LbServerName";
             this.LbServerName.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.LbServerName.Size = new System.Drawing.Size(132, 25);
+            this.LbServerName.Size = new System.Drawing.Size(90, 18);
             this.LbServerName.TabIndex = 0;
             this.LbServerName.Text = "Sql Server Name:";
-            // 
-            // LbSeparator1
-            // 
-            this.LbSeparator1.AutoSize = true;
-            this.LbSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LbSeparator1.Location = new System.Drawing.Point(10, 532);
-            this.LbSeparator1.Name = "LbSeparator1";
-            this.LbSeparator1.Size = new System.Drawing.Size(0, 20);
-            this.LbSeparator1.TabIndex = 2;
-            // 
-            // LbSeparator2
-            // 
-            this.LbSeparator2.AutoSize = true;
-            this.LbSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LbSeparator2.Location = new System.Drawing.Point(10, 552);
-            this.LbSeparator2.Name = "LbSeparator2";
-            this.LbSeparator2.Size = new System.Drawing.Size(0, 20);
-            this.LbSeparator2.TabIndex = 7;
             // 
             // pgRun
             // 
             this.pgRun.Controls.Add(this.BtnCashFlow);
             this.pgRun.Controls.Add(this.BtnBudget);
             this.pgRun.Controls.Add(this.BtnClearWorksheets);
-            this.pgRun.Location = new System.Drawing.Point(4, 29);
+            this.pgRun.Location = new System.Drawing.Point(4, 22);
             this.pgRun.Name = "pgRun";
             this.pgRun.Padding = new System.Windows.Forms.Padding(3);
-            this.pgRun.Size = new System.Drawing.Size(425, 425);
+            this.pgRun.Size = new System.Drawing.Size(425, 446);
             this.pgRun.TabIndex = 2;
             this.pgRun.Text = "Run";
             this.pgRun.UseVisualStyleBackColor = true;
@@ -383,7 +377,7 @@
             this.BtnCashFlow.Name = "BtnCashFlow";
             this.BtnCashFlow.Size = new System.Drawing.Size(179, 36);
             this.BtnCashFlow.TabIndex = 3;
-            this.BtnCashFlow.Text = "Cash Flow ";
+            this.BtnCashFlow.Text = "Cash Flow";
             this.BtnCashFlow.UseVisualStyleBackColor = true;
             this.BtnCashFlow.Click += new System.EventHandler(this.BtnCashFlow_Click);
             // 
@@ -411,7 +405,7 @@
             // 
             this.pnMessages.Controls.Add(this.LbMessage);
             this.pnMessages.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnMessages.Location = new System.Drawing.Point(0, 458);
+            this.pnMessages.Location = new System.Drawing.Point(0, 472);
             this.pnMessages.Name = "pnMessages";
             this.pnMessages.Padding = new System.Windows.Forms.Padding(5);
             this.pnMessages.Size = new System.Drawing.Size(433, 64);
@@ -426,6 +420,24 @@
             this.LbMessage.TabIndex = 0;
             this.LbMessage.Text = "-";
             this.LbMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // LbSeparator1
+            // 
+            this.LbSeparator1.AutoSize = true;
+            this.LbSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LbSeparator1.Location = new System.Drawing.Point(10, 546);
+            this.LbSeparator1.Name = "LbSeparator1";
+            this.LbSeparator1.Size = new System.Drawing.Size(0, 13);
+            this.LbSeparator1.TabIndex = 2;
+            // 
+            // LbSeparator2
+            // 
+            this.LbSeparator2.AutoSize = true;
+            this.LbSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LbSeparator2.Location = new System.Drawing.Point(10, 559);
+            this.LbSeparator2.Name = "LbSeparator2";
+            this.LbSeparator2.Size = new System.Drawing.Size(0, 13);
+            this.LbSeparator2.TabIndex = 7;
             // 
             // CtlActionsPane
             // 
@@ -486,5 +498,6 @@
         private System.Windows.Forms.Button BtnClearWorksheets;
         private System.Windows.Forms.Panel pnMessages;
         private System.Windows.Forms.Label LbMessage;
+        private System.Windows.Forms.CheckBox chkIncludeBalanceSheet;
     }
 }

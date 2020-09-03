@@ -182,18 +182,20 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
+		public System.Data.Linq.Table<vwBalanceSheet> vwBalanceSheets
+		{
+			get
+			{
+				return this.GetTable<vwBalanceSheet>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="App.proc_EventLog")]
 		public int proc_EventLog([global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventMessage", DbType="NVarChar(MAX)")] string eventMessage, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EventTypeCode", DbType="SmallInt")] System.Nullable<short> eventTypeCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LogCode", DbType="NVarChar(20)")] ref string logCode)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), eventMessage, eventTypeCode, logCode);
 			logCode = ((string)(result.GetParameterValue(2)));
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowBankBalances", IsComposable=true)]
-		public IQueryable<fnFlowBankBalancesResult> fnFlowBankBalances([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashAccountCode", DbType="NVarChar(10)")] string cashAccountCode)
-		{
-			return this.CreateMethodCallQuery<fnFlowBankBalancesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashAccountCode);
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoryTotalCodes", IsComposable=true)]
@@ -206,12 +208,6 @@ namespace TradeControl.CashFlow.Data
 		public IQueryable<fnFlowCategoriesByTypeResult> fnFlowCategoriesByType([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashTypeCode", DbType="SmallInt")] System.Nullable<short> cashTypeCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CategoryTypeCode", DbType="SmallInt")] System.Nullable<short> categoryTypeCode)
 		{
 			return this.CreateMethodCallQuery<fnFlowCategoriesByTypeResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashTypeCode, categoryTypeCode);
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategory", IsComposable=true)]
-		public IQueryable<fnFlowCategoryResult> fnFlowCategory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashTypeCode", DbType="SmallInt")] System.Nullable<short> cashTypeCode)
-		{
-			return this.CreateMethodCallQuery<fnFlowCategoryResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashTypeCode);
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategoryCashCodes", IsComposable=true)]
@@ -233,6 +229,18 @@ namespace TradeControl.CashFlow.Data
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), category, categoryCode);
 			categoryCode = ((string)(result.GetParameterValue(1)));
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowCategory", IsComposable=true)]
+		public IQueryable<fnFlowCategoryResult> fnFlowCategory([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashTypeCode", DbType="SmallInt")] System.Nullable<short> cashTypeCode)
+		{
+			return this.CreateMethodCallQuery<fnFlowCategoryResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashTypeCode);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Cash.fnFlowBankBalances", IsComposable=true)]
+		public IQueryable<fnFlowBankBalancesResult> fnFlowBankBalances([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CashAccountCode", DbType="NVarChar(10)")] string cashAccountCode)
+		{
+			return this.CreateMethodCallQuery<fnFlowBankBalancesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cashAccountCode);
 		}
 	}
 	
@@ -2639,49 +2647,106 @@ namespace TradeControl.CashFlow.Data
 		}
 	}
 	
-	public partial class fnFlowBankBalancesResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="Cash.vwBalanceSheet")]
+	public partial class vwBalanceSheet
 	{
 		
-		private string _CashAccountCode;
+		private System.Nullable<long> _EntryNumber;
 		
-		private short _YearNumber;
+		private string _AssetCode;
+		
+		private string _AssetName;
+		
+		private System.Nullable<int> _CashModeCode;
+		
+		private short _LiquidityLevel;
 		
 		private System.DateTime _StartOn;
 		
-		private System.Nullable<decimal> _PaidBalance;
+		private System.Nullable<double> _Balance;
 		
-		public fnFlowBankBalancesResult()
+		private System.Nullable<bool> _IsEntry;
+		
+		public vwBalanceSheet()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10)")]
-		public string CashAccountCode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryNumber", DbType="BigInt")]
+		public System.Nullable<long> EntryNumber
 		{
 			get
 			{
-				return this._CashAccountCode;
+				return this._EntryNumber;
 			}
 			set
 			{
-				if ((this._CashAccountCode != value))
+				if ((this._EntryNumber != value))
 				{
-					this._CashAccountCode = value;
+					this._EntryNumber = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
-		public short YearNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssetCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string AssetCode
 		{
 			get
 			{
-				return this._YearNumber;
+				return this._AssetCode;
 			}
 			set
 			{
-				if ((this._YearNumber != value))
+				if ((this._AssetCode != value))
 				{
-					this._YearNumber = value;
+					this._AssetCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AssetName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string AssetName
+		{
+			get
+			{
+				return this._AssetName;
+			}
+			set
+			{
+				if ((this._AssetName != value))
+				{
+					this._AssetName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashModeCode", DbType="Int")]
+		public System.Nullable<int> CashModeCode
+		{
+			get
+			{
+				return this._CashModeCode;
+			}
+			set
+			{
+				if ((this._CashModeCode != value))
+				{
+					this._CashModeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LiquidityLevel", DbType="SmallInt NOT NULL")]
+		public short LiquidityLevel
+		{
+			get
+			{
+				return this._LiquidityLevel;
+			}
+			set
+			{
+				if ((this._LiquidityLevel != value))
+				{
+					this._LiquidityLevel = value;
 				}
 			}
 		}
@@ -2702,18 +2767,34 @@ namespace TradeControl.CashFlow.Data
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaidBalance", DbType="Money")]
-		public System.Nullable<decimal> PaidBalance
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Float")]
+		public System.Nullable<double> Balance
 		{
 			get
 			{
-				return this._PaidBalance;
+				return this._Balance;
 			}
 			set
 			{
-				if ((this._PaidBalance != value))
+				if ((this._Balance != value))
 				{
-					this._PaidBalance = value;
+					this._Balance = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsEntry", DbType="Bit")]
+		public System.Nullable<bool> IsEntry
+		{
+			get
+			{
+				return this._IsEntry;
+			}
+			set
+			{
+				if ((this._IsEntry != value))
+				{
+					this._IsEntry = value;
 				}
 			}
 		}
@@ -2820,230 +2901,6 @@ namespace TradeControl.CashFlow.Data
 				if ((this._CategoryCode != value))
 				{
 					this._CategoryCode = value;
-				}
-			}
-		}
-	}
-	
-	public partial class fnFlowCategoryResult
-	{
-		
-		private string _CategoryCode;
-		
-		private string _Category;
-		
-		private short _CategoryTypeCode;
-		
-		private System.Nullable<short> _CashModeCode;
-		
-		private System.Nullable<short> _CashTypeCode;
-		
-		private short _DisplayOrder;
-		
-		private short _IsEnabled;
-		
-		private string _InsertedBy;
-		
-		private System.DateTime _InsertedOn;
-		
-		private string _UpdatedBy;
-		
-		private System.DateTime _UpdatedOn;
-		
-		private System.Data.Linq.Binary _RowVer;
-		
-		public fnFlowCategoryResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string CategoryCode
-		{
-			get
-			{
-				return this._CategoryCode;
-			}
-			set
-			{
-				if ((this._CategoryCode != value))
-				{
-					this._CategoryCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Category
-		{
-			get
-			{
-				return this._Category;
-			}
-			set
-			{
-				if ((this._Category != value))
-				{
-					this._Category = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryTypeCode", DbType="SmallInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public short CategoryTypeCode
-		{
-			get
-			{
-				return this._CategoryTypeCode;
-			}
-			set
-			{
-				if ((this._CategoryTypeCode != value))
-				{
-					this._CategoryTypeCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashModeCode", DbType="SmallInt", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<short> CashModeCode
-		{
-			get
-			{
-				return this._CashModeCode;
-			}
-			set
-			{
-				if ((this._CashModeCode != value))
-				{
-					this._CashModeCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashTypeCode", DbType="SmallInt", UpdateCheck=UpdateCheck.Never)]
-		public System.Nullable<short> CashTypeCode
-		{
-			get
-			{
-				return this._CashTypeCode;
-			}
-			set
-			{
-				if ((this._CashTypeCode != value))
-				{
-					this._CashTypeCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="SmallInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public short DisplayOrder
-		{
-			get
-			{
-				return this._DisplayOrder;
-			}
-			set
-			{
-				if ((this._DisplayOrder != value))
-				{
-					this._DisplayOrder = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsEnabled", DbType="SmallInt NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public short IsEnabled
-		{
-			get
-			{
-				return this._IsEnabled;
-			}
-			set
-			{
-				if ((this._IsEnabled != value))
-				{
-					this._IsEnabled = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InsertedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string InsertedBy
-		{
-			get
-			{
-				return this._InsertedBy;
-			}
-			set
-			{
-				if ((this._InsertedBy != value))
-				{
-					this._InsertedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InsertedOn", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime InsertedOn
-		{
-			get
-			{
-				return this._InsertedOn;
-			}
-			set
-			{
-				if ((this._InsertedOn != value))
-				{
-					this._InsertedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedBy", DbType="NVarChar(50) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string UpdatedBy
-		{
-			get
-			{
-				return this._UpdatedBy;
-			}
-			set
-			{
-				if ((this._UpdatedBy != value))
-				{
-					this._UpdatedBy = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedOn", DbType="DateTime NOT NULL", UpdateCheck=UpdateCheck.Never)]
-		public System.DateTime UpdatedOn
-		{
-			get
-			{
-				return this._UpdatedOn;
-			}
-			set
-			{
-				if ((this._UpdatedOn != value))
-				{
-					this._UpdatedOn = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RowVer", AutoSync=AutoSync.Always, DbType="rowversion NOT NULL", CanBeNull=false, IsDbGenerated=true, IsVersion=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary RowVer
-		{
-			get
-			{
-				return this._RowVer;
-			}
-			set
-			{
-				if ((this._RowVer != value))
-				{
-					this._RowVer = value;
 				}
 			}
 		}
@@ -3186,6 +3043,166 @@ namespace TradeControl.CashFlow.Data
 				if ((this._ForecastTax != value))
 				{
 					this._ForecastTax = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fnFlowCategoryResult
+	{
+		
+		private string _CategoryCode;
+		
+		private string _Category;
+		
+		private System.Nullable<short> _CashModeCode;
+		
+		private System.Nullable<short> _DisplayOrder;
+		
+		public fnFlowCategoryResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CategoryCode", DbType="NVarChar(10)")]
+		public string CategoryCode
+		{
+			get
+			{
+				return this._CategoryCode;
+			}
+			set
+			{
+				if ((this._CategoryCode != value))
+				{
+					this._CategoryCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Category", DbType="NVarChar(50)")]
+		public string Category
+		{
+			get
+			{
+				return this._Category;
+			}
+			set
+			{
+				if ((this._Category != value))
+				{
+					this._Category = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashModeCode", DbType="SmallInt")]
+		public System.Nullable<short> CashModeCode
+		{
+			get
+			{
+				return this._CashModeCode;
+			}
+			set
+			{
+				if ((this._CashModeCode != value))
+				{
+					this._CashModeCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DisplayOrder", DbType="SmallInt")]
+		public System.Nullable<short> DisplayOrder
+		{
+			get
+			{
+				return this._DisplayOrder;
+			}
+			set
+			{
+				if ((this._DisplayOrder != value))
+				{
+					this._DisplayOrder = value;
+				}
+			}
+		}
+	}
+	
+	public partial class fnFlowBankBalancesResult
+	{
+		
+		private string _CashAccountCode;
+		
+		private short _YearNumber;
+		
+		private System.DateTime _StartOn;
+		
+		private System.Nullable<double> _Balance;
+		
+		public fnFlowBankBalancesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CashAccountCode", DbType="NVarChar(10)")]
+		public string CashAccountCode
+		{
+			get
+			{
+				return this._CashAccountCode;
+			}
+			set
+			{
+				if ((this._CashAccountCode != value))
+				{
+					this._CashAccountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearNumber", DbType="SmallInt NOT NULL")]
+		public short YearNumber
+		{
+			get
+			{
+				return this._YearNumber;
+			}
+			set
+			{
+				if ((this._YearNumber != value))
+				{
+					this._YearNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartOn", DbType="DateTime NOT NULL")]
+		public System.DateTime StartOn
+		{
+			get
+			{
+				return this._StartOn;
+			}
+			set
+			{
+				if ((this._StartOn != value))
+				{
+					this._StartOn = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Balance", DbType="Float")]
+		public System.Nullable<double> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
 				}
 			}
 		}

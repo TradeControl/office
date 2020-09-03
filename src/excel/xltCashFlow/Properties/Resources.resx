@@ -135,6 +135,12 @@
   <data name="TextAnalysis" xml:space="preserve">
     <value>ANALYSIS</value>
   </data>
+  <data name="TextBalanceSheet" xml:space="preserve">
+    <value>BALANCE SHEET</value>
+  </data>
+  <data name="TextCapital" xml:space="preserve">
+    <value>CAPITAL</value>
+  </data>
   <data name="TextClosingBalances" xml:space="preserve">
     <value>CLOSING BALANCE</value>
   </data>
@@ -142,7 +148,7 @@
     <value>CODE</value>
   </data>
   <data name="TextCompanyBalance" xml:space="preserve">
-    <value>Company Balance</value>
+    <value>COMPANY BALANCE</value>
   </data>
   <data name="TextDate" xml:space="preserve">
     <value>Date:</value>

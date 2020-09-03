@@ -55,3 +55,17 @@ Node version [3.28.3](https://github.com/tradecontrol/tc-nodecore). Changes for 
 - [x] Bitcoin miner cash code and account in Administration for fee processing
 - [x] VSTO templates: data context money fields to decimal
 - [x] MTD decimals v1.2.2
+
+## 3.15
+
+Node version [3.29.2](https://github.com/tradecontrol/tc-nodecore). [Balance Sheets](docs/tc_demo_balance_sheets.md)
+
+- [x] Account types in cash accounts
+- [x] Asset entry form
+- [x] Global coin type in Administration options
+- [x] Asset categories in Cash Totals for Gross/Net Profit calculations
+- [x] Fix CashFlow.xlsx vat decimal isssue
+- [x] Fix closing bank balances without period transactions
+- [x] Asset movement and depreciation in CashFlow.xlsx P&L 
+- [x] New Balance Sheet option in CashFlow.xlsx
+- [x] Client _clsInit_ class - on connect, configure the client to use the OS UOA where coin type is Fiat (Bitcoin UOA is not supported by the OS and the ```money``` type has insufficient decimals).

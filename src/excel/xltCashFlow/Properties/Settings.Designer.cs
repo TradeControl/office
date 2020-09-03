@@ -12,7 +12,7 @@ namespace TradeControl.CashFlow.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -32,16 +32,6 @@ namespace TradeControl.CashFlow.Properties {
             }
             set {
                 this["AuthenticationMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TC-PC01;Initial Catalog=tcBom;Integrated Security=True")]
-        public string tcBomConnectionString {
-            get {
-                return ((string)(this["tcBomConnectionString"]));
             }
         }
         
@@ -172,6 +162,18 @@ namespace TradeControl.CashFlow.Properties {
         public string tcNodeConnectionString {
             get {
                 return ((string)(this["tcNodeConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool IncludeBalanceSheet {
+            get {
+                return ((bool)(this["IncludeBalanceSheet"]));
+            }
+            set {
+                this["IncludeBalanceSheet"] = value;
             }
         }
     }
