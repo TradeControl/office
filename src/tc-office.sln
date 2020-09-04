@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A0218791-F
 		..\readme.md = ..\readme.md
 		..\docs\tc_cash_codes.md = ..\docs\tc_cash_codes.md
 		..\docs\tc_client_installation.md = ..\docs\tc_client_installation.md
+		..\docs\tc_demo_balance_sheet.xlsx = ..\docs\tc_demo_balance_sheet.xlsx
 		..\docs\tc_demo_balance_sheets.md = ..\docs\tc_demo_balance_sheets.md
 		..\docs\tc_demo_manufacturing.md = ..\docs\tc_demo_manufacturing.md
 		..\docs\tc_demo_services.md = ..\docs\tc_demo_services.md

@@ -284,7 +284,7 @@ Trade Control instances are nodes that can be connected together, such that BOM-
 
 Install the [bitcoin wallet](https://github.com/tradecontrol/tc-bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
 
-## License
+## Licence
 
 The Trade Control Code licence is issued by Trade Control Ltd under a [GNU General Public Licence v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
 

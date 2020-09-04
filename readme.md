@@ -48,7 +48,7 @@ Each client is released with a [SemVer](http://semver.org/) of its own and a bac
 
 [Greenprint Consultancy Ltd](http://www.green-print.net), environmentally responsible printing services.
 
-## License
+## Licence
 
 The Trade Control Code licence is issued by Trade Control Ltd under a [GNU General Public Licence v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) 
 
