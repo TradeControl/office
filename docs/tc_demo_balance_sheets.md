@@ -2,6 +2,10 @@
 
 It is a statutory requirement for all companies to submit both a P&L and Balance Sheet to the government. Trade Control can generate legally compliant, auditable versions of both. Because it is not a statutory requirement to be represented by a chartered accountant, you can optionally dispense with these expensive services and present the accounts yourself.  The following demonstration shows you how to prepare your balance sheet to do this.
 
+## Documentation
+
+The technical specification can be obtained from the author's [accompanying documentation](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_balance_sheet.md). 
+
 ## Requirements
 
 [Version 3.29](https://github.com/tradecontrol/tc-nodecore)
