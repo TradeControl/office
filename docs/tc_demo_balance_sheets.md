@@ -32,7 +32,7 @@ This balance sheet at the bottom of the statement is arithmetically and legally 
 2.	[Fixed assets](#fixed-assets) – premises, van and plant
 3.	[Long-term Liabilities](#long-term-liabilities) – company loan
 
-Also covered are explanations for dealing with [accruals](#accruals-and-prepayments) and how to include assets on the [P&L profit calculations](#profit-and-loss). Firstly, we must configure the system to account for business assets.
+Also covered are explanations for dealing with [accruals](#accruals-and-prepayments) and how to include assets on the [P&L profit calculations](#profit-and-loss). Finally, we [audit the accounts](#audit). Firstly, however, we must configure the system to account for business assets.
 
 ## Configuration
 
@@ -49,6 +49,8 @@ Assets are modelled in Cash Accounts. The Cash Account Type distinguishes betwee
 ![Cash Accounts](../img/balance_sheet_cash_accounts.png)
 
 Each asset account requires a liquidity value because a balance sheet is presented least liquid first (premises=50). Zero liquidity represents the most liquid asset (cash=0). It does not matter what these numbers are, only their order. You can close all these accounts, delete them or add others. 
+
+Going-concerns will have opening asset balances. Here we simulate that with a £1000 opening balance on Plant and Machinery.
 
 ### Assets and Liabilities
 
@@ -84,16 +86,16 @@ To post, change the Payment Entry Status to Posted. The Statement page is from t
 To record fixed assets involves double-entry. The asset is purchased in a Pay Out transaction of type TRADE (in the same way as any other purchase), and then double-entered into a Pay In transaction of the corresponding asset account. We are going to buy a machine tool and a van.
 
 1. Enter two new Cash Codes in Indirect Costs with Standard VAT Rate - 219 Machinery, 220 Vehicles
-2. Open Organisations and use the Quick Entry to add a Van Trader and a Machine Tool Vendor
-3. In the second month of trading (here Feb 20), use Payment Entry to buy a van for £2K and a machine tool for £1K
-4. Open Asset Entry and pay in £2K into the VEHICLE cash account (Feb 20) and pay out (write down) £500 each year. Post the first two entries. 
+2. Open Organisations and use the Quick Entry to add a Van Trader and a Machine Tool Merchant
+3. In the second month of trading, use Payment Entry to buy a van for £2K and a machine tool for £1K
+4. Open Asset Entry and pay in £2K into the VEHICLE cash account and pay out (write down) £500 each year. Post the first two entries. 
 5. Pay in £1K into PLANT AND MACHINERY and write off £250 each year end, posting the opening value and the first write down.
 
 Trading Type entry:
 
 ![Buy Fixed Asset](../img/balance_sheet_fixed_asset_buy.png)
 
-Asset Type double-entry:
+Asset Type double-entry minus the tax content:
 
 ![Fixed Asset](../img/balance_sheet_fixed_asset.png)
 
@@ -103,19 +105,19 @@ Like [fixed assets](#fixed-assets), long-term liabilities are also double-entry.
 
 The very first transaction of the current account is a transfer receipt of £10K, which represents the initial shareholding. Here we take out a company loan from the bank for a further £10K, which they deposit into the reserve account. We need to register the money as a long-term liability with a double-entry into an asset account that yields negative capital. In [Cash Codes](#casdh-codes) we enabled the Liabilities category which has negative polarity, along with a cash code for debt repayment.
 
-Firstly, we make a trading entry that pays in the loan into the reserve account, followed by the monthly pay outs including interest (which could be entered on a different cash code representing interest payments):
+Firstly, we make a trading entry that pays in the loan into the reserve account, followed by the monthly pay outs to-date including interest (which could be entered on a different cash code representing interest payments):
 
 ![Company Loan](../img/balance_sheet_company_loan.png)
 
 Secondly, we make the corresponding double-entry with the opposite polarity, followed by the pay offs without interest, which is a cost:
 
-![Debt Repayment](../img/balance_sheet_debt_replayment.png)
+![Debt Repayment](../img/balance_sheet_debt_repayment.png)
 
 In this way, the net increase in asset value as a result of a company loan is zero. On the trading side, these debt repayments would be accrued on the Company Statement, [as explained below](#accruals-and-prepayments) and therefore the loan is not free money.
 
 ### Intangible Assets
 
-You can add intangible or gifted assets that do not appear on the P&L. We are going to gift a building to the business and write 25% off every year. To do that, you just uncheck the P&L option. If you check it on, the business is guaranteed to make a technical loss for years to come and therefore pay no corporation tax whatsoever.
+You can add intangible or gifted assets that do not appear on the P&L, such as Intellectual Property. We are going to gift a building to the business and write 25% off every year. To do that, you just uncheck the P&L option. If you check it on, the depreciation is deducted from profit, which is a common technique for avoiding corporation tax.
 
 ![Premises](../img/balance_sheet_premises.png)
 
@@ -127,7 +129,7 @@ Although the balance sheet adds cash to the current account, the Trade Statement
 
 ### Cash Box Operation
 
-To withdraw cash from a bank, open Transfers and move money from the current account into the cash box:
+To withdraw cash from a bank, open Transfers and move money from the current account into the cash box during the first month of trading:
 
 ![Cash Withdrawal](../img/balance_sheet_cash_withdrawal.png)
 
@@ -151,15 +153,17 @@ The closing balances have changed, but the balance sheet CASH category is unalte
 
 ## Profit and Loss
 
-To obtain legal compliance, we need to add depreciation, stock movement and loan payoffs to the P&L. The system, however, is principally concerned with controlling internal operations and cash, not providing the external asset value of the business for shareholders and governments. Therefore, these two perspectives are kept separate. The first section of the Trade Statement ends with a summary that expresses performance during each period. Below that, the asset types are listed:
-
-![Profit Summary](../img/balance_sheet_profit_summary.png)
+To obtain legal compliance, we need to add depreciation, stock movement and loan payoffs to the P&L. The system, however, is principally concerned with controlling internal operations and cash, not providing the external asset value of the business for shareholders and governments. Therefore, these two perspectives are kept separate. The first section of the Trade Statement ends with a summary that expresses performance during each period. Below that, the asset types are listed.
 
 Changes in asset value need to be added into the calculations for gross and net profit. These totals are not native values but [calculated Cash Codes](tc_cash_codes.md#cash-totals). All we need to do is add in the Asset and Liability categories and they will be included in the calculation. 
 
 ![Gross Profit](../img/balance_sheet_cash_totals.png)
 
 It is worth noting that all these categories, codes and calculations are configurable because you construct them from the basic building blocks offered by the schema design.
+
+In the summary, the investment adds income to the P&L; while the vehicle and plant purchases deduct expenditure. The asset sections counter these transactions, which is reflected in the gross and net profit:
+
+![Profit Summary](../img/balance_sheet_profit_summary.png)
 
 ## Accruals and Prepayments
 
@@ -177,7 +181,7 @@ There are two ways to enter a payment in Trade Control: against invoices or agai
 
 1. Open Activities from the Maintenance menu and change the default status for Office Rent from Charged to Open.
 2. From Organisations Quick Entry add **The Landlord** and set Payment Days to zero.
-3. Raise a new task from Task Explorer against the landlord with the Activity set to Project, the title Rent and the action on date as the start-up date. Edit the task.
+3. Raise a new task from Task Explorer against the landlord with the Activity set to Project, the title **Rent** and the action on date as the start-up date. Edit the task.
 4. Add another Project activity task entitled **Rent 2019-20** 
 5. Add a Tasks with the Cash Code set to Office Rent, the Action On when rent is due and a rent of £1K pcm.
 6. Clone the task for each rental period to year end and change the Action On date 
@@ -197,8 +201,6 @@ The Company Statement shows us our forward position:
 
 ![Company Statement](../img/balance_sheet_accruals_statement.png)
 
-This statement tells us to transfer less funds into the reserve account.
-
 Finally, since we have made a lot of retrospective changes, open the Cash Statement and rebuild the period end close downs. The Trade Statement shows the rent in their correct periods, irrespective of payment dates. The additional rent is for *use of home as office* from the Services Demo.
 
 ![Accrued Values](../img/balance_sheet_accruals_pl.png)
@@ -208,6 +210,20 @@ Finally, since we have made a lot of retrospective changes, open the Cash Statem
 If you haven't already, hit the Rebuild button (!) in the Cash Statement. Asset Type cash accounts work the same as your bank account, with a projected and current balance. The key difference between trading accounts and asset accounts is that the former generates invoices connected to Tasks. Tasks model [workflows](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_functions.md#workflow) and workflows drive [trading networks](https://github.com/tradecontrol/tc-network). But otherwise, you can use the existing means to amend, reschedule or delete them.
 
 ![Cash Statement](../img/balance_sheet_cash_statement.png)
+
+## Audit
+
+To [check for correctness](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_balance_sheet.md#correctness), you only need to do two things:
+
+1. Verify that the current cash account balances match your bank account or bitcoin wallet
+2. Ensure that your unpaid sales and purchase invoices represent your current obligations. 
+
+As long as these check out, all historical balance sheets will check out too. That's why no skill is needed to generate the Trade Control version of the balance sheet. However, if there are issues, two reports can direct you to the cause: 
+
+- The [Balance Sheet Audit Report](Org_BalanceSheetAudit.pdf) on the Information menu, showing the asset value of individual debtors and creditors for each period end. 
+- The Organisation Statement can be opened as a report [by financial period](Org_AssetStatementAudit.pdf) in the Invoice Register, or [by organisation](Org_Statement.pdf) from the Enquiry form.
+
+
 
 ## Trade Statement
 

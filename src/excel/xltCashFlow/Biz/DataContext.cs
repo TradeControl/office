@@ -23,6 +23,7 @@ namespace TradeControl.CashFlow
         public DataContext(SqlConnection connection)
         {
             db = new Data.dbTradeControlDataContext(connection);
+            
         }
 
         #region public methods
@@ -51,6 +52,11 @@ namespace TradeControl.CashFlow
             db.Connection.Close();
         }
 
+        public int CommandTimeout
+        {
+            get { return db.CommandTimeout; }
+            set { db.CommandTimeout = value; }
+        }
         #endregion
 
         #region datasets

@@ -24,6 +24,7 @@ namespace TradeControl.CashFlow
             SqlUserName = Properties.Settings.Default.SqlUserName;
             SqlServerName = Properties.Settings.Default.SqlServerName;
             DatabaseName = Properties.Settings.Default.DatabaseName;
+            CommandTimeout = Properties.Settings.Default.CommandTimeout;
             Authentication = (AuthenticationMode)Properties.Settings.Default.AuthenticationMode;
             IncludeActivePeriods = Properties.Settings.Default.IncludeActivePeriods;
             IncludeOrderBook = Properties.Settings.Default.IncludeOrderBook;
@@ -65,7 +66,8 @@ namespace TradeControl.CashFlow
                 {
                     DataLoader loader = new DataLoader();
                     loader.Greyscale = Greyscale;
-                    if (loader.OpenCashFlow(conn,
+                    if (loader.OpenCashFlow(conn: conn, 
+                            commandTimeout: CommandTimeout,
                             includeActivePeriods: IncludeActivePeriods,
                             includeOrderBook: IncludeOrderBook,
                             includeBankBalances: IncludeBankBalances,
@@ -101,7 +103,7 @@ namespace TradeControl.CashFlow
                 {
                     DataLoader loader = new DataLoader();
                     loader.Greyscale = Greyscale;
-                    if (loader.OpenBudget(conn, IncludeActivePeriods, IncludeOrderBook))
+                    if (loader.OpenBudget(conn, CommandTimeout, IncludeActivePeriods, IncludeOrderBook))
                         LbMessage.Text = string.Empty;
                     else
                         LbMessage.Text = Properties.Resources.GenerationFailed;
@@ -146,6 +148,19 @@ namespace TradeControl.CashFlow
                     return new SqlConnection(DbConnectionString);
                 else
                     return null;
+            }
+        }
+
+        private int CommandTimeout
+        {
+            get
+            {
+                Properties.Settings.Default.CommandTimeout = (int)numCommandTimeout.Value;
+                return Properties.Settings.Default.CommandTimeout;
+            }
+            set
+            {
+                numCommandTimeout.Value = value;
             }
         }
 
@@ -201,6 +216,9 @@ namespace TradeControl.CashFlow
         }
 
         private string Password { get { return TbPassword.Text; } }
+
+
+
 
         public bool IncludeActivePeriods
         {
@@ -451,8 +469,17 @@ namespace TradeControl.CashFlow
         }
 
 
+
         #endregion
 
+        private void PnConnection_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
+
+        private void CbDatabaseName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

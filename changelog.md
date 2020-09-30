@@ -69,3 +69,14 @@ Node version [3.29.2](https://github.com/tradecontrol/tc-nodecore). [Balance She
 - [x] Asset movement and depreciation in CashFlow.xlsx P&L 
 - [x] New Balance Sheet option in CashFlow.xlsx
 - [x] Client _clsInit_ class - on connect, configure the client to use the OS UOA where coin type is Fiat (Bitcoin UOA is not supported by the OS and the ```money``` type has insufficient decimals).
+
+## 3.16
+
+Node version [3.29.4](https://github.com/tradecontrol/tc-nodecore). 
+
+- [x] Add command timeout to the Cash Flow actions pane (default 60 secs)
+- [x] Fix P&L asset liabilities polarity error
+- [x] [Balance Sheet Audit Report](docs/Org_BalanceSheetAudit.pdf) 
+- [x] [Organisation Statement Report](docs/Org_Statement.pdf)
+- [x] [Debtor/Creditor Audit Report](docs/Org_AssetStatementAudit.pdf)
+- [x] Remove references to Paid Values on Invoice Details and Cash Statements

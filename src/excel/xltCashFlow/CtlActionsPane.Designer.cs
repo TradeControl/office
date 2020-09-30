@@ -43,6 +43,8 @@
             this.chkIncludeOrderBook = new System.Windows.Forms.CheckBox();
             this.pgConnection = new System.Windows.Forms.TabPage();
             this.PnConnection = new System.Windows.Forms.Panel();
+            this.numCommandTimeout = new System.Windows.Forms.NumericUpDown();
+            this.LbCommandTimeout = new System.Windows.Forms.Label();
             this.CbDatabaseName = new System.Windows.Forms.ComboBox();
             this.LbDatabaseName = new System.Windows.Forms.Label();
             this.PnCredentials = new System.Windows.Forms.Panel();
@@ -69,6 +71,7 @@
             this.pgOptions.SuspendLayout();
             this.pgConnection.SuspendLayout();
             this.PnConnection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCommandTimeout)).BeginInit();
             this.PnCredentials.SuspendLayout();
             this.pgRun.SuspendLayout();
             this.pnMessages.SuspendLayout();
@@ -230,6 +233,8 @@
             // 
             // PnConnection
             // 
+            this.PnConnection.Controls.Add(this.numCommandTimeout);
+            this.PnConnection.Controls.Add(this.LbCommandTimeout);
             this.PnConnection.Controls.Add(this.CbDatabaseName);
             this.PnConnection.Controls.Add(this.LbDatabaseName);
             this.PnConnection.Controls.Add(this.PnCredentials);
@@ -243,6 +248,32 @@
             this.PnConnection.Padding = new System.Windows.Forms.Padding(10);
             this.PnConnection.Size = new System.Drawing.Size(419, 440);
             this.PnConnection.TabIndex = 1;
+            this.PnConnection.Paint += new System.Windows.Forms.PaintEventHandler(this.PnConnection_Paint);
+            // 
+            // numCommandTimeout
+            // 
+            this.numCommandTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.numCommandTimeout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numCommandTimeout.Location = new System.Drawing.Point(10, 263);
+            this.numCommandTimeout.Maximum = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.numCommandTimeout.Name = "numCommandTimeout";
+            this.numCommandTimeout.Size = new System.Drawing.Size(399, 20);
+            this.numCommandTimeout.TabIndex = 11;
+            // 
+            // LbCommandTimeout
+            // 
+            this.LbCommandTimeout.AutoSize = true;
+            this.LbCommandTimeout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LbCommandTimeout.Location = new System.Drawing.Point(10, 240);
+            this.LbCommandTimeout.Name = "LbCommandTimeout";
+            this.LbCommandTimeout.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.LbCommandTimeout.Size = new System.Drawing.Size(98, 23);
+            this.LbCommandTimeout.TabIndex = 10;
+            this.LbCommandTimeout.Text = "Command Timeout:";
             // 
             // CbDatabaseName
             // 
@@ -252,6 +283,7 @@
             this.CbDatabaseName.Name = "CbDatabaseName";
             this.CbDatabaseName.Size = new System.Drawing.Size(399, 21);
             this.CbDatabaseName.TabIndex = 2;
+            this.CbDatabaseName.SelectedIndexChanged += new System.EventHandler(this.CbDatabaseName_SelectedIndexChanged);
             this.CbDatabaseName.Enter += new System.EventHandler(this.CbDatabaseName_Enter);
             // 
             // LbDatabaseName
@@ -455,6 +487,7 @@
             this.pgConnection.ResumeLayout(false);
             this.PnConnection.ResumeLayout(false);
             this.PnConnection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numCommandTimeout)).EndInit();
             this.PnCredentials.ResumeLayout(false);
             this.PnCredentials.PerformLayout();
             this.pgRun.ResumeLayout(false);
@@ -499,5 +532,7 @@
         private System.Windows.Forms.Panel pnMessages;
         private System.Windows.Forms.Label LbMessage;
         private System.Windows.Forms.CheckBox chkIncludeBalanceSheet;
+        private System.Windows.Forms.Label LbCommandTimeout;
+        private System.Windows.Forms.NumericUpDown numCommandTimeout;
     }
 }

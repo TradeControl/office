@@ -34,6 +34,7 @@ namespace TradeControl.CashFlow
 
         #region Public Functions
         public bool OpenCashFlow(SqlConnection conn, 
+            int commandTimeout = 30,
             bool includeActivePeriods = false, 
             bool includeOrderBook = false, 
             bool includeBankBalances = false, 
@@ -53,7 +54,8 @@ namespace TradeControl.CashFlow
                 ClearWorksheet(CashFlow);
 
                 dataContext = new DataContext(conn);
-                dataContext.Open();
+                dataContext.CommandTimeout = commandTimeout;
+                dataContext.Open();                
 
                 SetActivePeriod(CashFlow, Properties.Resources.TextStatementTitle);
                 InitialiseWorksheet(CashFlow);
@@ -102,6 +104,7 @@ namespace TradeControl.CashFlow
         }
 
         public bool OpenBudget(SqlConnection conn, 
+                int commandTimeout = 30,
                 bool includeActivePeriods = false, 
                 bool includeOrderBook = false)
         {
@@ -113,6 +116,7 @@ namespace TradeControl.CashFlow
                 ClearWorksheet(Budget);
 
                 dataContext = new DataContext(conn);
+                dataContext.CommandTimeout = commandTimeout;
                 dataContext.Open();
 
                 SetActivePeriod(Budget, Properties.Resources.BudgetStatementTitle);
