@@ -113,7 +113,7 @@ Secondly, we make the corresponding double-entry with the opposite polarity, fol
 
 ![Debt Repayment](../img/balance_sheet_debt_repayment.png)
 
-In this way, the net increase in asset value as a result of a company loan is zero. On the trading side, these debt repayments would be accrued on the Company Statement, [as explained below](#accruals-and-prepayments) and therefore the loan is not free money.
+In this way, the company loan means the net increase in asset value is zero. On the trading side, these debt repayments would be accrued on the Company Statement, [as explained below](#accruals-and-prepayments) and therefore the loan is not free money.
 
 ### Intangible Assets
 
@@ -167,7 +167,7 @@ In the summary, the investment adds income to the P&L; while the vehicle and pla
 
 ## Accruals and Prepayments
 
-In regard to this accounting topic, it is possible to lose the will to live. However, you can avoid many of the pitfalls very simply because accruals are fundamental to the way Trade Control works. A classic example of accruals comes in the form of rent payments. 
+Regarding this accounting topic, it is possible to lose the will to live. However, you can avoid many of the pitfalls very simply because accruals are fundamental to the way Trade Control works. A classic example of accruals comes in the form of rent payments. 
 
 ### Problem  
 
@@ -207,9 +207,27 @@ Finally, since we have made a lot of retrospective changes, open the Cash Statem
 
 ## Cash Statement
 
-If you haven't already, hit the Rebuild button (!) in the Cash Statement. Asset Type cash accounts work the same as your bank account, with a projected and current balance. The key difference between trading accounts and asset accounts is that the former generates invoices connected to Tasks. Tasks model [workflows](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_functions.md#workflow) and workflows drive [trading networks](https://github.com/tradecontrol/tc-network). But otherwise, you can use the existing means to amend, reschedule or delete them.
+If you have not already, hit the Rebuild button (!) in the Cash Statement. Asset Type cash accounts work the same as your bank account, with a projected and current balance. The key difference between trading accounts and asset accounts is that the former generates invoices connected to Tasks. Tasks model [workflows](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_functions.md#workflow) and workflows drive [trading networks](https://github.com/tradecontrol/tc-network). But otherwise, you can use the existing means to amend, reschedule or delete them.
 
 ![Cash Statement](../img/balance_sheet_cash_statement.png)
+
+## Tax
+
+Corporation Tax and VAT are dynamically calculated and presented in two respective statements. Both have corresponding audit reports that itemise taxed transactions within each financial period. 
+
+### VAT
+
+VAT is audited separately from the balance sheet because it is paid quarterly. The [VAT Audit Report](Cash_VatAuditAccruals.pdf) lists both forward and historical transactions. To avoid VAT accruals, companies normally ensure that a quarter always falls due at the end of their financial year.
+
+From the Invoice Register, the VAT Totals page communicates how much is due in each quarter.  These values will be projected on the balance sheet. If you pay the first two quarters using Payment Entry (specifying the VAT cash code for the HMREV account), the amount of cash will be reduced by the reduction in liability, thereby maintaining balance:
+ 
+![Vat Statement](../img/balance_sheet_vat_statement.png)
+
+### Corporation Tax
+
+The [Corporation Tax Audit](Cash_CorpTaxAuditAccruals.pdf) is merely generated to confirm that the tax has been correctly configured (in Cash Totals) and that all relevant cash codes have been included. Rates are specified in the tax page of the Administrator.
+
+There is no corporation tax to pay by this demonstration start-up company, and therefore balance sheet tax section is zero.
 
 ## Audit
 
@@ -222,8 +240,6 @@ As long as these check out, all historical balance sheets will check out too. Th
 
 - The [Balance Sheet Audit Report](Org_BalanceSheetAudit.pdf) on the Information menu, showing the asset value of individual debtors and creditors for each period end. 
 - The Organisation Statement can be opened as a report [by financial period](Org_AssetStatementAudit.pdf) in the Invoice Register, or [by organisation](Org_Statement.pdf) from the Enquiry form.
-
-
 
 ## Trade Statement
 
