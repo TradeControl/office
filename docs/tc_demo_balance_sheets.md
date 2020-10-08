@@ -22,7 +22,7 @@ Open the [Cash Flow XLS](tc_client_installation.md#cash-flow) and switch off acc
 
 ![Action Pane](../img/balance_sheet_action_pane.png)
 
-Set the database connection to the test company and run the cash flow routine. You will get a Trade Statement that will be similar to the Before page in the following [sample spreadsheet](tc_demo_balance_sheet.xlsx):  
+Set the database connection to the test company and run the cash flow routine. You will get a Trade Statement that will be similar to the Basic page in the following [sample spreadsheet](tc_demo_balance_sheet.xlsx):  
 
 ![Basic Balance Sheet](../img/balance_sheet_basic.png)
 
@@ -219,15 +219,17 @@ Corporation Tax and VAT are dynamically calculated and presented in two respecti
 
 VAT is audited separately from the balance sheet because it is paid quarterly. The [VAT Audit Report](Cash_VatAuditAccruals.pdf) lists both forward and historical transactions. To avoid VAT accruals, companies normally ensure that a quarter always falls due at the end of their financial year.
 
-From the Invoice Register, the VAT Totals page communicates how much is due in each quarter.  These values will be projected on the balance sheet. If you pay the first two quarters using Payment Entry (specifying the VAT cash code for the HMREV account), the amount of cash will be reduced by the reduction in liability, thereby maintaining balance:
- 
+From the Invoice Register, the VAT Totals page communicates how much is due in each month and quarter. Although VAT is paid quarterly, the monthly values and payments are projected onto the balance sheet. The reason is that the balance sheet records on-going liabilities, not when payments are due. 
+
+For the demo, when paying the first two quarters using Payment Entry (specifying the VAT cash code for the HMREV account), the amount of cash will be reduced by the reduction in liability, thereby maintaining balance.
+
 ![Vat Statement](../img/balance_sheet_vat_statement.png)
 
 ### Corporation Tax
 
 The [Corporation Tax Audit](Cash_CorpTaxAuditAccruals.pdf) is merely generated to confirm that the tax has been correctly configured (in Cash Totals) and that all relevant cash codes have been included. Rates are specified in the tax page of the Administrator.
 
-There is no corporation tax to pay by this demonstration start-up company, and therefore balance sheet tax section is zero.
+There is no corporation tax to pay by this demonstration start-up company, and therefore balance sheet tax section is zero. The Corporation Tax Statement in the Invoice Register shows amounts due adjusted by the offset days (275 in the UK). The corporation tax on the balance sheet is entered at the end of the financial year, because it is a company liability from that point on, whether or not it needs to paid.
 
 ## Audit
 
@@ -243,7 +245,7 @@ As long as these check out, all historical balance sheets will check out too. Th
 
 ## Trade Statement
 
-When completed, the full Trade Statement should look like the After page in the [sample spreadsheet](tc_demo_balance_sheet.xlsx). The values in the year end columns are all you need to satisfy the accounting obligations set by the government.
+When completed, the full Trade Statement should look like the Advanced page in the [sample spreadsheet](tc_demo_balance_sheet.xlsx). The values in the year end columns are all you need to satisfy the accounting obligations set by the government.
 
 ![Balance Sheet](../img/balance_sheet_full.png)
 
