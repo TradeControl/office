@@ -1,6 +1,6 @@
 # Balance Sheets
 
-It is a statutory requirement for all companies to submit both a P&L and Balance Sheet to the government. Trade Control can generate legally compliant, auditable versions of both. Because it is not a statutory requirement to be represented by a chartered accountant, you can optionally dispense with these expensive services and present the accounts yourself.  The following demonstration shows you how to prepare your balance sheet to do this.
+It is a statutory requirement for all companies to submit both a P&L and Balance Sheet to the government. Trade Control can generate legally compliant, auditable versions of both. Because it is not a statutory requirement to be represented by a chartered accountant, it is possible to present these documents yourself.  The following demonstration shows you how to prepare your balance sheet so that you can do this.
 
 ## Documentation
 
@@ -245,7 +245,7 @@ As long as these check out, all historical balance sheets will check out too. Th
 
 ## Trade Statement
 
-When completed, the full Trade Statement should look like the Advanced page in the [sample spreadsheet](tc_demo_balance_sheet.xlsx). The values in the year end columns are all you need to satisfy the accounting obligations set by the government.
+When completed, the full Trade Statement should look like the Advanced page in the [sample spreadsheet](tc_demo_balance_sheet.xlsx). Use the values in the year end totals column to fill in the Company Tax Return and submit your Balance Sheet.
 
 ![Balance Sheet](../img/balance_sheet_full.png)
 
