@@ -80,3 +80,4 @@ Node version [3.29.4](https://github.com/tradecontrol/tc-nodecore).
 - [x] [Organisation Statement Report](docs/Org_Statement.pdf)
 - [x] [Debtor/Creditor Audit Report](docs/Org_AssetStatementAudit.pdf)
 - [x] Remove references to Paid Values on Invoice Details and Cash Statements
+- [x] Fix Organisation Quick Entry, Allocation Activity, New Task forms unbound format strings
