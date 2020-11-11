@@ -81,3 +81,5 @@ Node version [3.29.4](https://github.com/tradecontrol/tc-nodecore).
 - [x] [Debtor/Creditor Audit Report](docs/Org_AssetStatementAudit.pdf)
 - [x] Remove references to Paid Values on Invoice Details and Cash Statements
 - [x] Fix Organisation Quick Entry, Allocation Activity, New Task forms unbound format strings
+- [x] Fix sub-report Invoice_BankDetails - picking up asset accounts
+- [x] Fix LoadActivity() in Task Edit - field name DefaultText obsolete

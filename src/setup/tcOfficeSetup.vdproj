@@ -184,7 +184,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.35310, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.32275, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_2F9148053FB478B987517825751460ED"
@@ -440,15 +440,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Client"
-        "ProductCode" = "8:{F2B6757E-66BA-499D-9C9F-B617EE6B3FFD}"
-        "PackageCode" = "8:{817A9589-E471-4472-A699-41C764290CB5}"
+        "ProductCode" = "8:{9BA7477A-27AF-44AA-85C8-5978FCCDDC34}"
+        "PackageCode" = "8:{F51C9D0B-4128-4F4E-A20C-B08FDABB6014}"
         "UpgradeCode" = "8:{D18C36D4-6510-46B5-A8C2-49A17926D734}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.15.0"
+        "ProductVersion" = "8:3.16.3"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
