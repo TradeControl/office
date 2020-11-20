@@ -4,7 +4,7 @@ Trade Control (TC) is not a manufacturing system, it is generic; yet the design 
 
 ## Installation
 
-The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/tc-nodecore). Follow the instructions until you get to the screen below. If you want, you can replace the fiat payment system with a [bitcoin wallet](#bitcoin).
+The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/sqlnode). Follow the instructions until you get to the screen below. If you want, you can replace the fiat payment system with a [bitcoin wallet](#bitcoin).
 
 > **Note**
 >
@@ -278,11 +278,11 @@ In a real factory, you must do a lot more than that - exciting duties like stock
 
 ### Supply-Chains
 
-Trade Control instances are nodes that can be connected together, such that BOM-like workflows can operate over supply-chains. Install the [Trade Control Network](https://github.com/tradecontrol/tc-network) and try out the demo. It shows you how to schedule the entire supply chain for both customers and suppliers of the assembly.
+Trade Control instances are nodes that can be connected together, such that BOM-like workflows can operate over supply-chains. Install the [Trade Control Network](https://github.com/tradecontrol/network) and try out the demo. It shows you how to schedule the entire supply chain for both customers and suppliers of the assembly.
 
 ### Bitcoin
 
-Install the [bitcoin wallet](https://github.com/tradecontrol/tc-bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
+Install the [bitcoin wallet](https://github.com/tradecontrol/bitcoin) and follow the demo, replacing the [payment system](#payments) with payments from an HD Wallet.
 
 ## Licence
 

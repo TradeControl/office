@@ -20,7 +20,7 @@ The following record logs changes to Trade Control, first released on **2019.09.
 
 ## 3.11
 
-Includes interface changes required for the [Trade Control Network](https://github.com/tradecontrol/tc-network) project
+Includes interface changes required for the [Trade Control Network](https://github.com/tradecontrol/network) project
 
 - [x] Org transmission type
 - [x] Change log pages in Task and Invoice Editors 
@@ -32,13 +32,13 @@ Includes interface changes required for the [Trade Control Network](https://gith
 
 ## 3.12
 
-Node version [3.26.1](https://github.com/tradecontrol/tc-nodecore)
+Node version [3.26.1](https://github.com/tradecontrol/sqlnode)
 
 - [x] Change ```FLOAT``` types to ```DECIMAL``` - VSTO Cash Flow, COM Interop assembly, Document Schema and client.
 
 ## 3.13
 
-Node version [3.27.1](https://github.com/tradecontrol/tc-nodecore). First release of the [Trade Control Network](https://github.com/tradecontrol/tc-network)
+Node version [3.27.1](https://github.com/tradecontrol/sqlnode). First release of the [Trade Control Network](https://github.com/tradecontrol/network)
 
 - [x] Network Allocations
 - [x] Network Invoices
@@ -47,7 +47,7 @@ Node version [3.27.1](https://github.com/tradecontrol/tc-nodecore). First releas
 
 ## 3.14
 
-Node version [3.28.3](https://github.com/tradecontrol/tc-nodecore). Changes for the [Trade Control Bitcoin](https://github.com/tradecontrol/tc-bitcoin) project.
+Node version [3.28.3](https://github.com/tradecontrol/sqlnode). Changes for the [Trade Control Bitcoin](https://github.com/tradecontrol/bitcoin) project.
 
 - [x] Remove default windows currency symbol and convert money types to ```DECIMAL(18,5)```
 - [x] Add bitcoin payment address to invoice mirrors
@@ -58,7 +58,7 @@ Node version [3.28.3](https://github.com/tradecontrol/tc-nodecore). Changes for 
 
 ## 3.15
 
-Node version [3.29.2](https://github.com/tradecontrol/tc-nodecore). [Balance Sheets](docs/tc_demo_balance_sheets.md)
+Node version [3.29.2](https://github.com/tradecontrol/sqlnode). [Balance Sheets](docs/tc_demo_balance_sheets.md)
 
 - [x] Account types in cash accounts
 - [x] Asset entry form
@@ -72,7 +72,7 @@ Node version [3.29.2](https://github.com/tradecontrol/tc-nodecore). [Balance She
 
 ## 3.16
 
-Node version [3.29.4](https://github.com/tradecontrol/tc-nodecore). 
+Node version [3.29.4](https://github.com/tradecontrol/sqlnode). 
 
 - [x] Add command timeout to the Cash Flow actions pane (default 60 secs)
 - [x] Fix P&L asset liabilities polarity error

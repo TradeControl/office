@@ -13,7 +13,7 @@ Then add an Sql database on the server called **tcDemo**, configured to Basic.
 
 3. Open the **tcDemo** database and add the VM IP Address to the firewall.
 
-4. Login and turn off IE Enhanced Security and download [tcNodeConfigSetup.zip](https://github.com/tradecontrol/tc-nodecore). Follow the configuration instructions until you have installed one of the demos. 
+4. Login and turn off IE Enhanced Security and download [tcNodeConfigSetup.zip](https://github.com/tradecontrol/sqlnode). Follow the configuration instructions until you have installed one of the demos. 
 
 ## Frontend
 
@@ -27,7 +27,7 @@ Then add an Sql database on the server called **tcDemo**, configured to Basic.
 - [tcOfficeTemplates](../src/installation/tcOfficeTemplates.zip)
 - [tcOfficeMTD](../src/installation/tcOfficeMTD.zip)
 
-4. Install the Office Client and the MTD. Open the TC-Office Client.
+4. Install the Office Client and the MTD. Open the Office Client.
 
 5. Specify the Data Source: delete the default Windows connection and modify the Azure template by replacing the tags with their actual values.
 

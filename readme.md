@@ -1,6 +1,6 @@
 # Trade Control - Office
 
-An MS Office client for the [Trade Control](https://github.com/tradecontrol/tc-nodecore) management information system.
+An MS Office client for the [Trade Control](https://github.com/tradecontrol/sqlnode) management information system.
 
 It is a free open source alternative to conventional accounting and order processing apps for Office Business 365 subscribers.
 
@@ -21,7 +21,7 @@ It is a free open source alternative to conventional accounting and order proces
 
 Supporting material describes how [cash transactions](docs/tc_cash_codes.md) are modelled.
 
-For supply-chain scheduling, refer to the demo in the [Trade Control Network](https://github.com/tradecontrol/tc-network) repository. If you are interested in making Bitcoin your Unit of Account, install the [Commercial Wallet](https://github.com/tradecontrol/tc-bitcoin) and follow the instructions provided.
+For supply-chain scheduling, refer to the demo in the [Trade Control Network](https://github.com/tradecontrol/network) repository. If you are interested in making Bitcoin your Unit of Account, install the [Commercial Wallet](https://github.com/tradecontrol/bitcoin) and follow the instructions provided.
 
 ### Visual Studio Solution
 

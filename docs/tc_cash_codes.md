@@ -3,7 +3,7 @@
 
 The demos cover the structure of activities and tasks, but the classification of cash transactions is pre-configured by the Basic Setup. To address that, the following explanation explains how it is structured so you can create a meaningful configuration for your own business. 
 
-Install the [Basic Setup](https://github.com/tradecontrol/tc-nodecore) and refer to Settings/Definitions for concrete examples.
+Install the [Basic Setup](https://github.com/tradecontrol/sqlnode) and refer to Settings/Definitions for concrete examples.
 
 ## Categories and Cash Codes
 

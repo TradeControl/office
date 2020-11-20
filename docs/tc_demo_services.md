@@ -21,7 +21,7 @@ This demo shows you how to set up and manage these processes.
 
 ## Installation
 
-The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/tc-nodecore). Follow the instructions until you get to the screen below. 
+The demo is installed by the [Trade Control Configurator](https://github.com/tradecontrol/sqlnode). Follow the instructions until you get to the screen below. 
 
 ![Demo Install](../img/services_install.jpg)
 

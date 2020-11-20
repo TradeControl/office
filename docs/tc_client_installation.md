@@ -20,7 +20,7 @@ Pre-requisite: Office 365 Business 64 bit.
 
 > If your machine is 32 bit, [re-compile the solution](../readme.md#visual-studio-solution) with an alternative build target.
 
-First, if not already available, [install and configure](https://github.com/tradecontrol/tc-nodecore) an instance of Trade Control in Azure Sql and add data users. Use Azure Portal to register your fixed IP Address with the database firewall. Then install the following on your machine:
+First, if not already available, [install and configure](https://github.com/tradecontrol/sqlnode) an instance of Trade Control in Azure Sql and add data users. Use Azure Portal to register your fixed IP Address with the database firewall. Then install the following on your machine:
 
 - [Office client installer](../src/installation/tcOfficeClient.zip)
 - [Cash flow and documentation templates](../src/installation/tcOfficeTemplates.zip)
@@ -30,7 +30,7 @@ Alternatively, if you want to evaluate the system, you can replicate the [pre-re
 
 ### Options
 
-The Trade Control client is installed into the user's local _AppData_ folder. There are two open modes: compiled and un-compiled. If you are using the [Bitcoin Wallet](https://github.com/tradecontrol/tc-bitcoin), you must use the Native Version, since Bitcoin is not supported by the Windows OS as a Unit of Account and the client must re-configure itself locally.
+The Trade Control client is installed into the user's local _AppData_ folder. There are two open modes: compiled and un-compiled. If you are using the [Bitcoin Wallet](https://github.com/tradecontrol/bitcoin), you must use the Native Version, since Bitcoin is not supported by the Windows OS as a Unit of Account and the client must re-configure itself locally.
 
 #### Native Version
 

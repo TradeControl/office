@@ -8,13 +8,13 @@ The technical specification can be obtained from the author's [accompanying docu
 
 ## Requirements
 
-[Version 3.29](https://github.com/tradecontrol/tc-nodecore)
+[Version 3.29](https://github.com/tradecontrol/sqlnode)
 
 [Client and Trade Statements](tc_client_installation.md#installation)
 
 ## Data
 
-First install a test company trading in fiat using the [Node Configurator](https://github.com/tradecontrol/tc-nodecore#demos), then install the Services Demo with the Pay option selected. 
+First install a test company trading in fiat using the [Node Configurator](https://github.com/tradecontrol/sqlnode#demos), then install the Services Demo with the Pay option selected. 
 
 ## Basic Implementation
 
@@ -207,7 +207,7 @@ Finally, since we have made a lot of retrospective changes, open the Cash Statem
 
 ## Cash Statement
 
-If you have not already, hit the Rebuild button (!) in the Cash Statement. Asset Type cash accounts work the same as your bank account, with a projected and current balance. The key difference between trading accounts and asset accounts is that the former generates invoices connected to Tasks. Tasks model [workflows](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_functions.md#workflow) and workflows drive [trading networks](https://github.com/tradecontrol/tc-network). But otherwise, you can use the existing means to amend, reschedule or delete them.
+If you have not already, hit the Rebuild button (!) in the Cash Statement. Asset Type cash accounts work the same as your bank account, with a projected and current balance. The key difference between trading accounts and asset accounts is that the former generates invoices connected to Tasks. Tasks model [workflows](https://github.com/iamonnox/tradecontrol/blob/master/docs/tc_functions.md#workflow) and workflows drive [trading networks](https://github.com/tradecontrol/network). But otherwise, you can use the existing means to amend, reschedule or delete them.
 
 ![Cash Statement](../img/balance_sheet_cash_statement.png)
 
