@@ -5,21 +5,8 @@ VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A0218791-FD24-4922-88E4-247AC2039E1A}"
 	ProjectSection(SolutionItems) = preProject
-		..\docs\Cash_CorpTaxAuditAccruals.pdf = ..\docs\Cash_CorpTaxAuditAccruals.pdf
-		..\docs\Cash_VatAuditAccruals.pdf = ..\docs\Cash_VatAuditAccruals.pdf
 		..\changelog.md = ..\changelog.md
-		..\docs\Org_AssetStatementAudit.pdf = ..\docs\Org_AssetStatementAudit.pdf
-		..\docs\Org_BalanceSheetAudit.pdf = ..\docs\Org_BalanceSheetAudit.pdf
-		..\docs\Org_Statement.pdf = ..\docs\Org_Statement.pdf
 		..\readme.md = ..\readme.md
-		..\docs\tc_cash_codes.md = ..\docs\tc_cash_codes.md
-		..\docs\tc_client_installation.md = ..\docs\tc_client_installation.md
-		..\docs\tc_demo_balance_sheet.xlsx = ..\docs\tc_demo_balance_sheet.xlsx
-		..\docs\tc_demo_balance_sheets.md = ..\docs\tc_demo_balance_sheets.md
-		..\docs\tc_demo_manufacturing.md = ..\docs\tc_demo_manufacturing.md
-		..\docs\tc_demo_services.md = ..\docs\tc_demo_services.md
-		..\docs\tc_mtd_uk.md = ..\docs\tc_mtd_uk.md
-		..\docs\tc_testing.md = ..\docs\tc_testing.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{96699F18-CBEB-4AD9-B68C-8A79A54FFF44}"
