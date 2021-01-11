@@ -4,8 +4,6 @@ An MS Office client for the [Trade Control](https://tradecontrol.github.io) mana
 
 First published on 24 September 2019
 
-[development schedule](changelog.md)
-
 ## Documentation
 
 - [overview](https://tradecontrol.github.io/app)

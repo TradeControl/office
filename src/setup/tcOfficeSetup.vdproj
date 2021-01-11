@@ -15,14 +15,14 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_00A5E5278031B053AFCD5562EF8C52BF"
+        "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2F9148053FB478B987517825751460ED"
-        "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
+        "MsmKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,7 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F9148053FB478B987517825751460ED"
+        "OwnerKey" = "8:_00A5E5278031B053AFCD5562EF8C52BF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -180,14 +180,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2F9148053FB478B987517825751460ED"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_00A5E5278031B053AFCD5562EF8C52BF"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.32275, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.30349, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2F9148053FB478B987517825751460ED"
+                    "_00A5E5278031B053AFCD5562EF8C52BF"
                     {
                     "Name" = "8:TradeControl.Documents.Word.Schema.dll"
                     "Attributes" = "3:512"
@@ -440,15 +440,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Client"
-        "ProductCode" = "8:{9BA7477A-27AF-44AA-85C8-5978FCCDDC34}"
-        "PackageCode" = "8:{F51C9D0B-4128-4F4E-A20C-B08FDABB6014}"
+        "ProductCode" = "8:{4CEC0C5C-E9C8-41D7-A4D4-0E99F0D1B71C}"
+        "PackageCode" = "8:{00A37063-03ED-4FCC-A633-2F67285FB1A5}"
         "UpgradeCode" = "8:{D18C36D4-6510-46B5-A8C2-49A17926D734}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.16.3"
+        "ProductVersion" = "8:3.17.1"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
