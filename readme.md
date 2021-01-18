@@ -1,17 +1,11 @@
 # Trade Control - Office
 
-An MS Office client for the [Trade Control](https://tradecontrol.github.io) management information system.
-
 First published on 24 September 2019
 
 ## Documentation
 
-- [overview](https://tradecontrol.github.io/app)
-- [installation](https://tradecontrol.github.io/tutorials/installing-office)
-- [company accounts](https://tradecontrol.github.io/tutorials/balance-sheet)
-- [mtd vat submissions](https://tradecontrol.github.io/tutorials/digital-tax)
-- [services tutorial](https://tradecontrol.github.io/tutorials/services)
-- [manufacturing tutorial](https://tradecontrol.github.io/tutorials/manufacturing)
+- [mis](https://tradecontrol.github.io/mis)
+- [accounts](https://tradecontrol.github.io/accounts)
 
 ## Versioning
 

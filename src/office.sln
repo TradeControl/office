@@ -83,6 +83,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{96699F18-CBE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "installation", "installation", "{EAB7026F-356D-4BBD-ACF6-95E98C1CBF0D}"
 	ProjectSection(SolutionItems) = preProject
+		installation\tcOfficeCashFlow.zip = installation\tcOfficeCashFlow.zip
 		installation\tcOfficeClient.zip = installation\tcOfficeClient.zip
 		installation\tcOfficeMTD.zip = installation\tcOfficeMTD.zip
 		installation\tcOfficeTemplates.zip = installation\tcOfficeTemplates.zip
