@@ -4,8 +4,8 @@ First published on 24 September 2019
 
 ## Documentation
 
-- [mis](https://tradecontrol.github.io/mis)
 - [accounts](https://tradecontrol.github.io/accounts)
+- [mis](https://tradecontrol.github.io/mis)
 
 ## Versioning
 
