@@ -1,5 +1,5 @@
-# Changes
+# Change Log
 
-Proposed changes to the next Office release. Checked items are completed but not yet released in the master commit.
+Changes to 3.18.1, released February 2020.
 
-- no outstanding changes
+> An historical log of changes to the beta version can be found on the author's accompanying repository.
