@@ -184,7 +184,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.30349, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.26301, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
                     "_00A5E5278031B053AFCD5562EF8C52BF"
@@ -440,15 +440,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Client"
-        "ProductCode" = "8:{B7B448A6-7D90-485D-B93E-4470672600D9}"
-        "PackageCode" = "8:{8BD7FC26-4228-48B9-B588-F6FB3424364E}"
+        "ProductCode" = "8:{48E1A718-6EF8-4A4E-8F72-2DE3824E6C67}"
+        "PackageCode" = "8:{79DA5FF7-A84E-47A3-913B-7AA1DFD8E5F0}"
         "UpgradeCode" = "8:{D18C36D4-6510-46B5-A8C2-49A17926D734}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.18.1"
+        "ProductVersion" = "8:3.18.2"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -563,7 +563,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0ADB8F1575274E48BB23E23107C9F50B"
             {
-            "Name" = "8:TC-Office Client Access"
+            "Name" = "8:Trade Control Access"
             "Arguments" = "8:"
             "Description" = "8:Trade Control Office Cusomisable Client"
             "ShowCmd" = "3:1"
@@ -577,7 +577,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_1539B98D33B4432BAD37F17C1456CCD3"
             {
-            "Name" = "8:TC-Office Client"
+            "Name" = "8:Trade Control Office"
             "Arguments" = "8:"
             "Description" = "8:Trade Control Office Client"
             "ShowCmd" = "3:1"
@@ -933,7 +933,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_27D54F1629FF40DD85A966F989DE611F"
             {
-            "SourcePath" = "8:..\\word\\Documents\\obj\\Release\\TradeControl.Documents.Word.dll"
+            "SourcePath" = "8:..\\word\\Documents\\obj\\Debug\\TradeControl.Documents.Word.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
