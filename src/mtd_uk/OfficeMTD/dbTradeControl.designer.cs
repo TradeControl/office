@@ -22,7 +22,7 @@ namespace TradeControl.Tax.Office
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="tcTHEBUS")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="tcNode")]
 	public partial class dbTradeControlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,7 +33,7 @@ namespace TradeControl.Tax.Office
     #endregion
 		
 		public dbTradeControlDataContext() : 
-				base(global::TradeControl.Tax.Office.Properties.Settings.Default.tcTHEBUSConnectionString, mappingSource)
+				base(global::TradeControl.Tax.Office.Properties.Settings.Default.tcNodeConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -83,25 +83,25 @@ namespace TradeControl.Tax.Office
 		
 		private System.Nullable<System.DateTime> _StartOn;
 		
-		private System.Nullable<decimal> _HomeSales;
+		private System.Nullable<double> _HomeSales;
 		
-		private System.Nullable<decimal> _HomePurchases;
+		private System.Nullable<double> _HomePurchases;
 		
-		private System.Nullable<decimal> _ExportSales;
+		private System.Nullable<double> _ExportSales;
 		
-		private System.Nullable<decimal> _ExportPurchases;
+		private System.Nullable<double> _ExportPurchases;
 		
-		private System.Nullable<decimal> _HomeSalesVat;
+		private System.Nullable<double> _HomeSalesVat;
 		
-		private System.Nullable<decimal> _HomePurchasesVat;
+		private System.Nullable<double> _HomePurchasesVat;
 		
-		private System.Nullable<decimal> _ExportSalesVat;
+		private System.Nullable<double> _ExportSalesVat;
 		
-		private System.Nullable<decimal> _ExportPurchasesVat;
+		private System.Nullable<double> _ExportPurchasesVat;
 		
-		private System.Nullable<decimal> _VatAdjustment;
+		private System.Nullable<double> _VatAdjustment;
 		
-		private System.Nullable<decimal> _VatDue;
+		private System.Nullable<double> _VatDue;
 		
 		public vwTaxVatTotal()
 		{
@@ -171,8 +171,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> HomeSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSales", DbType="Float")]
+		public System.Nullable<double> HomeSales
 		{
 			get
 			{
@@ -187,8 +187,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> HomePurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchases", DbType="Float")]
+		public System.Nullable<double> HomePurchases
 		{
 			get
 			{
@@ -203,8 +203,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> ExportSales
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSales", DbType="Float")]
+		public System.Nullable<double> ExportSales
 		{
 			get
 			{
@@ -219,8 +219,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> ExportPurchases
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchases", DbType="Float")]
+		public System.Nullable<double> ExportPurchases
 		{
 			get
 			{
@@ -235,8 +235,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> HomeSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomeSalesVat", DbType="Float")]
+		public System.Nullable<double> HomeSalesVat
 		{
 			get
 			{
@@ -251,8 +251,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> HomePurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HomePurchasesVat", DbType="Float")]
+		public System.Nullable<double> HomePurchasesVat
 		{
 			get
 			{
@@ -267,8 +267,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> ExportSalesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportSalesVat", DbType="Float")]
+		public System.Nullable<double> ExportSalesVat
 		{
 			get
 			{
@@ -283,8 +283,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> ExportPurchasesVat
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExportPurchasesVat", DbType="Float")]
+		public System.Nullable<double> ExportPurchasesVat
 		{
 			get
 			{
@@ -299,8 +299,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatAdjustment", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> VatAdjustment
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatAdjustment", DbType="Float")]
+		public System.Nullable<double> VatAdjustment
 		{
 			get
 			{
@@ -315,8 +315,8 @@ namespace TradeControl.Tax.Office
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Decimal(38,5)")]
-		public System.Nullable<decimal> VatDue
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VatDue", DbType="Float")]
+		public System.Nullable<double> VatDue
 		{
 			get
 			{

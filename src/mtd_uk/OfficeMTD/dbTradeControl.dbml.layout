@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbTradeControl">
   <DataContextMoniker Name="/dbTradeControlDataContext" />
   <nestedChildShapes>
-    <classShape Id="41156ee6-32d2-49cd-bb67-ab59d1175851" absoluteBounds="4.5, 1.75, 2, 3.5016097005208326">
+    <classShape Id="06111e96-dccc-4efa-8a7c-564211b50ba7" absoluteBounds="4.75, 2.125, 2, 3.5016097005208326">
       <DataClassMoniker Name="/dbTradeControlDataContext/vwTaxVatTotal" />
       <nestedChildShapes>
-        <elementListCompartment Id="114fa2e2-c4a5-4b8a-8d34-107affea7809" absoluteBounds="4.515, 2.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0d441478-c7ad-41e8-8bec-3b3207197e7d" absoluteBounds="4.765, 2.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

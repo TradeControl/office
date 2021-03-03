@@ -208,15 +208,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Vat Export"
-        "ProductCode" = "8:{A7091066-46D1-4FBC-B318-0F35AC0D96BF}"
-        "PackageCode" = "8:{D0ECF8AD-DA07-4009-ACAF-26B6FDCE84C8}"
+        "ProductCode" = "8:{4652C682-CB7B-4C53-B5F4-B2BBE8A3124E}"
+        "PackageCode" = "8:{D8875A1E-F0DE-430F-91D6-946DE6119696}"
         "UpgradeCode" = "8:{E4226633-67D0-4532-A008-9CD0B3C5071B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.2.2"
+        "ProductVersion" = "8:1.3.1"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -730,7 +730,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BB49F38CB26E4648BDCF5B29B6879ED0"
             {
-            "SourcePath" = "8:..\\OfficeMTD\\obj\\Debug\\TradeControl.Tax.Office.dll"
+            "SourcePath" = "8:..\\OfficeMTD\\obj\\Release\\TradeControl.Tax.Office.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B19F05A375974FA682E9DC42584C2CEF"
