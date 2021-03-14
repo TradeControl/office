@@ -8,7 +8,7 @@ using System.Security;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Trade Control Ltd")]
 [assembly: AssemblyProduct("Trade Control")]
-[assembly: AssemblyCopyright("GNU General Public License v3.0")]
+[assembly: AssemblyCopyright("Copyright © Trade Control 2020-21")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
