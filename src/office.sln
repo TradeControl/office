@@ -94,7 +94,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "access", "access", "{29A2A4
 		access\CTCnode_3.accdr = access\CTCnode_3.accdr
 		access\CTCnode_3.ico = access\CTCnode_3.ico
 		access\TCnode_3.accdb = access\TCnode_3.accdb
-		access\TCnode_3.accde = access\TCnode_3.accde
 		access\TCnode_3.ico = access\TCnode_3.ico
 		access\TCnode_local.accdb = access\TCnode_local.accdb
 	EndProjectSection
