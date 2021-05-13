@@ -1,8 +1,7 @@
 # Change Log
 
-Changes to 3.18, released February 2020.
+Changes to 3.18, released February 2021.
 
-> An historical log of changes to the beta version can be found on the author's accompanying repository.
 
 ### 3.19
 
