@@ -387,7 +387,8 @@ namespace TradeControl.CashFlow
             foreach (Data.fnFlowCategoryResult category in categories)
             {
                 curRow++;
-                ws.Cells[curRow, 1].Value = category.Category;
+                ws.Cells[curRow, 1].Value = category.CategoryCode;
+                ws.Cells[curRow, 2].Value = category.Category;
                 int catRow = CategoryRow(ws, category.CategoryCode);
                 for (int curX = 4; curX <= lastCol; curX++)
                     ws.Cells[curRow, curX].Formula = $"={Column(curX)}{catRow}";
@@ -460,7 +461,8 @@ namespace TradeControl.CashFlow
             {
                 curRow++;
                 ws.Cells[curRow, 1].EntireRow.Locked = true;
-                ws.Cells[curRow, 1].Value = total.Category;
+                ws.Cells[curRow, 1].Value = "=" + "\"" + total.CategoryCode + "\"";
+                ws.Cells[curRow, 2].Value = total.Category;
                 ws.Cells[curRow, 3].Value = "=" + "\"" + total.CategoryCode + "\"";                
             }
 
