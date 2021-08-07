@@ -20,7 +20,7 @@
     <PublishUrl>..\..\Installation\CashFlow\</PublishUrl>
     <InstallUrl />
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>2.3.1.6</ApplicationVersion>
+    <ApplicationVersion>2.3.1.7</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>

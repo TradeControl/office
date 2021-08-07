@@ -183,9 +183,14 @@ namespace TradeControl.CashFlow
             }
         }
 
-        static int CategoryRow(WorksheetBase ws, string categoryCode)
+        int CategoryRow(WorksheetBase ws, string categoryCode)
         {
-            return ws.Range["C1"].EntireColumn.Find(What:categoryCode).Row;            
+            int row = ws.Range["C1"].EntireColumn.Find(What: categoryCode, SearchDirection: Excel.XlSearchDirection.xlNext, MatchCase: true).Row;
+
+            while (ws.Cells[row, 3].Value != categoryCode)
+                row = ws.Range[$"C{++row}:C{curRow}"].Find(What: categoryCode, SearchDirection: Excel.XlSearchDirection.xlNext, MatchCase: true).Row;
+
+            return row;
         }
 
         private void FreezeFrames()

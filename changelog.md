@@ -15,4 +15,5 @@ Changes to 3.18, released February 2021.
 
 - [x] Update invoice header totals automatically when adding/subtracting tasks and items
 - [x] Fix - cancel invoices not working in Accounts Mode
-- [x] Show record selectors in editable continuous forms  
+- [x] Show record selectors in editable continuous forms 
+- [x] Fix xltCashFlow - DataLoader.CategoryRow()  
