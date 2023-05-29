@@ -11,8 +11,8 @@
 
 ## Documentation
 
-- [accounts](https://tradecontrol.github.io/accounts)
-- [mis](https://tradecontrol.github.io/mis)
+- [accounts](https://tradecontrol.github.io/tutorials/cash-book)
+- [mis](https://tradecontrol.github.io/tutorials/manufacturing)
 
 ## Versioning
 

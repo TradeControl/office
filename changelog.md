@@ -1,6 +1,6 @@
 # Change Log
 
-Changes to 3.18, released February 2021.
+Changes to 3.18, released February 2021. Previous releases are logged in the [development history archive](https://github.com/iamonnox/tradecontrol).
 
 
 ### 3.19

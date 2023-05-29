@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_00A5E5278031B053AFCD5562EF8C52BF"
+        "MsmKey" = "8:_1D704D1D899E6B79126161742C5D5C51"
         "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -23,12 +23,6 @@
         {
         "MsmKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_371C396C9533CB447FC32943C4D019D6"
-        "OwnerKey" = "8:_27D54F1629FF40DD85A966F989DE611F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,13 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_00A5E5278031B053AFCD5562EF8C52BF"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_371C396C9533CB447FC32943C4D019D6"
+        "OwnerKey" = "8:_1D704D1D899E6B79126161742C5D5C51"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -174,45 +162,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_00A5E5278031B053AFCD5562EF8C52BF"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:TradeControl.Documents.Word.Schema, Version=2.2.1.24636, Culture=neutral, PublicKeyToken=00190a51f7dba08a, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_00A5E5278031B053AFCD5562EF8C52BF"
-                    {
-                    "Name" = "8:TradeControl.Documents.Word.Schema.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:TradeControl.Documents.Word.Schema.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_371C396C9533CB447FC32943C4D019D6"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1D704D1D899E6B79126161742C5D5C51"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_371C396C9533CB447FC32943C4D019D6"
+                    "_1D704D1D899E6B79126161742C5D5C51"
                     {
                     "Name" = "8:Microsoft.VisualStudio.Tools.Applications.Runtime.dll"
                     "Attributes" = "3:512"
@@ -414,15 +371,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Trade Control Client"
-        "ProductCode" = "8:{78426B7E-E7D7-4025-9FAD-498A1F5FBB86}"
-        "PackageCode" = "8:{78D70DAD-2B9D-4EFA-ACEB-2964656C023C}"
+        "ProductCode" = "8:{293AEA37-B0E6-41FD-B6D3-1981BEE1B802}"
+        "PackageCode" = "8:{C9A4F2F1-CB6A-46B9-9AFF-3FE715A32466}"
         "UpgradeCode" = "8:{D18C36D4-6510-46B5-A8C2-49A17926D734}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:3.20.1"
+        "ProductVersion" = "8:3.20.2"
         "Manufacturer" = "8:Trade Control"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -907,7 +864,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_27D54F1629FF40DD85A966F989DE611F"
             {
-            "SourcePath" = "8:..\\word\\Documents\\obj\\Release\\TradeControl.Documents.Word.dll"
+            "SourcePath" = "8:..\\word\\Documents\\obj\\Debug\\TradeControl.Documents.Word.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_58C12112864544F9B590C91671C3D6F2"
